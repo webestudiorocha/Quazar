@@ -49,7 +49,7 @@ class TemplateSite
         <link rel="stylesheet" href="<?= URL; ?>/assets/css/ion.rangeSlider.skinFlat.css" />
         <link rel="stylesheet" href="<?= URL; ?>/assets/css/magnific-popup.css">
         <link rel="stylesheet" href="<?= URL; ?>/assets/css/main.css">
-
+  <?php include ("assets/inc/nav.inc.php");?>
     </head>
         <?php
     }
