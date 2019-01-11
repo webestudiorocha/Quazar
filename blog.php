@@ -1,29 +1,35 @@
 <?php
 require_once "Config/Autoload.php";
 Config\Autoload::runSitio();
-//Clases
-$cod = isset($_GET["cod"]) ? $_GET["cod"] : '';
-$novedades = new Clases\Novedades();
-$novedades->set("cod", $cod);
-$novedades_data = $novedades->view();
-$imagenes = new Clases\Imagenes();
-$filter = array("cod='" . $novedades_data['cod'] . "'");
-$imagenes_data = $imagenes->list($filter);
-$fecha = explode("-", $novedades_data['fecha']);
 $template = new Clases\TemplateSite();
-$template->set("title", TITULO .' | '.ucfirst(strip_tags($novedades_data['titulo'])));
-$template->set("imagen", URL."/".$imagenes_data[0]['ruta']);
+$funciones= new Clases\PublicFunction();
+
+//Clases
+$imagenes = new Clases\Imagenes();
+$novedades = new Clases\Novedades();
+$banners = new Clases\Banner();
+//Productos
+$id       = isset($_GET["id"]) ? $_GET["id"] : '';
+$novedades->set("id",$id);
+$novedadData = $novedades->view();
+$imagenes->set("cod",$novedadData['cod']);
+$imagenData = $imagenes->view();
+$novedadesData = $novedades->list('');
+$fecha = explode("-", $novedadData['fecha']);
+$template->set("title", ucfirst($novedadData['titulo']));
+$template->set("description", $novedadData['description']);
+$template->set("keywords", $novedadData['keywords']);
+$template->set("imagen", URL."/".$imagenData['ruta']);
 $template->set("favicon", LOGO);
-$template->set("keywords", strip_tags($novedades_data['keywords']));
-$template->set("description", ucfirst(substr(strip_tags($novedades_data['desarrollo']), 0, 160)));
 $template->themeInit();
+//
 ?>
     <!-- Start Banner Area -->
     <section class="banner-area organic-breadcrumb">
         <div class="container">
             <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
                 <div class="col-first">
-                    <h1></h1>
+                    <h1><?= ucfirst($novedadData["titulo"]); ?></h1>
                 </div>
             </div>
         </div>
@@ -34,31 +40,42 @@ $template->themeInit();
     <section class="blog_area single-post-area section_gap">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 posts-list">
+                <div class="col-lg-12 posts-list">
                     <div class="single-post row">
                         <div class="col-lg-12">
                             <div class="feature-img">
-                                <img class="img-fluid" src="img/blog/feature-img1.jpg" alt="">
+                                <img src="<?= URL. '/' . $imagenData['ruta']; ?>" alt="<?= $novedadData['titulo']; ?>">
                             </div>
                         </div>
                         <div class="col-lg-3  col-md-3">
                             <div class="blog_info text-right">
 
                                 <ul class="blog_meta list">
-
-                                    <li><a href="#">12 Dec, 2018<i class="lnr lnr-calendar-full"></i></a></li>
-
+                                    <li><a href="#"> <span><?php echo $fecha[2] . "/" . $fecha[1] . "/" . $fecha[0] ?></span><i class="lnr lnr-calendar-full"></i></a></li>
                                 </ul>
-
                             </div>
                         </div>
                         <div class="col-lg-9 col-md-9 blog_details">
-                            <h2></h2>
+                            <h2>Astronomy Binoculars A Great Alternative</h2>
                             <p class="excert">
-
+                                MCSE boot camps have its supporters and its detractors. Some people do not understand
+                                why you should have to spend money on boot camp when you can get the MCSE study
+                                materials yourself at a fraction.
                             </p>
-
-
+                            <p>
+                                Boot camps have its supporters and its detractors. Some people do not understand why
+                                you should have to spend money on boot camp when you can get the MCSE study materials
+                                yourself at a fraction of the camp price. However, who has the willpower to actually
+                                sit through a self-imposed MCSE training. who has the willpower to actually sit through
+                                a self-imposed
+                            </p>
+                            <p>
+                                Boot camps have its supporters and its detractors. Some people do not understand why
+                                you should have to spend money on boot camp when you can get the MCSE study materials
+                                yourself at a fraction of the camp price. However, who has the willpower to actually
+                                sit through a self-imposed MCSE training. who has the willpower to actually sit through
+                                a self-imposed
+                            </p>
                         </div>
 
                     </div>
