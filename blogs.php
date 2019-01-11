@@ -2,12 +2,23 @@
 require_once "Config/Autoload.php";
 Config\Autoload::runSitio();
 $template = new Clases\TemplateSite();
-$funciones = new Clases\PublicFunction();
-$template->set("title", "Quazar | Inicio");
+$funciones= new Clases\PublicFunction();
+$template->set("title", "Quazar| Blogs");
 $template->set("description", "");
 $template->set("keywords", "");
 $template->set("favicon", LOGO);
-$template->themeInit()
+$template->themeInit();
+$novedades = new Clases\Novedades();
+$pagina = isset($_GET["pagina"]) ? $_GET["pagina"] : '0';
+$novedadesData = $novedades->listWithOps('', '', (3 * $pagina) . ',' . 3);
+$novedadesPaginador = $novedades->paginador('', 3);
+$imagenes = new Clases\Imagenes();
+
+if(@count($_GET) == 0) {
+    $anidador = "?";
+} else {
+    $anidador = "&";
+}
 ?>
 <!-- Start Banner Area -->
 <section class="banner-area organic-breadcrumb">
@@ -99,15 +110,21 @@ $template->themeInit()
                             <div class="blog_post">
                                 <img src="img/blog/main-blog/m-blog-1.jpg" alt="">
                                 <div class="blog_details">
-                                    <a href="single-blog.html">
-                                        <h2>Astronomy Binoculars A Great Alternative</h2>
+                                  <?php
+                                    foreach ($novedadesData as $nov) :
+                                        $imagenes->set("cod", $nov['cod']);
+                                        $img = $imagenes->view();
+                                        $fecha = explode("-", $nov['fecha']);
+                                        ?>
+
+                                    <a class="post-img" href="<?php echo URL . '/blogs/' . $funciones->normalizar_link($nov['titulo']) . "/" . $nov['id'] ?>"
+                                       style="height:440px;background:url(<?= URL . '/' . $img['ruta'] ?>)center/cover;">
                                     </a>
-                                    <p>MCSE boot camps have its supporters and its detractors. Some people do not
-                                        understand why you should have to spend money on boot camp when you can get
-                                        the MCSE study materials yourself at a fraction.</p>
-                                    <a href="single-blog.html" class="white_bg_btn">View More</a>
+                                    <?php endforeach;?>
+                                    <a href="blog.php" class="white_bg_btn">View More</a>
                                 </div>
                             </div>
+
                         </div>
                     </article>
                     <nav class="blog-pagination justify-content-center d-flex">
