@@ -123,9 +123,9 @@ $numeroPaginas = $novedades->paginador("", $cantidad);
 
                         <div class="col-md-9">
                             <div class="blog_post">
-                                <div class="project-photo"
+                                <a href="<?php echo URL . '/blog/' . $funciones->normalizar_link($nov['titulo']) . "/" . $nov['cod'] ?>"><div class="project-photo"
                                      style=" height: 300px; background: url(<?= URL . '/' . $img['ruta'] ?>) no-repeat center center/cover;">
-                                </div>
+                                    </div></a>
                                 <div class="blog_details">
                                     <a href="<?php echo URL . '/blog/' . $funciones->normalizar_link($nov['titulo']) . "/" . $nov['cod'] ?>"><?= ucfirst($nov['titulo']) ?></a>
                                     <p><?php echo strip_tags(substr($nov["desarrollo"],0,400)); ?>...</p>
