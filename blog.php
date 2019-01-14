@@ -52,7 +52,7 @@ $template->themeInit();
                             <div class="col-md-3">
                                 <div class="blog_info text-left">
                                     <ul class="blog_meta list">
-                                        <li><a href="#"> <span class="poster"><?php echo $fecha[2] . "/" . $fecha[1] . "/" . $fecha[0] ?></span><i class="lnr lnr-calendar-full"></i></a></li>
+                                        <li> <span class="poster"><?php echo $fecha[2] . "/" . $fecha[1] . "/" . $fecha[0] ?></span><i class="lnr lnr-calendar-full"></i></li>
                                     </ul>
 
                                 </div>
