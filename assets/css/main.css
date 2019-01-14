@@ -5095,7 +5095,8 @@ label {
 
 /*============ blog_left_sidebar css ==============*/
 .blog_item {
-  margin-bottom: 40px; }
+}
+
 
 .blog_info {
   padding-top: 30px; }

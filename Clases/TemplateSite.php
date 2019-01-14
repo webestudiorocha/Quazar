@@ -51,12 +51,12 @@ class TemplateSite
         <link rel="stylesheet" href="<?= URL; ?>/assets/css/main.css">
   <?php include ("assets/inc/nav.inc.php");?>
     </head>
-        <?php
+      <?php
     }
 
     public function themeNav()
     {
-        include 'assets/inc/nav.inc.php';
+      include 'assets/inc/nav.inc.php';
     }
 
     public function themeSideIndex()
@@ -66,7 +66,7 @@ class TemplateSite
 
     public function themeSideBlog()
     {
-        include 'assets/inc/sideBlog.inc.php';
+        include 'assets/inc/side/side.inc.php';
     }
 
     public function themeEnd()

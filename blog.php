@@ -7,6 +7,7 @@ $novedades = new Clases\Novedades();
 $novedades->set("cod", $cod);
 $novedades_data = $novedades->view();
 $imagenes = new Clases\Imagenes();
+$imagenes->set("cod",$novedades_data['cod']);
 $filter = array("cod='" . $novedades_data['cod'] . "'");
 $imagenes_data = $imagenes->view();
 $fecha = explode("-", $novedades_data['fecha']);
@@ -36,27 +37,38 @@ $template->themeInit();
             <div class="row">
                 <div class="col-lg-12 posts-list">
                     <div class="single-post row">
-                        <div class="col-lg-12">
-                            <div class="feature-img"
-                                style=" height: 300px; background: url(<?= URL . '/' . $imagenes_data['ruta'] ?>) no-repeat center center/cover;">
+                        <article>
+
+
+                            <div class="col-md-12">
+                                <div class="blog_post">
+                                    <div >
+                                        <img src="<?= URL . '/' . $imagenes_data['ruta'] ?>">
+                                    </div>
+
+                                </div>
+
                             </div>
-                        </div>
-                        <div class="col-lg-3  col-md-3">
-                            <div class="blog_info text-right">
+                            <div class="col-md-3">
+                                <div class="blog_info text-left">
+                                    <ul class="blog_meta list">
+                                        <li><a href="#"> <span class="poster"><?php echo $fecha[2] . "/" . $fecha[1] . "/" . $fecha[0] ?></span><i class="lnr lnr-calendar-full"></i></a></li>
+                                    </ul>
 
-                                <ul class="blog_meta list">
-                                    <li><i class="lnr lnr-calendar-full"></i><span></span></li>
-                                </ul>
+                                </div>
+
                             </div>
-                        </div>
-                        <div class="col-lg-9 col-md-9 blog_details">
-                            <h1><?= $novedades_data['titulo']; ?></h1>
-                            <p>
-                                <?= $novedades_data['desarrollo']; ?>
-                            </p>
+                            <div class="col-md-12">
+                                <p>
+                                    <?= $novedades_data['desarrollo']; ?>
+                                </p>
 
 
-                        </div>
+                            </div>
+                        </article>
+
+
+
 
                     </div>
 

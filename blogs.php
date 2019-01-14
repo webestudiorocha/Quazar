@@ -128,7 +128,7 @@ $numeroPaginas = $novedades->paginador("", $cantidad);
                                 <div class="blog_details">
                                     <a href="<?php echo URL . '/blog/' . $funciones->normalizar_link($nov['titulo']) . "/" . $nov['cod'] ?>"><?= ucfirst($nov['titulo']) ?></a>
                                     <p><?php echo strip_tags(substr($nov["desarrollo"],0,400)); ?>...</p>
-                                    <a href="blog.php" class="white_bg_btn">View More</a>
+                                    <a title="Leer más" href="<?php echo URL . '/blog/' . $funciones->normalizar_link($nov['titulo']) . "/" . $nov['cod'] ?>" class="white_bg_btn">Leer Mas</a>
                                 </div>
                             </div>
 

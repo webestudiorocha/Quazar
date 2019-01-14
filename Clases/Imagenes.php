@@ -30,9 +30,9 @@ class Imagenes
 
     public function add()
     {
-     /*  $sql   = "INSERT INTO `imagenes`(`ruta`, `cod`) VALUES ('{$this->ruta}', '{$this->cod}')";
+      $sql   = "INSERT INTO `imagenes`(`ruta`, `cod`) VALUES ('{$this->ruta}', '{$this->cod}')";
         $query = $this->con->sql($sql);
-        return $query; */
+        return $query;
     }
 
     public function edit()
@@ -66,11 +66,11 @@ class Imagenes
 
     public function view()
     {
-        $sql      = "SELECT * FROM `imagenes` WHERE cod = '{$this->cod}' ORDER BY id ASC";
+        $sql      = "SELECT * FROM `imagenes` WHERE cod = '{$this->cod}'  ORDER BY cod ASC";
         $imagenes = $this->con->sqlReturn($sql);
         $row      = mysqli_fetch_assoc($imagenes);
         if ($row===NULL) {
-            $row['ruta']      =  "assets/archivos/sin_imagen.jpg";
+            $row['ruta']      =  "assets/archivos/recortadas/sin_imagen.jpg";
         return $row;
         }else {
         return $row;
