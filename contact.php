@@ -74,29 +74,29 @@ $template->themeInit();
 					<div class="contact_info">
 						<div class="info_item">
 							<i class="lnr lnr-home"></i>
-							<h6>California, United States</h6>
-							<p>Santa monica bullevard</p>
+							<h6>San Francisco, Cordoba</h6>
+							<p>xxxxxxx</p>
 						</div>
 						<div class="info_item">
 							<i class="lnr lnr-phone-handset"></i>
-							<h6><a href="#">00 (440) 9865 562</a></h6>
-							<p>Mon to Fri 9am to 6 pm</p>
+							<h6><a href="#">213213213</a></h6>
+                                <p></p>
 						</div>
 						<div class="info_item">
 							<i class="lnr lnr-envelope"></i>
-							<h6><a href="#">support@colorlib.com</a></h6>
-							<p>Send us your query anytime!</p>
+							<h6><a href="#">info@quazar.com.ar</a></h6>
+							<p>Tu consulta no es molestia!</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-9">
-					<form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+					<form class="row contact_form" method="post" id="contact-form" >
 						<div class="col-md-6">
 							<div class="form-group">
 								<input type="text" class="form-control" id="name" name="nombre" placeholder="Nombre" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre'">
 							</div>
 							<div class="form-group">
-								<input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'">
+								<input type="email" class="form-control" id="email" name="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'">
 							</div>
                             <div class="form-group">
                             <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Telefono'">

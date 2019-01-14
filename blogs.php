@@ -15,7 +15,7 @@ $imagenes = new Clases\Imagenes();
 $funciones = new Clases\PublicFunction();
 $pagina = isset($_GET["pagina"]) ? $_GET["pagina"] : '0';
 
-$cantidad = 5;
+$cantidad = 4;
 
 if ($pagina > 0) {
     $pagina = $pagina - 1;
@@ -120,6 +120,7 @@ $numeroPaginas = $novedades->paginador("", $cantidad);
                                 </ul>
                             </div>
                         </div>
+
                         <div class="col-md-9">
                             <div class="blog_post">
                                 <div class="project-photo"
@@ -134,6 +135,7 @@ $numeroPaginas = $novedades->paginador("", $cantidad);
 
                         </div>
                     </article>
+                </br>
                     <?php endforeach;?>
                     <nav class="blog-pagination justify-content-center d-flex">
                         <ul class="pagination">
