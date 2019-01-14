@@ -30,9 +30,9 @@ class Imagenes
 
     public function add()
     {
-        $sql   = "INSERT INTO `imagenes`(`ruta`, `cod`) VALUES ('{$this->ruta}', '{$this->cod}')";
+     /*  $sql   = "INSERT INTO `imagenes`(`ruta`, `cod`) VALUES ('{$this->ruta}', '{$this->cod}')";
         $query = $this->con->sql($sql);
-        return $query;
+        return $query; */
     }
 
     public function edit()

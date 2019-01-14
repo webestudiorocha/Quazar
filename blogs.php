@@ -126,7 +126,7 @@ $numeroPaginas = $novedades->paginador("", $cantidad);
                                      style=" height: 300px; background: url(<?= URL . '/' . $img['ruta'] ?>) no-repeat center center/cover;">
                                 </div>
                                 <div class="blog_details">
-                                    <a href="<?php echo URL . '/blog/' . $funciones->normalizar_link($nov['titulo']) . "/" . $nov['id'] ?>"><?= ucfirst($nov['titulo']) ?></a>
+                                    <a href="<?php echo URL . '/blog/' . $funciones->normalizar_link($nov['titulo']) . "/" . $nov['cod'] ?>"><?= ucfirst($nov['titulo']) ?></a>
                                     <p><?php echo strip_tags(substr($nov["desarrollo"],0,400)); ?>...</p>
                                     <a href="blog.php" class="white_bg_btn">View More</a>
                                 </div>

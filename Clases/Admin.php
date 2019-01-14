@@ -25,9 +25,9 @@ class Admin {
     }
 
     public function add() {
-        /*$sql = "INSERT INTO `admin` (`id`, `titulo`, `desarrollo`, `categoria`, `keywords`, `description`, `fecha`) VALUES ('{$this->id}', '{$this->titulo}', '{$this->desarrollo}', '{$this->categoria}', '{$this->keywords}', '{$this->description}', '{$this->fecha}')";
+        $sql = "INSERT INTO `admin` (`id`, `titulo`, `desarrollo`, `categoria`, `keywords`, `description`, `fecha`) VALUES ('{$this->id}', '{$this->titulo}', '{$this->desarrollo}', '{$this->categoria}', '{$this->keywords}', '{$this->description}', '{$this->fecha}')";
         $query = $this->con->sql($sql);
-        return $query;*/
+        return $query;
     }
 
     public function edit() {
