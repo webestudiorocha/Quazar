@@ -1,11 +1,10 @@
 <?php
 
-    $to = "rockybd1995@gmail.com";
+    $to = "webestudiorocha@gmail.com";
     $from = $_REQUEST['email'];
-    $name = $_REQUEST['name'];
-    $subject = $_REQUEST['subject'];
-    $number = $_REQUEST['number'];
-    $cmessage = $_REQUEST['message'];
+    $name = $_REQUEST['nombre'];
+    $subject = $_REQUEST['telefono'];
+    $cmessage = $_REQUEST['consulta'];
 
     $headers = "From: $from";
 	$headers = "From: " . $from . "\r\n";
@@ -23,10 +22,10 @@
 	$body .= "<thead style='text-align: center;'><tr><td style='border:none;' colspan='2'>";
 	$body .= "<a href='{$link}'><img src='{$logo}' alt=''></a><br><br>";
 	$body .= "</td></tr></thead><tbody><tr>";
-	$body .= "<td style='border:none;'><strong>Name:</strong> {$name}</td>";
+	$body .= "<td style='border:none;'><strong>Nombre:</strong> {$name}</td>";
 	$body .= "<td style='border:none;'><strong>Email:</strong> {$from}</td>";
 	$body .= "</tr>";
-	$body .= "<tr><td style='border:none;'><strong>Subject:</strong> {$csubject}</td></tr>";
+	$body .= "tr><td style='border:none;'><strong>Telefono:</strong> {$subject}</td></tr>";
 	$body .= "<tr><td></td></tr>";
 	$body .= "<tr><td colspan='2' style='border:none;'>{$cmessage}</td></tr>";
 	$body .= "</tbody></table>";

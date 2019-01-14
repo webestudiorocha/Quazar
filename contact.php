@@ -11,6 +11,8 @@ $template->set("title", TITULO . " | Inicio");
 $template->set("description", "Inicio " . TITULO);
 $template->set("keywords", "Inicio," . TITULO);
 $template->set("imagen", LOGO);
+$enviar = new Clases\Email();
+$funciones = new Clases\PublicFunction();
 $template->themeInit();
 ?>
 	<!-- Start Banner Area -->
@@ -29,6 +31,42 @@ $template->themeInit();
 	<!--================Contact Area =================-->
 	<section class="contact_area section_gap_bottom">
         <h1 style="text-align: center">Formulario</h1>
+        <?php if (isset($_POST["enviar"])):
+            $nombre = $funciones->antihack_mysqli(isset($_POST["nombre"]) ? $_POST["nombre"] : '');
+            $email = $funciones->antihack_mysqli(isset($_POST["email"]) ? $_POST["email"] : '');
+            $telefono = $funciones->antihack_mysqli(isset($_POST["telefono"]) ? $_POST["telefono"] : '');
+            $consulta = $funciones->antihack_mysqli(isset($_POST["consulta"]) ? $_POST["consulta"] : '');
+            $asunto = $funciones->antihack_mysqli(isset($_POST["asunto"]) ? $_POST["asunto"] : '');
+
+            $mensajeFinal = "<b>Nombre</b>: " . $nombre . " <br/>";
+            $mensajeFinal .= "<b>Email</b>: " . $email . "<br/>";
+            $mensajeFinal .= "<b>Teléfono</b>: " . $telefono . " <br/>";
+            $mensajeFinal .= "<b>Consulta</b>: " . $consulta . "<br/>";
+
+            //USUARIO
+            $enviar->set("asunto", "Realizaste tu consulta");
+            $enviar->set("receptor", $email);
+            $enviar->set("emisor", EMAIL);
+            $enviar->set("mensaje", $mensajeFinal);
+            if ($enviar->emailEnviar() == 1):
+                echo '<div class="alert alert-success" role="alert">¡Consulta enviada correctamente!</div>';
+            endif;
+
+            //ADMIN
+
+            $mensajeFinalAdmin = "<b>Nombre</b>: " . $nombre . " <br/>";
+            $mensajeFinalAdmin .= "<b>URL</b>: " . $asunto . "<br/>";
+            $mensajeFinalAdmin .= "<b>Email</b>: " . $email . "<br/>";
+            $mensajeFinalAdmin .= "<b>Teléfono</b>: " . $telefono . " <br/>";
+            $mensajeFinalAdmin .= "<b>Consulta</b>: " . $consulta . "<br/>";
+            //ADMIN
+            $enviar->set("asunto", "Consulta Web");
+            $enviar->set("receptor", EMAIL);
+            $enviar->set("mensaje", $mensajeFinalAdmin);
+            if ($enviar->emailEnviar() == 0):
+                echo '<div class="alert alert-danger" role="alert">¡No se ha podido enviar la consulta!</div>';
+            endif;
+        endif; ?>
 		<div class="container">
 			<div class="row">
 
@@ -55,22 +93,23 @@ $template->themeInit();
 					<form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
 						<div class="col-md-6">
 							<div class="form-group">
-								<input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'">
+								<input type="text" class="form-control" id="name" name="nombre" placeholder="Nombre" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre'">
 							</div>
 							<div class="form-group">
 								<input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'">
 							</div>
-							<div class="form-group">
-								<input type="text" class="form-control" id="subject" name="subject" placeholder="Enter Subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'">
-							</div>
+                            <div class="form-group">
+                            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Telefono'">
+                            </div>
 						</div>
+
 						<div class="col-md-6">
 							<div class="form-group">
-								<textarea class="form-control" name="message" id="message" rows="1" placeholder="Enter Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'"></textarea>
+								<textarea class="form-control" name="consulta" id="message" rows="1" placeholder="Mensaje" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mensaje'"></textarea>
 							</div>
 						</div>
 						<div class="col-md-12 text-right">
-							<button type="submit" value="submit" class="primary-btn">Send Message</button>
+							<button type="submit" value="submit" class="primary-btn">Enviar Mensaje</button>
 						</div>
 					</form>
 				</div>
