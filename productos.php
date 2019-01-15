@@ -10,25 +10,22 @@ $template->set("favicon", LOGO);
 $template->themeInit();
 //Clases
 $productos = new Clases\Productos();
+$id = isset($_GET["id"]) ? $_GET["id"] : '';
 $productos->set("cod", $id);
 $producto_Data = $productos->listWithOps("", "", "");
 $imagenes = new Clases\Imagenes();
 $categorias = new Clases\Categorias();
-$categoria_data = $categorias->list($filter);
-$subcategorias = new Clases\Subcategorias();
-$subcategorias_data = $subcategorias->list($filter);
 $subcategorias = new Clases\Subcategorias();
 $banners = new Clases\Banner();
 $rubros = new Clases\Rubros();
-
 $linea = isset($_GET["linea"]) ? $_GET["linea"] : '';
 $rubro = isset($_GET["rubro"]) ? $_GET["rubro"] : '';
 $id = isset($_GET["id"]) ? $_GET["id"] : '';
 $buscar = isset($_GET["buscar"]) ? $_GET["buscar"] : '';
 $orden_pagina = isset($_GET["order"]) ? $_GET["order"] : '';
 $pagina = isset($_GET["pagina"]) ? $_GET["pagina"] : '0';
-
-
+$categoria_data = $categorias->list("");
+$subcategorias_data = $subcategorias->list("");
 ?>
     <!-- Start Banner Area -->
     <section class="banner-area organic-breadcrumb">
@@ -48,9 +45,8 @@ $pagina = isset($_GET["pagina"]) ? $_GET["pagina"] : '0';
                     <div class="head">Categorias</div>
                     <ul class="main-categories">
                         <?php foreach ($categoria_data as $categorias): ?>
-                            <li class="main-nav-list"><a data-toggle="collapse" href="#fruitsVegetable"
-                                                         aria-expanded="false" aria-controls="fruitsVegetable"><span
-                                            class="lnr lnr-arrow-right"></span><?= $categorias['titulo']; ?></a>
+                            <li class="main-nav-list"><a data-toggle="collapse" href="#fruitsVegetable" aria-expanded="false" aria-controls="fruitsVegetable">
+                                    <span class="lnr lnr-arrow-right"></span><?= $categorias['titulo']; ?></a>
                             </li>
                         <?php endforeach; ?>
                     </ul>
@@ -125,22 +121,22 @@ $pagina = isset($_GET["pagina"]) ? $_GET["pagina"] : '0';
                     <div class="row">
                         <!-- single product -->
                         <div class="col-lg-4 col-md-6">
-                            <?php foreach ($producto_Data as $productos):?>
-                             <?php   $imagenes->set("cod", $productos['cod']);
+                            <?php foreach ($producto_Data as $prod):?>
+                             <?php   $imagenes->set("cod", $prod['cod']);
                                 $img = $imagenes->view(); ?>
                             <div class="single-product">
                                 <img class="img-fluid" src="<?= URL . '/' . $img['ruta'] ?>" alt="">
                                 <div class="product-details">
-                                    <h6><?= $productos['titulo']; ?></h6>
-                                    <p><?= $productos['desarrollo']; ?></p>
+                                    <h6><?= $prod['titulo']; ?></h6>
+                                    <p><?= $prod['desarrollo']; ?></p>
                                     <div class="price">
-                                        <h6>Precio: $<?= $productos['precio']; ?></h6>
-                                        <h6>Precio con Descuento: $<?= $productos['precioDescuento']; ?></h6>
+                                        <h6>Precio: $<?= $prod['precio']; ?></h6>
+                                        <h6>Precio con Descuento: $<?= $prod['precioDescuento']; ?></h6>
                                     </div>
                                     <div class="prd-bottom">
                                         <a href="" class="social-info">
                                             <span class="lnr lnr-move"></span>
-                                            <p class="hover-text">Ver Más</p>
+                                            <p class="hover-text" href="<?= URL . '/producto/' . $funciones->normalizar_link($prod['titulo']) . "/" . $prod['cod'] ?>">Ver Más</p>
                                         </a>
                                     </div>
                                 </div>
@@ -173,78 +169,5 @@ $pagina = isset($_GET["pagina"]) ? $_GET["pagina"] : '0';
             </div>
         </div>
     </div>
-    <!-- Modal Quick Product View -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="container relative">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <div class="product-quick-view">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <div class="quick-view-carousel">
-                                <div class="item" style="background: url(img/organic-food/q1.jpg);">
-
-                                </div>
-                                <div class="item" style="background: url(img/organic-food/q1.jpg);">
-
-                                </div>
-                                <div class="item" style="background: url(img/organic-food/q1.jpg);">
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="quick-view-content">
-                                <div class="top">
-                                    <h3 class="head">Mill Oil 1000W Heater, White</h3>
-                                    <div class="price d-flex align-items-center"><span class="lnr lnr-tag"></span> <span
-                                                class="ml-10">$149.99</span></div>
-                                    <div class="category">Category: <span>Household</span></div>
-                                    <div class="available">Availibility: <span>In Stock</span></div>
-                                </div>
-                                <div class="middle">
-                                    <p class="content">Mill Oil is an innovative oil filled radiator with the most
-                                        modern technology. If you are
-                                        looking for something that can make your interior look awesome, and at the same
-                                        time give you the pleasant
-                                        warm feeling during the winter.</p>
-                                    <a href="#" class="view-full">View full Details <span
-                                                class="lnr lnr-arrow-right"></span></a>
-                                </div>
-                                <div class="bottom">
-                                    <div class="color-picker d-flex align-items-center">Color:
-                                        <span class="single-pick"></span>
-                                        <span class="single-pick"></span>
-                                        <span class="single-pick"></span>
-                                        <span class="single-pick"></span>
-                                        <span class="single-pick"></span>
-                                    </div>
-                                    <div class="quantity-container d-flex align-items-center mt-15">
-                                        Quantity:
-                                        <input type="text" class="quantity-amount ml-15" value="1"/>
-                                        <div class="arrow-btn d-inline-flex flex-column">
-                                            <button class="increase arrow" type="button" title="Increase Quantity"><span
-                                                        class="lnr lnr-chevron-up"></span></button>
-                                            <button class="decrease arrow" type="button" title="Decrease Quantity"><span
-                                                        class="lnr lnr-chevron-down"></span></button>
-                                        </div>
-
-                                    </div>
-                                    <div class="d-flex mt-20">
-                                        <a href="#" class="view-btn color-2"><span>Add to Cart</span></a>
-                                        <a href="#" class="like-btn"><span class="lnr lnr-layers"></span></a>
-                                        <a href="#" class="like-btn"><span class="lnr lnr-heart"></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
 <?php $template->themeEnd(); ?>
