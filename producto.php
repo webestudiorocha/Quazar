@@ -2,36 +2,33 @@
 <?php
 require_once "Config/Autoload.php";
 Config\Autoload::runSitio();
-$template = new Clases\TemplateSite();
-$funciones = new Clases\PublicFunction();
-$template->set("title", "Quazar | Productos");
-$template->set("description", "");
-$template->set("keywords", "");
-$template->set("favicon", LOGO);
-$template->themeInit();
 //Clases
-$productos = new Clases\Productos();
 $cod = isset($_GET["cod"]) ? $_GET["cod"] : '';
+$productos = new Clases\Productos();
 $productos->set("cod", $cod);
-$producto_Data = $productos->view();
+$producto_data = $productos->view();
 $imagenes = new Clases\Imagenes();
-$filter = array("cod='" . $producto_Data['cod'] . "'");
-$imagenes_data = $imagenes->list($filter);
+$imagenes->set("cod",$producto_data['cod']);
+$filter = array("cod='" . $producto_data['cod'] . "'");
+$imagenes_data = $imagenes->view();
 $categorias = new Clases\Categorias();
-$categoria_data = $categorias->list("");
-
+$categorias->set("cod", $cod);
+$categoria_data = $categorias->view();
+$template = new Clases\TemplateSite();
+$template->set("title", TITULO .' | '.ucfirst(strip_tags($producto_data['titulo'])));
+$template->set("imagen", URL."/".$imagenes_data['ruta']);
+$template->set("favicon", LOGO);
+$template->set("keywords", strip_tags($producto_data['keywords']));
+$template->set("description", ucfirst(substr(strip_tags($producto_data['desarrollo']), 0, 160)));
+$template->themeInit();
 ?>
 	<!-- Start Banner Area -->
 	<section class="banner-area organic-breadcrumb">
 		<div class="container">
 			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
 				<div class="col-first">
-					<h1>Product Details Page</h1>
-					<nav class="d-flex align-items-center">
-						<a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
-						<a href="#">Shop<span class="lnr lnr-arrow-right"></span></a>
-						<a href="single-product.html">product-details</a>
-					</nav>
+					<h1><?= ucfirst($producto_data['titulo']); ?></h1>
+
 				</div>
 			</div>
 		</div>
@@ -43,29 +40,20 @@ $categoria_data = $categorias->list("");
 		<div class="container">
 			<div class="row s_product_inner">
 				<div class="col-lg-6">
-					<div class="s_Product_carousel">
-						<div class="single-prd-item">
-							<img class="img-fluid" src="img/category/s-p1.jpg" alt="">
-						</div>
-						<div class="single-prd-item">
-							<img class="img-fluid" src="img/category/s-p1.jpg" alt="">
-						</div>
-						<div class="single-prd-item">
-							<img class="img-fluid" src="img/category/s-p1.jpg" alt="">
-						</div>
-					</div>
+                 <div class="single-prd-item">
+                     <img class="img-fluid" src="<?= URL . '/' . $imagenes_data['ruta'] ?>" alt="">
+                   <?php  var_dump($imagenes_data); ?>
+                 </div>
 				</div>
 				<div class="col-lg-5 offset-lg-1">
 					<div class="s_product_text">
 						<h3>Faded SkyBlu Denim Jeans</h3>
 						<h2>$149.99</h2>
 						<ul class="list">
-							<li><a class="active" href="#"><span>Category</span> : Household</a></li>
+							<li><a class="active" href="#"><span>Category</span> : <?= $categoria_data['titulo']; ?></a></li>
 							<li><a href="#"><span>Availibility</span> : In Stock</a></li>
 						</ul>
-						<p>Mill Oil is an innovative oil filled radiator with the most modern technology. If you are looking for
-							something that can make your interior look awesome, and at the same time give you the pleasant warm feeling
-							during the winter.</p>
+						<p><?= ucfirst($producto_data['desarrollo']); ?></p>
 						<div class="product_count">
 							<label for="qty">Quantity:</label>
 							<input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:" class="input-text qty">

@@ -10,22 +10,10 @@ $template->set("favicon", LOGO);
 $template->themeInit();
 //Clases
 $productos = new Clases\Productos();
-$id = isset($_GET["id"]) ? $_GET["id"] : '';
-$productos->set("cod", $id);
 $producto_Data = $productos->listWithOps("", "", "");
 $imagenes = new Clases\Imagenes();
 $categorias = new Clases\Categorias();
-$subcategorias = new Clases\Subcategorias();
-$banners = new Clases\Banner();
-$rubros = new Clases\Rubros();
-$linea = isset($_GET["linea"]) ? $_GET["linea"] : '';
-$rubro = isset($_GET["rubro"]) ? $_GET["rubro"] : '';
-$id = isset($_GET["id"]) ? $_GET["id"] : '';
-$buscar = isset($_GET["buscar"]) ? $_GET["buscar"] : '';
-$orden_pagina = isset($_GET["order"]) ? $_GET["order"] : '';
-$pagina = isset($_GET["pagina"]) ? $_GET["pagina"] : '0';
 $categoria_data = $categorias->list("");
-$subcategorias_data = $subcategorias->list("");
 ?>
     <!-- Start Banner Area -->
     <section class="banner-area organic-breadcrumb">
@@ -128,13 +116,13 @@ $subcategorias_data = $subcategorias->list("");
                                 <img class="img-fluid" src="<?= URL . '/' . $img['ruta'] ?>" alt="">
                                 <div class="product-details">
                                     <h6><?= $prod['titulo']; ?></h6>
-                                    <p><?= $prod['desarrollo']; ?></p>
+                                    <p><?php echo strip_tags(substr($prod["desarrollo"],0,300)); ?>...</p>
                                     <div class="price">
                                         <h6>Precio: $<?= $prod['precio']; ?></h6>
                                         <h6>Precio con Descuento: $<?= $prod['precioDescuento']; ?></h6>
                                     </div>
                                     <div class="prd-bottom">
-                                        <a href="" class="social-info">
+                                        <a href="<?= URL . '/producto/' . $funciones->normalizar_link($prod['titulo']) . "/" . $prod['cod'] ?>" class="social-info">
                                             <span class="lnr lnr-move"></span>
                                             <p class="hover-text" href="<?= URL . '/producto/' . $funciones->normalizar_link($prod['titulo']) . "/" . $prod['cod'] ?>">Ver Más</p>
                                         </a>

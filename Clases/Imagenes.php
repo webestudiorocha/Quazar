@@ -69,6 +69,7 @@ class Imagenes
         $sql      = "SELECT * FROM `imagenes` WHERE cod = '{$this->cod}'  ORDER BY cod ASC";
         $imagenes = $this->con->sqlReturn($sql);
         $row      = mysqli_fetch_assoc($imagenes);
+        var_dump($sql);
         if ($row===NULL) {
             $row['ruta']      =  "assets/archivos/recortadas/sin_imagen.jpg";
         return $row;
