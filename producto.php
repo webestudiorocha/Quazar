@@ -11,22 +11,15 @@ $template->set("favicon", LOGO);
 $template->themeInit();
 //Clases
 $productos = new Clases\Productos();
-$id = isset($_GET["id"]) ? $_GET["id"] : '';
-$productos->set("cod", $id);
-$producto_Data = $productos->listWithOps("", "", "");
+$cod = isset($_GET["cod"]) ? $_GET["cod"] : '';
+$productos->set("cod", $cod);
+$producto_Data = $productos->view();
 $imagenes = new Clases\Imagenes();
+$filter = array("cod='" . $producto_Data['cod'] . "'");
+$imagenes_data = $imagenes->list($filter);
 $categorias = new Clases\Categorias();
-$subcategorias = new Clases\Subcategorias();
-$banners = new Clases\Banner();
-$rubros = new Clases\Rubros();
-$linea = isset($_GET["linea"]) ? $_GET["linea"] : '';
-$rubro = isset($_GET["rubro"]) ? $_GET["rubro"] : '';
-$id = isset($_GET["id"]) ? $_GET["id"] : '';
-$buscar = isset($_GET["buscar"]) ? $_GET["buscar"] : '';
-$orden_pagina = isset($_GET["order"]) ? $_GET["order"] : '';
-$pagina = isset($_GET["pagina"]) ? $_GET["pagina"] : '0';
 $categoria_data = $categorias->list("");
-$subcategorias_data = $subcategorias->list("");
+
 ?>
 	<!-- Start Banner Area -->
 	<section class="banner-area organic-breadcrumb">
