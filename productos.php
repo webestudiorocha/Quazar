@@ -2,18 +2,41 @@
 require_once "Config/Autoload.php";
 Config\Autoload::runSitio();
 $template = new Clases\TemplateSite();
-$funciones = new Clases\PublicFunction();
-$template->set("title", "Quazar | Productos");
+$funciones= new Clases\PublicFunction();
+$template->set("title", "Quazar| Blogs");
 $template->set("description", "");
 $template->set("keywords", "");
 $template->set("favicon", LOGO);
 $template->themeInit();
-//Clases
 $productos = new Clases\Productos();
-$producto_Data = $productos->listWithOps("", "", "");
+$pagina = isset($_GET["pagina"]) ? $_GET["pagina"] : '0';
+$novedadesPaginador = $productos->paginador('', 3);
 $imagenes = new Clases\Imagenes();
 $categorias = new Clases\Categorias();
 $categoria_data = $categorias->list("");
+$funciones = new Clases\PublicFunction();
+$pagina = isset($_GET["pagina"]) ? $_GET["pagina"] : '0';
+
+$cantidad = 2;
+
+if ($pagina > 0) {
+    $pagina = $pagina - 1;
+}
+
+if (@count($_GET) > 1) {
+    $anidador = "&";
+} else {
+    $anidador = "?";
+}
+
+if (isset($_GET['pagina'])):
+    $url = $funciones->eliminar_get(CANONICAL, 'pagina');
+else:
+    $url = CANONICAL;
+endif;
+
+$producto_Data = $productos->listWithOps("", "", $cantidad * $pagina . ',' . $cantidad);
+$numeroPaginas = $productos->paginador("", $cantidad);
 ?>
     <!-- Start Banner Area -->
     <section class="banner-area organic-breadcrumb">
@@ -28,7 +51,7 @@ $categoria_data = $categorias->list("");
     <!-- End Banner Area -->
     <div class="container">
         <div class="row">
-            <div class="col-xl-3 col-lg-4 col-md-5">
+            <div class="col-md-3">
                 <div class="sidebar-categories">
                     <div class="head">Categorias</div>
                     <ul class="main-categories">
@@ -41,7 +64,7 @@ $categoria_data = $categorias->list("");
 
                 </div>
                 <div class="sidebar-filter mt-50">
-                    <div class="top-filter-head">Product Filters</div>
+                    <div class="top-filter-head">Filtrar Productos</div>
                     <div class="common-filter">
                         <div class="head">Marcas</div>
                         <form action="#">
@@ -94,13 +117,22 @@ $categoria_data = $categorias->list("");
                         </select>
                     </div>
                     <div class="pagination">
-                        <a href="#" class="prev-arrow"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></a>
-                        <a href="#" class="active">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#" class="dot-dot"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
-                        <a href="#">6</a>
-                        <a href="#" class="next-arrow"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                        <li>
+                            <?php if (($pagina + 1) > 1): ?>
+                        <li><a href="<?= $url ?><?= $anidador ?>pagina=<?= $pagina ?>"><i
+                                        class="fa fa-angle-left" ></i></a></li>
+                        <?php endif; ?>
+
+                        <?php for ($i = 1; $i <= $numeroPaginas; $i++): ?>
+                            <li class="<?php if ($i == $pagina + 1) {
+                                echo "active";
+                            } ?>"><a href="<?= $url ?><?= $anidador ?>pagina=<?= $i ?>"><?= $i ?></a></li>
+                        <?php endfor; ?>
+
+                        <?php if (($pagina + 2) <= $numeroPaginas): ?>
+                            <li><a href="<?= $url ?><?= $anidador ?>pagina=<?= ($pagina + 2) ?>"><i
+                                            class="fa fa-angle-right" ></i></a></li>
+                        <?php endif; ?>
                     </div>
                 </div>
                 <!-- End Filter Bar -->
@@ -108,7 +140,7 @@ $categoria_data = $categorias->list("");
                 <section class="lattest-product-area pb-40 category-list">
                     <div class="row">
                         <!-- single product -->
-                        <div class="col-lg-4 col-md-6">
+                        <div class="col-md-3">
                             <?php foreach ($producto_Data as $prod):?>
                              <?php   $imagenes->set("cod", $prod['cod']);
                                 $img = $imagenes->view(); ?>
@@ -144,13 +176,22 @@ $categoria_data = $categorias->list("");
                         </select>
                     </div>
                     <div class="pagination">
-                        <a href="#" class="prev-arrow"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></a>
-                        <a href="#" class="active">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#" class="dot-dot"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
-                        <a href="#">6</a>
-                        <a href="#" class="next-arrow"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                        <li>
+                            <?php if (($pagina + 1) > 1): ?>
+                        <li><a href="<?= $url ?><?= $anidador ?>pagina=<?= $pagina ?>"><i
+                                        class="fa fa-angle-left" ></i></a></li>
+                        <?php endif; ?>
+
+                        <?php for ($i = 1; $i <= $numeroPaginas; $i++): ?>
+                            <li class="<?php if ($i == $pagina + 1) {
+                                echo "active";
+                            } ?>"><a href="<?= $url ?><?= $anidador ?>pagina=<?= $i ?>"><?= $i ?></a></li>
+                        <?php endfor; ?>
+
+                        <?php if (($pagina + 2) <= $numeroPaginas): ?>
+                            <li><a href="<?= $url ?><?= $anidador ?>pagina=<?= ($pagina + 2) ?>"><i
+                                            class="fa fa-angle-right" ></i></a></li>
+                        <?php endif; ?>
                     </div>
                 </div>
                 <!-- End Filter Bar -->

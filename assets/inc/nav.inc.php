@@ -19,10 +19,6 @@
                            aria-expanded="false">Shop</a>
                         <ul class="dropdown-menu">
                             <li class="nav-item"><a class="nav-link" href="<?= URL; ?>/productos.php">Productos</a></li>
-                            <li class="nav-item"><a class="nav-link" href="single-product.html">Product Details</a></li>
-                            <li class="nav-item"><a class="nav-link" href="checkout.html">Product Checkout</a></li>
-                            <li class="nav-item"><a class="nav-link" href="cart.html">Shopping Cart</a></li>
-                            <li class="nav-item"><a class="nav-link" href="confirmation.html">Confirmation</a></li>
                         </ul>
                     </li>
                     <li class="nav-item "><a class="nav-link" href="<?= URL; ?>/blogs.php">Blog</a></li>

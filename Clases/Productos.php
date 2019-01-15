@@ -78,7 +78,7 @@ class Productos
 
     public function view()
     {
-        $sql   = "SELECT * FROM `productos` WHERE id = '{$this->id}' ||  cod = '{$this->cod}' ORDER BY id DESC";
+        $sql   = "SELECT * FROM `productos` WHERE id = '{$this->id}' ||  cod = '{$this->cod}' ORDER BY id, cod DESC";
         $notas = $this->con->sqlReturn($sql);
         $row   = mysqli_fetch_assoc($notas);
         return $row;

@@ -42,7 +42,6 @@ $template->themeInit();
 				<div class="col-lg-6">
                  <div class="single-prd-item">
                      <img class="img-fluid" src="<?= URL . '/' . $imagenes_data['ruta'] ?>" alt="">
-                   <?php  var_dump($imagenes_data); ?>
                  </div>
 				</div>
 				<div class="col-lg-5 offset-lg-1">
