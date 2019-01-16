@@ -37,7 +37,7 @@ class TemplateSite
         <!-- meta character set -->
         <meta charset="UTF-8">
         <!-- Site Title -->
-        <title>Karma Shop</title>
+        <title>Quazar</title>
         <link rel="stylesheet" href="<?= URL; ?>/assets/css/linearicons.css">
         <link rel="stylesheet" href="<?= URL; ?>/assets/css/font-awesome.min.css">
         <link rel="stylesheet" href="<?= URL; ?>/assets/css/themify-icons.css">

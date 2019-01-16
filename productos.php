@@ -16,7 +16,6 @@ $novedadesPaginador = $productos->paginador('', 3);
 $imagenes = new Clases\Imagenes();
 $categorias = new Clases\Categorias();
 $categoria_data = $categorias->list("");
-$funciones = new Clases\PublicFunction();
 $pagina = isset($_GET["pagina"]) ? $_GET["pagina"] : '0';
 
 $cantidad = 4;
@@ -86,39 +85,12 @@ $numeroPaginas = $productos->paginador("", $cantidad);
                             </ul>
                         </form>
                     </div>
-                   <!-- <div class="common-filter">
-                        <div class="head">Precio</div>
-                        <div class="price-range-area">
-                            <div id="price-range"></div>
-                            <div class="value-wrapper d-flex">
-                                <div class="price">Precio:</div>
-                                <span>$</span>
-                                <div id="lower-value"></div>
-                                <div class="to">to</div>
-                                <span>$</span>
-                                <div id="upper-value"></div>
-                            </div>
-                        </div>
-                    </div>-->
                 </div>
             </div>
             <div class="col-xl-9 col-lg-8 col-md-7">
                 <!-- Start Filter Bar -->
                 <div class="filter-bar d-flex flex-wrap align-items-center">
-                    <div class="sorting">
-                        <select>
-                            <option value="1">Default sorting</option>
-                            <option value="1">Default sorting</option>
-                            <option value="1">Default sorting</option>
-                        </select>
-                    </div>
-                    <div class="sorting mr-auto">
-                        <select>
-                            <option value="1">Show 12</option>
-                            <option value="1">Show 12</option>
-                            <option value="1">Show 12</option>
-                        </select>
-                    </div>
+
                     <div class="pagination">
                         <li>
                             <?php if (($pagina + 1) > 1): ?>
@@ -145,16 +117,17 @@ $numeroPaginas = $productos->paginador("", $cantidad);
                         <!-- single product -->
                         <?php foreach ($producto_Data as $prod):?>
                         <div class="col-md-6">
+
                              <?php   $imagenes->set("cod", $prod['cod']);
                                 $img = $imagenes->view(); ?>
                             <div class="single-product">
-                                <a href="<?= URL . '/producto/' . $funciones->normalizar_link($prod['titulo']) . "/" . $prod['cod'] ?>" ><img class="img-fluid" style=" height: 200px; background: url(<?= URL . '/' . $img['ruta'] ?>) no-repeat center center/cover;"></a>
-                                    <div class="product-details">
+                                <a href="<?= URL . '/producto/' . $funciones->normalizar_link($prod['titulo']) . "/" . $prod['cod'] ?>" ><img class="img-fluid" style=" height: 200px; background: url(<?= URL . '/' . $img['ruta'] ?>) no-repeat center center/cover;" alt=""></a>
+                                <div class="product-details">
                                     <a href="<?= URL . '/producto/' . $funciones->normalizar_link($prod['titulo']) . "/" . $prod['cod'] ?>" ><h6><?= ucfirst($prod['titulo'])?></h6></a>
-                                    <p><?php echo strip_tags(substr( ucfirst($prod["desarrollo"]) ,0,100)); ?>...</p>
+                                    <p><?php echo strip_tags(substr($prod["desarrollo"],0,100)); ?>...</p>
                                     <div class="price">
                                         <h6>Precio: $<?= $prod['precio']; ?></h6>
-                                        <h6>Precio con Descuento: $<?= $prod['precioDescuento']; ?></h6>
+                                        <h6>Precio de contado: $<?= $prod['precioDescuento']; ?></h6>
                                     </div>
                                     <div class="prd-bottom">
                                         <a href="<?= URL . '/producto/' . $funciones->normalizar_link($prod['titulo']) . "/" . $prod['cod'] ?>" class="social-info">
@@ -164,6 +137,7 @@ $numeroPaginas = $productos->paginador("", $cantidad);
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                         <?php endforeach;?>
                     </div>
@@ -171,13 +145,7 @@ $numeroPaginas = $productos->paginador("", $cantidad);
                 <!-- End Best Seller -->
                 <!-- Start Filter Bar -->
                 <div class="filter-bar d-flex flex-wrap align-items-center">
-                    <div class="sorting mr-auto">
-                        <select>
-                            <option value="1">Show 12</option>
-                            <option value="1">Show 12</option>
-                            <option value="1">Show 12</option>
-                        </select>
-                    </div>
+
                     <div class="pagination">
                         <li>
                             <?php if (($pagina + 1) > 1): ?>

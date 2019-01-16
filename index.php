@@ -2,13 +2,27 @@
 require_once "Config/Autoload.php";
 Config\Autoload::runSitio();
 $template = new Clases\TemplateSite();
-$funciones = new Clases\PublicFunction();
+$funciones= new Clases\PublicFunction();
 $template->set("title", "Quazar | Inicio");
 $template->set("description", "");
 $template->set("keywords", "");
 $template->set("favicon", LOGO);
-$template->themeInit()
-    ?>
+$template->themeInit();
+$cod = isset($_GET["cod"]) ? $_GET["cod"] : '';
+$productos = new Clases\Productos();
+$productos->set("cod", $cod);
+$cod = isset($_GET["cod"]) ? $_GET["cod"] : '';
+$slider = new  Clases\Sliders();
+$slider->set("cod", $cod);
+$sliderData = $slider->list("");
+$sliderDatas = $slider->view();
+$imagenes = new Clases\Imagenes();
+$imagenes->set("cod",$sliderDatas['cod']);
+$imagenes_data = $imagenes->view();
+$pagina = isset($_GET["pagina"]) ? $_GET["pagina"] : '0';
+$cantidad = 3;
+$producto_Data = $productos->listWithOps("", "", $cantidad * $pagina . ',' . $cantidad);
+?>
 <!-- start banner Area -->
 <section class="banner-area">
     <div class="container">
@@ -18,34 +32,26 @@ $template->themeInit()
                     <!-- single-slide -->
                     <div class="row single-slide align-items-center d-flex">
                         <div class="col-lg-5 col-md-6">
+                            <?php foreach ($sliderData as $slider): ?>
                             <div class="banner-content">
-                                <h1>Nike New <br>Collection!</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                                <div class="add-bag d-flex align-items-center">
-                                    <a class="add-btn" href=""><span class="lnr lnr-cross"></span></a>
-                                    <span class="add-text text-uppercase">Add to Bag</span>
-                                </div>
+                                <h3><?= ucfirst($slider['titulo']); ?></h3>
                             </div>
+                            <?php endforeach; ?>
                         </div>
                         <div class="col-lg-7">
                             <div class="banner-img">
-                                <img class="img-fluid" src="<?= URL; ?>/assets/img/banner/banner-img.png" alt="">
+                                <img class="img-fluid" src="<?= URL . '/'. $imagenes_data['ruta'] ?>" alt="">
                             </div>
                         </div>
                     </div>
                     <!-- single-slide -->
                     <div class="row single-slide">
                         <div class="col-lg-5">
+                <?php foreach ($sliderData as $slider): ?>
                             <div class="banner-content">
-                                <h1>Nike New <br>Collection!</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                                <div class="add-bag d-flex align-items-center">
-                                    <a class="add-btn" href=""><span class="lnr lnr-cross"></span></a>
-                                    <span class="add-text text-uppercase">Add to Bag</span>
-                                </div>
+                                <h3><?= ucfirst($slider['titulo']); ?></h3>
                             </div>
+                    <?php endforeach;?>
                         </div>
                         <div class="col-lg-7">
                             <div class="banner-img">
@@ -60,7 +66,7 @@ $template->themeInit()
 </section>
 <!-- End banner Area -->
 <br>
-    </br>
+
 <!-- Start category Area -->
 <section class="category-area">
     <div class="container">
@@ -128,9 +134,9 @@ $template->themeInit()
     </div>
 </section>
 <!-- End category Area -->
-
+<br>
 <!-- start product Area -->
-<section class="owl-carousel active-product-area section_gap">
+<section>
     <!-- single product slide -->
     <div class="single-product-slider">
         <div class="container">
@@ -138,98 +144,39 @@ $template->themeInit()
                 <div class="col-lg-6 text-center">
 
                     <div class="section-title">
-                        <h1>Latest Products</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore
-                            magna aliqua.</p>
+                        <h1>Productos</h1>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <!-- single product -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-product">
-                        <img class="img-fluid" src="<?= URL; ?>/assets/img/product/p1.jpg" alt="">
-                        <div class="product-details">
-                            <h6>addidas New Hammer sole
-                                for Sports person</h6>
-                            <div class="price">
-                                <h6>$150.00</h6>
-                                <h6 class="l-through">$210.00</h6>
-                            </div>
-                            <div class="prd-bottom">
+                <?php foreach ($producto_Data as $productos): ?>
+                    <!-- single product -->
+                    <div class="col-md-4">
+                        <?php  $imagenes->set("cod", $productos['cod']);
+                        $img = $imagenes->view(); ?>
+                        <div class="single-product">
 
-                                <a href="" class="social-info">
-                                    <span class="ti-bag"></span>
-                                    <p class="hover-text">add to bag</p>
-                                </a>
-                                <a href="" class="social-info">
-                                    <span class="lnr lnr-heart"></span>
-                                    <p class="hover-text">Wishlist</p>
-                                </a>
-                                <a href="" class="social-info">
-                                    <span class="lnr lnr-sync"></span>
-                                    <p class="hover-text">compare</p>
-                                </a>
-                                <a href="" class="social-info">
-                                    <span class="lnr lnr-move"></span>
-                                    <p class="hover-text">view more</p>
-                                </a>
+                            <a href="<?= URL . '/producto/' . $funciones->normalizar_link($productos['titulo']) . "/" . $productos['cod'] ?>" ><img class="img-fluid" style=" height: 200px; background: url(<?= URL . '/' . $img['ruta'] ?>) no-repeat center center/cover;" alt=""></a>
+
+                            <div class="product-details">
+                                <a href="<?= URL . '/producto/' . $funciones->normalizar_link($productos['titulo']) . "/" . $productos['cod'] ?>" ><h6><?= ucfirst($productos['titulo'])?></h6></a>
+                                <p><?php echo strip_tags(substr($productos["desarrollo"],0,100)); ?>...</p>
+                                <div class="price">
+                                    <h6>Precio: $<?= ucfirst($productos['precio']); ?></h6>
+                                    <h6>Precio de contado: $<?= ucfirst($productos['precioDescuento']); ?></h6>
+                                </div>
+                                <div class="prd-bottom">
+                                    <a href="<?= URL . '/producto/' . $funciones->normalizar_link($productos['titulo']) . "/" . $productos['cod'] ?>" class="social-info">
+                                        <span class="lnr lnr-move"></span>
+                                        <p class="hover-text" href="<?= URL . '/producto/' . $funciones->normalizar_link($prod['titulo']) . "/" . $prod['cod'] ?>">Ver Más</p>
+                                    </a>
+                                </div>
                             </div>
+
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- single product slide -->
-    <div class="single-product-slider">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 text-center">
-                    <div class="section-title">
-                        <h1>Coming Products</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore
-                            magna aliqua.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <!-- single product -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-product">
-                        <img class="img-fluid" src="<?= URL; ?>/assets/img/product/p6.jpg" alt="">
-                        <div class="product-details">
-                            <h6>addidas New Hammer sole
-                                for Sports person</h6>
-                            <div class="price">
-                                <h6>$150.00</h6>
-                                <h6 class="l-through">$210.00</h6>
-                            </div>
-                            <div class="prd-bottom">
 
-                                <a href="" class="social-info">
-                                    <span class="ti-bag"></span>
-                                    <p class="hover-text">add to bag</p>
-                                </a>
-                                <a href="" class="social-info">
-                                    <span class="lnr lnr-heart"></span>
-                                    <p class="hover-text">Wishlist</p>
-                                </a>
-                                <a href="" class="social-info">
-                                    <span class="lnr lnr-sync"></span>
-                                    <p class="hover-text">compare</p>
-                                </a>
-                                <a href="" class="social-info">
-                                    <span class="lnr lnr-move"></span>
-                                    <p class="hover-text">view more</p>
-                                </a>
-                            </div>
-                        </div>
                     </div>
-                </div>
-
+                <?php endforeach; ?>
             </div>
         </div>
     </div>

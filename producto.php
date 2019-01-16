@@ -11,9 +11,8 @@ $imagenes = new Clases\Imagenes();
 $imagenes->set("cod",$producto_data['cod']);
 $filter = array("cod='" . $producto_data['cod'] . "'");
 $imagenes_data = $imagenes->view();
-$cod = isset($_GET["cod"]) ? $_GET["cod"] : '';
 $categorias = new Clases\Categorias();
-$categorias->set("cod", $cod);
+$categorias->set("cod", $producto_data['cod']);
 $categoria_data = $categorias->view();
 $template = new Clases\TemplateSite();
 $template->set("title", TITULO .' | '.ucfirst(strip_tags($producto_data['titulo'])));
@@ -56,10 +55,10 @@ $template->themeInit();
                         </br>
 						<div class="product_count">
 							<label for="qty"><h4>Cantidad que quiere comprar:</h4></label>
-							<input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:" class="input-text qty">
-							<button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
+							<input type="text" name="qty" id="sst" maxlength="12"  value="1" style="height: 30px !important;" title="Quantity:" class="input-text qty">
+							<button style="top: 1px !important;" onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
 							 class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
-							<button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
+							<button style="bottom: 1px !important;" onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
 							 class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
 						</div>
 
@@ -81,6 +80,10 @@ $template->themeInit();
 					<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
 					 aria-selected="false">Detalles</a>
 				</li>
+                <li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+                       aria-selected="false">Comentarios</a>
+                </li>
 			</ul>
 			<div class="tab-content " id="myTabContent">
 				<div class="tab-pane fade active show" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -158,6 +161,27 @@ $template->themeInit();
 						</table>
 					</div>
 				</div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="review_box">
+                                <h4>Dejanos tu comentario</h4>
+                                <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <textarea class="form-control" name="message" id="message" rows="1" placeholder="Comentario"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 text-right">
+                                        <button type="submit" value="submit" class="btn primary-btn">Subir Comentario</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 			</div>
 		</div>
