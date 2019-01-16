@@ -8,7 +8,9 @@ $template->set("description", "");
 $template->set("keywords", "");
 $template->set("favicon", LOGO);
 $template->themeInit();
+$cod = isset($_GET["cod"]) ? $_GET["cod"] : '';
 $productos = new Clases\Productos();
+$productos->set("cod", $cod);
 $pagina = isset($_GET["pagina"]) ? $_GET["pagina"] : '0';
 $novedadesPaginador = $productos->paginador('', 3);
 $imagenes = new Clases\Imagenes();
@@ -17,7 +19,7 @@ $categoria_data = $categorias->list("");
 $funciones = new Clases\PublicFunction();
 $pagina = isset($_GET["pagina"]) ? $_GET["pagina"] : '0';
 
-$cantidad = 2;
+$cantidad = 4;
 
 if ($pagina > 0) {
     $pagina = $pagina - 1;
@@ -37,6 +39,7 @@ endif;
 
 $producto_Data = $productos->listWithOps("", "", $cantidad * $pagina . ',' . $cantidad);
 $numeroPaginas = $productos->paginador("", $cantidad);
+
 ?>
     <!-- Start Banner Area -->
     <section class="banner-area organic-breadcrumb">
@@ -56,7 +59,7 @@ $numeroPaginas = $productos->paginador("", $cantidad);
                     <div class="head">Categorias</div>
                     <ul class="main-categories">
                         <?php foreach ($categoria_data as $categorias): ?>
-                            <li class="main-nav-list"><a data-toggle="collapse" href="#fruitsVegetable" aria-expanded="false" aria-controls="fruitsVegetable">
+                            <li class="main-nav-list"><a data-toggle="collapse"  aria-expanded="false" aria-controls="fruitsVegetable">
                                     <span class="lnr lnr-arrow-right"></span><?= $categorias['titulo']; ?></a>
                             </li>
                         <?php endforeach; ?>
@@ -83,12 +86,12 @@ $numeroPaginas = $productos->paginador("", $cantidad);
                             </ul>
                         </form>
                     </div>
-                    <div class="common-filter">
+                   <!-- <div class="common-filter">
                         <div class="head">Precio</div>
                         <div class="price-range-area">
                             <div id="price-range"></div>
                             <div class="value-wrapper d-flex">
-                                <div class="price">Price:</div>
+                                <div class="price">Precio:</div>
                                 <span>$</span>
                                 <div id="lower-value"></div>
                                 <div class="to">to</div>
@@ -96,7 +99,7 @@ $numeroPaginas = $productos->paginador("", $cantidad);
                                 <div id="upper-value"></div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
             <div class="col-xl-9 col-lg-8 col-md-7">
@@ -140,15 +143,15 @@ $numeroPaginas = $productos->paginador("", $cantidad);
                 <section class="lattest-product-area pb-40 category-list">
                     <div class="row">
                         <!-- single product -->
-                        <div class="col-md-3">
-                            <?php foreach ($producto_Data as $prod):?>
+                        <?php foreach ($producto_Data as $prod):?>
+                        <div class="col-md-6">
                              <?php   $imagenes->set("cod", $prod['cod']);
                                 $img = $imagenes->view(); ?>
                             <div class="single-product">
-                                <img class="img-fluid" src="<?= URL . '/' . $img['ruta'] ?>" alt="">
+                                <a href="<?= URL . '/producto/' . $funciones->normalizar_link($prod['titulo']) . "/" . $prod['cod'] ?>" ><img class="img-fluid" style=" height: 200px; background: url(<?= URL . '/' . $img['ruta'] ?>) no-repeat center center/cover;"></a>
                                 <div class="product-details">
-                                    <h6><?= $prod['titulo']; ?></h6>
-                                    <p><?php echo strip_tags(substr($prod["desarrollo"],0,300)); ?>...</p>
+                                    <a href="<?= URL . '/producto/' . $funciones->normalizar_link($prod['titulo']) . "/" . $prod['cod'] ?>" ><h6><?= ucfirst($prod['titulo'])?></h6></a>
+                                    <p><?php echo strip_tags(substr( ucfirst($prod["desarrollo"]) ,0,100)); ?>...</p>
                                     <div class="price">
                                         <h6>Precio: $<?= $prod['precio']; ?></h6>
                                         <h6>Precio con Descuento: $<?= $prod['precioDescuento']; ?></h6>
@@ -161,8 +164,8 @@ $numeroPaginas = $productos->paginador("", $cantidad);
                                     </div>
                                 </div>
                             </div>
-                      <?php endforeach;?>
                         </div>
+                        <?php endforeach;?>
                     </div>
                 </section>
                 <!-- End Best Seller -->

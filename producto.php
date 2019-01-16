@@ -11,6 +11,7 @@ $imagenes = new Clases\Imagenes();
 $imagenes->set("cod",$producto_data['cod']);
 $filter = array("cod='" . $producto_data['cod'] . "'");
 $imagenes_data = $imagenes->view();
+$cod = isset($_GET["cod"]) ? $_GET["cod"] : '';
 $categorias = new Clases\Categorias();
 $categorias->set("cod", $cod);
 $categoria_data = $categorias->view();
@@ -41,31 +42,27 @@ $template->themeInit();
 			<div class="row s_product_inner">
 				<div class="col-lg-6">
                  <div class="single-prd-item">
-                     <img class="img-fluid" src="<?= URL . '/' . $imagenes_data['ruta'] ?>" alt="">
+                     <img class="img-fluid" src=" <?= URL . '/' . $imagenes_data['ruta'] ?>" alt="">
                  </div>
 				</div>
 				<div class="col-lg-5 offset-lg-1">
 					<div class="s_product_text">
-						<h3>Faded SkyBlu Denim Jeans</h3>
-						<h2>$149.99</h2>
-						<ul class="list">
-							<li><a class="active" href="#"><span>Category</span> : <?= $categoria_data['titulo']; ?></a></li>
-							<li><a href="#"><span>Availibility</span> : In Stock</a></li>
-						</ul>
-						<p><?= ucfirst($producto_data['desarrollo']); ?></p>
+                        <ul class="list">
+                           <h5>Categoria: <?= ucfirst($categoria_data['titulo']);?></h5>
+                            <h5>Cantidad en stock: <?= $producto_data['stock']; ?></h5>
+                        </ul>
+						<h6>Precio: <?= ucfirst($producto_data['precio']); ?></h6>
+                        <h6>10% de descuento por pago de contado <?= ucfirst($producto_data['precioDescuento']); ?></h6>
+                        <p><?= ucfirst($producto_data['desarrollo']); ?></p>
 						<div class="product_count">
-							<label for="qty">Quantity:</label>
+							<label for="qty">Cantidad que quiere comprar:</label>
 							<input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:" class="input-text qty">
 							<button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
 							 class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
 							<button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
 							 class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
 						</div>
-						<div class="card_area d-flex align-items-center">
-							<a class="primary-btn" href="#">Add to Cart</a>
-							<a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
-							<a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
-						</div>
+
 					</div>
 				</div>
 			</div>

@@ -525,7 +525,6 @@
 				font-weight: normal;
 				color: #555555;
 				span{
-					width: 90px;
 					display: inline-block;
 					&:hover{
 						color: #555;
@@ -545,10 +544,7 @@
 		}
 	}
 	p{
-		padding-top: 20px;
-		border-top: 1px dotted #d5d5d5;
-		margin-top: 20px;
-		margin-bottom: 70px;
+
 	}
 	.card_area{
 		.primary-btn{
@@ -596,7 +592,6 @@
 .product_count{
 	display: inline-block;
 	position: relative;
-	margin-bottom: 24px;
 	label{
 		font-size: 14px;
 		color: $text-color;
