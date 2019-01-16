@@ -3147,7 +3147,10 @@ label {
       right: 18px; }
     .sorting .nice-select .list {
       border-radius: 0px; }
-
+.borderes
+{
+  margin-left: 0px !important;
+}
 .pagination {
   margin-top: 10px;
   border-radius: 0px; }

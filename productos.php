@@ -149,7 +149,7 @@ $numeroPaginas = $productos->paginador("", $cantidad);
                                 $img = $imagenes->view(); ?>
                             <div class="single-product">
                                 <a href="<?= URL . '/producto/' . $funciones->normalizar_link($prod['titulo']) . "/" . $prod['cod'] ?>" ><img class="img-fluid" style=" height: 200px; background: url(<?= URL . '/' . $img['ruta'] ?>) no-repeat center center/cover;"></a>
-                                <div class="product-details">
+                                    <div class="product-details">
                                     <a href="<?= URL . '/producto/' . $funciones->normalizar_link($prod['titulo']) . "/" . $prod['cod'] ?>" ><h6><?= ucfirst($prod['titulo'])?></h6></a>
                                     <p><?php echo strip_tags(substr( ucfirst($prod["desarrollo"]) ,0,100)); ?>...</p>
                                     <div class="price">
