@@ -26,13 +26,10 @@ class Email
     public function emailEnviar()
     {
         $mail = new PHPMailer(true);
-        $mensaje = '<body style="background: #0f74a8;margin:0;padding:0"><div style="background: #fff;width:700px;margin:auto;padding:20px"><div><br/><img src="'.LOGO.'" width="200"/><br/><hr/></div>'.$this->mensaje.'<br/></div></body>';
         try {
             //Server settings
             $mail->SMTPDebug = 0;                                 // Enable verbose debug output
-            $mail->isSMTP();
-            $mail->CharSet = 'UTF-8';
-            // Set mailer to use SMTP
+            $mail->isSMTP();                                      // Set mailer to use SMTP
             $mail->Host = SMTP_EMAIL;  // Specify main and backup SMTP servers
             $mail->SMTPAuth = true;                               // Enable SMTP authentication
             $mail->Username = EMAIL;                 // SMTP username
@@ -41,21 +38,20 @@ class Email
             $mail->Port = 587;                                    // TCP port to connect to
 
             //Recipients
-            $mail->setFrom($this->emisor, 'PINTURERIA ARIEL');
+            $mail->setFrom($this->emisor, 'Quazar');
             $mail->addAddress($this->receptor, '');     // Add a recipient
 
             //Content
             $mail->isHTML(true);                                  // Set email format to HTML
             $mail->Subject = $this->asunto;
-            $mail->Body = $mensaje;
-            $mail->AltBody = strip_tags($mensaje);
+            $mail->Body = $this->mensaje;
+            $mail->AltBody = strip_tags($this->mensaje);
 
             $mail->send();
             return 1;
-        } catch (Exception $e) {
+        }catch (Exception $e) {
             return 0;
         }
     }
 }
-
 ?>

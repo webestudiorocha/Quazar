@@ -8,23 +8,20 @@ $template->set("description", "");
 $template->set("keywords", "");
 $template->set("favicon", LOGO);
 $template->themeInit();
-$cod = isset($_GET["cod"]) ? $_GET["cod"] : '';
 $productos = new Clases\Productos();
+$imagenes = new Clases\Imagenes();
+$banner= new Clases\Banner();
+$cod = isset($_GET["cod"]) ? $_GET["cod"] : '';
+$id = isset($_GET['id']) ? $_GET['id']: '';
 $productos->set("cod", $cod);
 $cod = isset($_GET["cod"]) ? $_GET["cod"] : '';
-$slider = new  Clases\Sliders();
-$slider->set("cod", $cod);
-$sliderData = $slider->list("");
-$sliderDatas = $slider->view();
-$imagenes = new Clases\Imagenes();
-$imagenes->set("cod",$sliderDatas['cod']);
-$imagenes_data = $imagenes->view();
+$banner_data= $banner->list();
 $pagina = isset($_GET["pagina"]) ? $_GET["pagina"] : '0';
 $cantidad = 3;
 $producto_Data = $productos->listWithOps("", "", $cantidad * $pagina . ',' . $cantidad);
 ?>
 <!-- start banner Area -->
-<section class="banner-area">
+   <section class="banner-area">
     <div class="container">
         <div class="row fullscreen align-items-center justify-content-start">
             <div class="col-lg-12">
@@ -32,38 +29,49 @@ $producto_Data = $productos->listWithOps("", "", $cantidad * $pagina . ',' . $ca
                     <!-- single-slide -->
                     <div class="row single-slide align-items-center d-flex">
                         <div class="col-lg-5 col-md-6">
-                            <?php foreach ($sliderData as $slider): ?>
+                            <?php foreach ($banner_data as $banner): ?>
+                            <?php
+                                $imagenes->set("cod",$cod);
+                                $imagenes_data = $imagenes->view();
+                                ?>
                             <div class="banner-content">
-                                <h3><?= ucfirst($slider['titulo']); ?></h3>
+                                <h1><?= ucfirst($banner['nombre']); ?></h1>
                             </div>
-                            <?php endforeach; ?>
+                            <?php endforeach;?>
                         </div>
                         <div class="col-lg-7">
                             <div class="banner-img">
-                                <img class="img-fluid" src="<?= URL . '/'. $imagenes_data['ruta'] ?>" alt="">
+                                <img class="img-fluid" src="<?= URL . '/' . $imagenes_data['ruta'] ?>" alt="">
                             </div>
+
                         </div>
+
                     </div>
                     <!-- single-slide -->
                     <div class="row single-slide">
                         <div class="col-lg-5">
-                <?php foreach ($sliderData as $slider): ?>
+                        <?php foreach ($banner_data as $banner): ?>
+                            <?php
+                            $imagenes->set("cod",$cod);
+                            $imagenes_data = $imagenes->view();
+                            ?>
                             <div class="banner-content">
-                                <h3><?= ucfirst($slider['titulo']); ?></h3>
+                                <h1><?= ucfirst($banner['nombre']); ?></h1>
                             </div>
-                    <?php endforeach;?>
+                        <?php endforeach;?>
                         </div>
                         <div class="col-lg-7">
                             <div class="banner-img">
-                                <img class="img-fluid" src="<?= URL; ?>/assets/img/banner/banner-img.png" alt="">
+                                <img class="img-fluid" src="<?= URL . '/' . $imagenes_data['ruta'] ?>" alt="">
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
+    </section>
 <!-- End banner Area -->
 <br>
 

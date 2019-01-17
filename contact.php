@@ -12,7 +12,6 @@ $template->set("description", "Inicio " . TITULO);
 $template->set("keywords", "Inicio," . TITULO);
 $template->set("imagen", LOGO);
 $enviar = new Clases\Email();
-$funciones = new Clases\PublicFunction();
 $template->themeInit();
 ?>
 	<!-- Start Banner Area -->
@@ -30,7 +29,7 @@ $template->themeInit();
     </br>
 	<!--================Contact Area =================-->
 	<section class="contact_area section_gap_bottom">
-        <h1 style="text-align: center">Formulario</h1>
+        <h1 style="text-align: center">Dejanos tu consulta</h1>
         <?php if (isset($_POST["enviar"])):
             $nombre = $funciones->antihack_mysqli(isset($_POST["nombre"]) ? $_POST["nombre"] : '');
             $email = $funciones->antihack_mysqli(isset($_POST["email"]) ? $_POST["email"] : '');
@@ -93,23 +92,29 @@ $template->themeInit();
 					<form class="row contact_form" method="post" id="contact-form" >
 						<div class="col-md-6">
 							<div class="form-group">
-								<input type="text" class="form-control" id="name" name="nombre" placeholder="Nombre" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre'">
-							</div>
+                                <input type="text" name="nombre" class="form-control" placeholder="Nombre" required id="name"
+                                       title="nombre" />
+                            </div>
 							<div class="form-group">
-								<input type="email" class="form-control" id="email" name="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'">
-							</div>
+                                <input type="hidden" name="asunto" class="form-control" placeholder="Nombre" required id="name"
+                                       title="asunto" value="<?= CANONICAL ?>"/>							</div>
                             <div class="form-group">
-                            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Telefono'">
+                                <input type="text" name="telefono" class="form-control" placeholder="Telefono" required
+                                       id="telefono" title="telefono" value=""/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="email" class="form-control" placeholder="Email"
+                                       required id="email" title="Email" value=""/>
                             </div>
 						</div>
 
 						<div class="col-md-6">
 							<div class="form-group">
-								<textarea class="form-control" name="consulta" id="message" rows="1" placeholder="Mensaje" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mensaje'"></textarea>
-							</div>
+                                <textarea name="consulta" class="form-control" placeholder="Consulta" id="comment" title="Comment"></textarea>
+                            </div>
 						</div>
 						<div class="col-md-12 text-right">
-							<button type="submit" value="submit" class="primary-btn">Enviar Mensaje</button>
+                            <input type="submit" name="enviar" class="primary-btn" id="submit" value="Enviar Mensaje">
 						</div>
 					</form>
 				</div>
