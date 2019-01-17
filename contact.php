@@ -124,7 +124,4 @@ $template->themeInit();
             </div>
 		</div>
 	</section>
-	<!--================Contact Area =================-->
-
-
 <?php $template->themeEnd();?>
