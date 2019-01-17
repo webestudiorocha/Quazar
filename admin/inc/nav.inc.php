@@ -1,5 +1,5 @@
 <?php
-$pages = ["ecommerce","contenidos", "novedades", "multimedia","subcategorias", "banners", "productos", "portfolio", "servicios", "configuracion", "categorias"];
+$pages = ["ecommerce","contenidos", "novedades", "multimedia","usuarios", "banners", "productos", "portfolio", "servicios", "configuracion", "categorias"];
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-30">
     <div class="col-md-12">
@@ -108,16 +108,16 @@ $pages = ["ecommerce","contenidos", "novedades", "multimedia","subcategorias", "
                         </a>
                     </div>
                 </li>
-                <li class="nav-item dropdown <?php if (!in_array('subcategorias', $pages)) {echo 'd-none';}?>">
+                <li class="nav-item dropdown <?php if (!in_array('usuarios', $pages)) {echo 'd-none';}?>">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
-                        Subcategorias
+                        Usuarios
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="<?=URL?>/index.php?op=subcategorias">
-                            Ver Subcategorias
+                        <a class="dropdown-item" href="<?=URL?>/index.php?op=usuarios">
+                            Ver Usuarios
                         </a>
-                        <a class="dropdown-item" href="<?=URL?>/index.php?op=subcategorias&accion=agregar">
-                            Agregar Subcategorias
+                        <a class="dropdown-item" href="<?=URL?>/index.php?op=usuarios&accion=agregar">
+                            Agregar Usuarios
                         </a>
                     </div>
                 </li>

@@ -1,9 +1,30 @@
+
+<div style="background-color: #ffa31a ">
+    <div>
+    <?php if (isset($_SESSION["usuarios"])): ?>
+        <li>
+            <a class="top-link-myaccount" title="cuenta" href="<?= URL ?>/sesion">Mi
+                cuenta</a>
+
+            <a class="top-link-login" title="salir" href="<?= URL ?>/sesion/logout">Salir</a>
+        </li>
+    <?php else: ?>
+        <li class=" last">
+            <a class="top-link-login" data-toggle="modal" data-target="#login"
+               title="Iniciar sesion" href="#">Iniciar sesión</a>
+
+            <a class="top-link-login" data-toggle="modal" data-target="#registrar"
+               title="Registrar" href="#">Registrar</a>
+        </li>
+    <?php endif; ?>
+    </div>
+</div>
 <header class="header_area sticky-header">
 <div class="main_menu">
     <nav class="navbar navbar-expand-lg navbar-light main_box">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <a class="navbar-brand logo_h" href="index.php"><img src="<?= URL; ?>/assets/img/logo.png" alt=""></a>
+                <a class="navbar-brand logo_h" href="index.php"><img src="<?= URL; ?>/assets/img/logo.png" alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="icon-bar"></span>
@@ -23,13 +44,9 @@
                     </li>
                     <li class="nav-item "><a class="nav-link" href="<?= URL; ?>/blogs.php">Blog</a></li>
                     <li class="nav-item submenu dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false">Pages</a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-                            <li class="nav-item"><a class="nav-link" href="tracking.html">Tracking</a></li>
-                            <li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
-                        </ul>
+
+                           <a class="nav-link" href="login.php">Login</a>
+
                     </li>
                     <li class="nav-item"><a class="nav-link" href="<?= URL; ?>/contact.php">Contacto</a></li>
                 </ul>

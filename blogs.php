@@ -15,7 +15,7 @@ $imagenes = new Clases\Imagenes();
 $funciones = new Clases\PublicFunction();
 $pagina = isset($_GET["pagina"]) ? $_GET["pagina"] : '0';
 
-$cantidad = 4;
+$cantidad = 3;
 
 if ($pagina > 0) {
     $pagina = $pagina - 1;
