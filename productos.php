@@ -50,6 +50,7 @@ $numeroPaginas = $productos->paginador("", $cantidad);
             </div>
         </div>
     </section>
+</br>
     <!-- End Banner Area -->
     <div class="container">
         <div class="row">
@@ -58,7 +59,7 @@ $numeroPaginas = $productos->paginador("", $cantidad);
                     <div class="head">Categorias</div>
                     <ul class="main-categories">
                         <?php foreach ($categoria_data as $categorias): ?>
-                            <li class="main-nav-list"><a data-toggle="collapse"  aria-expanded="false" aria-controls="fruitsVegetable">
+                            <li class="main-nav-list"><a data-toggle="collapse" aria-expanded="false" aria-controls="fruitsVegetable">
                                     <span class="lnr lnr-arrow-right"></span><?= $categorias['titulo']; ?></a>
                             </li>
                         <?php endforeach; ?>
@@ -169,5 +170,5 @@ $numeroPaginas = $productos->paginador("", $cantidad);
             </div>
         </div>
     </div>
-
+</br>
 <?php $template->themeEnd(); ?>

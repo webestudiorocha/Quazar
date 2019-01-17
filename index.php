@@ -10,15 +10,17 @@ $template->set("favicon", LOGO);
 $template->themeInit();
 $productos = new Clases\Productos();
 $imagenes = new Clases\Imagenes();
+$novedades =new Clases\Novedades();
 $banner= new Clases\Banner();
 $cod = isset($_GET["cod"]) ? $_GET["cod"] : '';
-$id = isset($_GET['id']) ? $_GET['id']: '';
 $productos->set("cod", $cod);
+$novedades->set("cod", $cod);
 $cod = isset($_GET["cod"]) ? $_GET["cod"] : '';
 $banner_data= $banner->list();
 $pagina = isset($_GET["pagina"]) ? $_GET["pagina"] : '0';
 $cantidad = 3;
 $producto_Data = $productos->listWithOps("", "", $cantidad * $pagina . ',' . $cantidad);
+$novedades_data = $novedades->listWithOps("", "", $cantidad * $pagina . ',' . $cantidad);
 ?>
 <!-- start banner Area -->
    <section class="banner-area">
@@ -144,7 +146,8 @@ $producto_Data = $productos->listWithOps("", "", $cantidad * $pagina . ',' . $ca
 <!-- End category Area -->
 <br>
 <!-- start product Area -->
-<section>
+
+    <section>
     <!-- single product slide -->
     <div class="single-product-slider">
         <div class="container">
@@ -189,5 +192,47 @@ $producto_Data = $productos->listWithOps("", "", $cantidad * $pagina . ',' . $ca
         </div>
     </div>
 </section>
+    <section>
+        <!-- single product slide -->
+        <div class="single-product-slider">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 text-center">
+
+                        <div class="section-title">
+                            <h1>Blog</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <?php foreach ($novedades_data as $novedades): ?>
+                        <!-- single product -->
+                        <div class="col-md-4">
+                            <?php  $imagenes->set("cod", $novedades['cod']);
+                            $img = $imagenes->view();
+                            $fecha = explode("-", $novedades['fecha']);?>
+                            <div class="single-product">
+
+                                <a href="<?= URL . '/blog/' . $funciones->normalizar_link($novedades['titulo']) . "/" . $novedades['cod'] ?>" ><img class="img-fluid" style=" height: 200px; background: url(<?= URL . '/' . $img['ruta'] ?>) no-repeat center center/cover;" alt=""></a>
+
+                                <div class="product-details">
+                                    <a href="<?= URL . '/blog/' . $funciones->normalizar_link($novedades['titulo']) . "/" . $novedades['cod'] ?>" ><h6><?= ucfirst($novedades['titulo'])?></h6></a>
+                                    <p><?php echo strip_tags(substr($productos["desarrollo"],0,100)); ?>...</p>
+                                    <div class="prd-bottom">
+                                        <a href="<?= URL . '/blog/' . $funciones->normalizar_link($novedades['titulo']) . "/" . $novedades['cod'] ?>" class="social-info">
+                                            <span class="lnr lnr-move"></span>
+                                            <p class="hover-text" href="<?= URL . '/blog/' . $funciones->normalizar_link($novedades['titulo']) . "/" . $novedades['cod'] ?>">Ver Más</p>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </section>
 <!-- end product Area -->
 <?php $template->themeEnd();?>

@@ -12,7 +12,7 @@ $imagenes->set("cod",$producto_data['cod']);
 $filter = array("cod='" . $producto_data['cod'] . "'");
 $imagenes_data = $imagenes->view();
 $categorias = new Clases\Categorias();
-$categorias->set("cod", $producto_data['cod']);
+$categorias->set("cod", $producto_data['categoria']);
 $categoria_data = $categorias->view();
 $template = new Clases\TemplateSite();
 $template->set("title", TITULO .' | '.ucfirst(strip_tags($producto_data['titulo'])));
@@ -21,6 +21,7 @@ $template->set("favicon", LOGO);
 $template->set("keywords", strip_tags($producto_data['keywords']));
 $template->set("description", ucfirst(substr(strip_tags($producto_data['desarrollo']), 0, 160)));
 $template->themeInit();
+
 ?>
 	<!-- Start Banner Area -->
 	<section class="banner-area organic-breadcrumb">
@@ -56,9 +57,9 @@ $template->themeInit();
 						<div class="product_count">
 							<label for="qty"><h4>Cantidad que quiere comprar:</h4></label>
 							<input type="text" name="qty" id="sst" maxlength="12"  value="1" style="height: 30px !important;" title="Quantity:" class="input-text qty">
-							<button style="top: 1px !important;" onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
+							<button style="top: -5px !important;" onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
 							 class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
-							<button style="bottom: 1px !important;" onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
+							<button style="bottom: -6px !important;" onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
 							 class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
 						</div>
 

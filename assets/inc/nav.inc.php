@@ -1,26 +1,25 @@
-
-<div style="background-color: #ffa31a ">
-    <div>
+<div style="background-color: #ffa31a " class="modal-open">
     <?php if (isset($_SESSION["usuarios"])): ?>
         <li>
             <a class="top-link-myaccount" title="cuenta" href="<?= URL ?>/sesion">Mi
                 cuenta</a>
-
+        </li>
+        <li>
             <a class="top-link-login" title="salir" href="<?= URL ?>/sesion/logout">Salir</a>
         </li>
     <?php else: ?>
-        <li class=" last">
+
             <a class="top-link-login" data-toggle="modal" data-target="#login"
                title="Iniciar sesion" href="#">Iniciar sesión</a>
 
             <a class="top-link-login" data-toggle="modal" data-target="#registrar"
                title="Registrar" href="#">Registrar</a>
-        </li>
+
     <?php endif; ?>
-    </div>
 </div>
 <header class="header_area sticky-header">
 <div class="main_menu">
+   <?php /**/?>
     <nav class="navbar navbar-expand-lg navbar-light main_box">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -43,11 +42,6 @@
                         </ul>
                     </li>
                     <li class="nav-item "><a class="nav-link" href="<?= URL; ?>/blogs.php">Blog</a></li>
-                    <li class="nav-item submenu dropdown">
-
-                           <a class="nav-link" href="login.php">Login</a>
-
-                    </li>
                     <li class="nav-item"><a class="nav-link" href="<?= URL; ?>/contact.php">Contacto</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
