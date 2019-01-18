@@ -507,6 +507,19 @@ h1, h2, h3, h4, h5, h6 {
       color: #797979; }
   .input-group-icon .single-input {
     padding-left: 45px; }
+#sns_header .sns_header_top .myaccount .content ul.links li a.top-link-login:before {
+  content: '\f084';
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: auto;
+  height: auto;
+  text-align: center;
+  line-height: auto;
+}
 
 .single-textarea {
   display: block;
@@ -1354,7 +1367,12 @@ h1, h2, h3, h4, h5, h6 {
 .features-area .col-lg-3:nth-child(3) .single-features,
 .features-area .col-lg-3:nth-child(4) .single-features {
   margin-bottom: 0; }
-
+.billing > ul li.last {
+  width: 7%
+}
+.billing > ul li.last {
+  width: 7%
+}
 .features-inner {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   padding: 40px 0; }

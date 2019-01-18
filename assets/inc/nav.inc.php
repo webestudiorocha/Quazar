@@ -1,25 +1,73 @@
-<div style="background-color: #ffa31a " class="modal-open">
-    <?php if (isset($_SESSION["usuarios"])): ?>
-        <li>
-            <a class="top-link-myaccount" title="cuenta" href="<?= URL ?>/sesion">Mi
-                cuenta</a>
-        </li>
-        <li>
-            <a class="top-link-login" title="salir" href="<?= URL ?>/sesion/logout">Salir</a>
-        </li>
-    <?php else: ?>
+<?php
+$funcionesNav = new Clases\PublicFunction();
+//Clases
+$imagenesNav = new Clases\Imagenes();
+$usuario = new Clases\Usuarios();
+$categoriasNav = new Clases\Categorias();
+$bannersNav = new Clases\Banner();
+$carrito = new Clases\Carrito();
+$rubros = new Clases\Rubros();
+//Banners
+$categoriasDataNav = $categoriasNav->list('');
+$carro = $carrito->return();
 
-            <a class="top-link-login" data-toggle="modal" data-target="#login"
-               title="Iniciar sesion" href="#">Iniciar sesión</a>
+$filterRubrosCategorias = array("categoria != '' GROUP BY categoria");
+$rubrosArrayCategorias = $rubros->list($filterRubrosCategorias, "categoria ASC", "");
 
-            <a class="top-link-login" data-toggle="modal" data-target="#registrar"
-               title="Registrar" href="#">Registrar</a>
-
-    <?php endif; ?>
+$buscar = isset($_GET["buscar"]) ? $_GET["buscar"] : '';
+foreach ($categoriasDataNav as $valNav) {
+    if ($valNav['titulo'] == 'Botonera' && $valNav['area'] == 'banners') {
+        $bannersNav->set("categoria", $valNav['cod']);
+        $banDataBotonera = $bannersNav->listForCategory();
+    }
+}
+?>
+<div id="sns_wrapper">
+    <!-- HEADER -->
+    <div id="sns_header" class="wrap">
+        <!-- Header Top -->
+        <div class="sns_header_top">
+            <div class="container">
+                <div class="sns_module">
+                    <div class="header-account">
+                        <div class="myaccount">
+                            <div class="customer-ct content">
+                                <ul class="links">
+                                    <?php if (isset($_SESSION["usuarios"])): ?>
+                                        <li>
+                                            <a class="top-link-myaccount" title="cuenta" href="<?= URL ?>/sesion">Mi
+                                                cuenta</a>
+                                        </li>
+                                        <li>
+                                            <a class="top-link-login" title="salir" href="<?= URL ?>/sesion/logout">Salir</a>
+                                        </li>
+                                    <?php else: ?>
+                                        <li class=" last">
+                                            <a class="top-link-login" data-toggle="modal" data-target="#login"
+                                               title="Iniciar sesion" href="#">Iniciar sesión</a>
+                                        </li>
+                                        <li class=" last">
+                                            <a class="top-link-login" data-toggle="modal" data-target="#registrar"
+                                               title="Registrar" href="#">Registrar</a>
+                                        </li>
+                                    <?php endif; ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
+
+
+
 <header class="header_area sticky-header">
 <div class="main_menu">
-   <?php /**/?>
+
     <nav class="navbar navbar-expand-lg navbar-light main_box">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
