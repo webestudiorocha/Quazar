@@ -899,10 +899,10 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   z-index: 2;
   margin-bottom: 27px;
-  font-size: 12px;
+
 }
 #sns_header .sns_header_top {
-  background: #ff9900;
+  background: #ffd633;
   vertical-align: middle;
   position: relative;
   height: 39px;
