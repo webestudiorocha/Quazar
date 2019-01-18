@@ -53,7 +53,7 @@ $numeroPaginas = $productos->paginador("", $cantidad);
 </br>
     <!-- End Banner Area -->
     <div class="container">
-        <div class="row">
+        <div class="row" style="flex-wrap: initial !important;">
             <div class="col-md-3">
                 <div class="sidebar-categories">
                     <div class="head">Categorias</div>

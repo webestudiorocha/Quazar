@@ -11,6 +11,7 @@
   position: relative !important;
   padding: 15px !important;
 }
+
 .top-link-login {
   content: '\f084';
   display: inline-block;
@@ -5236,8 +5237,9 @@ label {
 
 /*============ blog_left_sidebar css ==============*/
 .blog_item {
-}
 
+  flex-wrap: initial !important;
+}
 
 .blog_info {
   padding-top: 30px; }

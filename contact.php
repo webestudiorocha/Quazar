@@ -69,7 +69,7 @@ $template->themeInit();
 		<div class="container">
 			<div class="row">
 
-				<div class="col-lg-3">
+				<div class="col-md-3">
 					<div class="contact_info">
 						<div class="info_item">
 							<i class="lnr lnr-home"></i>
@@ -88,7 +88,7 @@ $template->themeInit();
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-9">
+				<div  class="col-md-9">
 					<form class="row contact_form" method="post" id="contact-form" >
 						<div class="col-md-6">
 							<div class="form-group">

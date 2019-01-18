@@ -78,9 +78,9 @@ $novedades_data = $novedades->listWithOps("", "", $cantidad * $pagina . ',' . $c
 <br>
 
 <!-- Start category Area -->
-<section class="category-area">
+<section  class="category-area">
     <div class="container">
-        <div class="row justify-content-center">
+        <div   class="row justify-content-center">
             <div class="col-lg-8 col-md-12">
                 <div class="row">
                     <div class="col-lg-8 col-md-8">
