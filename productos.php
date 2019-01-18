@@ -88,7 +88,7 @@ $numeroPaginas = $productos->paginador("", $cantidad);
                     </div>
                 </div>
             </div>
-            <div class="col-xl-9 col-lg-8 col-md-7">
+            <div class=" col-md-9">
                 <!-- Start Filter Bar -->
                 <div class="filter-bar d-flex flex-wrap align-items-center">
 

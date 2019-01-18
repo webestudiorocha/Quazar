@@ -36,11 +36,7 @@
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
 }
 
-*,
-::after,
-::before {
-    box-sizing: border-box
-}
+
 
 html {
     font-family: sans-serif;
@@ -3512,16 +3508,7 @@ input[type=submit].btn-block {
     pointer-events: none
 }
 
-.input-group {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-    width: 100%
-}
+
 
 .input-group>.custom-file,
 .input-group>.custom-select,

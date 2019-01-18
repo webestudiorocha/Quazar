@@ -47,3 +47,5 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 <script src="<?= URL; ?>/assets/js/gmaps.min.js"></script>
 <script src="<?= URL; ?>/assets/js/main.js"></script>
+
+<?php include 'assets/inc/login.inc.php'; ?>
