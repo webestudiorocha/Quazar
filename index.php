@@ -11,69 +11,45 @@ $template->themeInit();
 $productos = new Clases\Productos();
 $imagenes = new Clases\Imagenes();
 $novedades =new Clases\Novedades();
-$banner= new Clases\Banner();
+$sliders = new Clases\Sliders();
 $cod = isset($_GET["cod"]) ? $_GET["cod"] : '';
 $productos->set("cod", $cod);
 $novedades->set("cod", $cod);
 $cod = isset($_GET["cod"]) ? $_GET["cod"] : '';
-$banner_data= $banner->list();
+$sliders_data = $sliders->list('', '', '');
 $pagina = isset($_GET["pagina"]) ? $_GET["pagina"] : '0';
 $cantidad = 3;
 $producto_Data = $productos->listWithOps("", "", $cantidad * $pagina . ',' . $cantidad);
 $novedades_data = $novedades->listWithOps("", "", $cantidad * $pagina . ',' . $cantidad);
 ?>
 <!-- start banner Area -->
-   <section class="banner-area">
-    <div class="container">
-        <div class="row fullscreen align-items-center justify-content-start">
-            <div class="col-lg-12">
-                <div class="active-banner-slider owl-carousel">
-                    <!-- single-slide -->
-                    <div class="row single-slide align-items-center d-flex">
-                        <div class="col-lg-5 col-md-6">
-                            <?php foreach ($banner_data as $banner): ?>
-                            <?php
-                                $imagenes->set("cod",$cod);
-                                $imagenes_data = $imagenes->view();
-                                ?>
-                            <div class="banner-content">
-                                <h1><?= ucfirst($banner['nombre']); ?></h1>
-                            </div>
-                            <?php endforeach;?>
-                        </div>
-                        <div class="col-lg-7">
-                            <div class="banner-img">
-                                <img class="img-fluid" src="<?= URL . '/' . $imagenes_data['ruta'] ?>" alt="">
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <!-- single-slide -->
-                    <div class="row single-slide">
-                        <div class="col-lg-5">
-                        <?php foreach ($banner_data as $banner): ?>
-                            <?php
-                            $imagenes->set("cod",$cod);
-                            $imagenes_data = $imagenes->view();
-                            ?>
-                            <div class="banner-content">
-                                <h1><?= ucfirst($banner['nombre']); ?></h1>
-                            </div>
-                        <?php endforeach;?>
-                        </div>
-                        <div class="col-lg-7">
-                            <div class="banner-img">
-                                <img class="img-fluid" src="<?= URL . '/' . $imagenes_data['ruta'] ?>" alt="">
-                            </div>
-
-                        </div>
-                    </div>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <?php
+            $activo = 0;
+            foreach ($sliders_data as $sli) {
+                $imagenes->set("cod", $sli['cod']);
+                $img_data = $imagenes->view();
+                ?>
+                <div class="carousel-item <?php if ($activo == 0) {
+                    echo 'active';
+                    $activo++;
+                } ?>" style=" height: 600px; background: url(<?= URL . '/' . $img_data['ruta'] ?>) no-repeat center center/cover;">
+                    <!--<img class="d-block h-400" src="<?= URL . '/' . $img_data['ruta'] ?>">-->
                 </div>
-            </div>
+                <?php
+            }
+            ?>
         </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
-    </section>
 <!-- End banner Area -->
 <br>
 
