@@ -40,13 +40,13 @@ endif;
                     <div class="input-group">
                         <input class="form-control h40" type="email" placeholder="Correo electrónico" name="email"
                                required/>
-                        <span class="input-group-addon"> <i class="login_icon glyphicon glyphicon-envelope"></i></span>
+                        <span class="input-group-addon"></span>
                     </div>
                     <br/>
                     <div class="input-group">
                         <input class="form-control h40" type="password" placeholder="Contraseña" name="password"
                                required/>
-                        <span class="input-group-addon"> <i class="login_icon glyphicon glyphicon-lock"></i></span>
+                        <span class="input-group-addon"> </span>
                     </div>
                     <br/>
                     <button type="submit" name="login" class="btn btn-submit">Ingresar</button>
@@ -115,32 +115,32 @@ endif;
                     <div class="input-group">
                         <input class="form-control h40" type="text" placeholder="Nombre" name="nombre"
                                required/>
-                        <span class="input-group-addon"> <i class="login_icon glyphicon glyphicon-user"></i></span>
+                        <span class="input-group-addon"></span>
                     </div>
                     <br/>
                     <div class="input-group">
                         <input class="form-control h40" type="text" placeholder="Apellido" name="apellido"
                                required/>
-                        <span class="input-group-addon"> <i class="login_icon glyphicon glyphicon-user"></i></span>
+                        <span class="input-group-addon"> </span>
                     </div>
                     <br/>
                     <div class="input-group">
                         <input class="form-control h40" type="email" placeholder="Email" name="email"
                                required/>
-                        <span class="input-group-addon"> <i class="login_icon glyphicon glyphicon-envelope"></i></span>
+                        <span class="input-group-addon"> </span>
                     </div>
                     <br/>
                     <div class="input-group">
                         <input class="form-control h40" type="password" placeholder="Contraseña" name="password"
                                required/>
-                        <span class="input-group-addon"> <i class="login_icon glyphicon glyphicon-lock"></i></span>
+                        <span class="input-group-addon"></span>
                     </div>
                     <br/>
                     <div class="input-group">
                         <input class="form-control h40" type="password" placeholder="Confirmar Contraseña"
                                name="password2"
                                required/>
-                        <span class="input-group-addon"> <i class="login_icon glyphicon glyphicon-lock"></i></span>
+                        <span class="input-group-addon"></span>
                     </div>
                     <br/>
                     <button type="submit" name="registrar" class="btn btn-submit">Registrar</button>

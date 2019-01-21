@@ -53,13 +53,14 @@ $numeroPaginas = $productos->paginador("", $cantidad);
 </br>
     <!-- End Banner Area -->
     <div class="container">
-        <div class="row" style="flex-wrap: initial !important;">
+        <div class="row">
             <div class="col-md-3">
                 <div class="sidebar-categories">
                     <div class="head">Categorias</div>
                     <ul class="main-categories">
                         <?php foreach ($categoria_data as $categorias): ?>
-                            <li class="main-nav-list"><a data-toggle="collapse" aria-expanded="false" aria-controls="fruitsVegetable">
+                            <li class="main-nav-list">
+                                <a  href="<?= CANONICAL; ?>">
                                     <span class="lnr lnr-arrow-right"></span><?= $categorias['titulo']; ?></a>
                             </li>
                         <?php endforeach; ?>

@@ -46,6 +46,7 @@ foreach ($categoriasDataNav as $valNav) {
                                                title="Iniciar sesion" href="#">Iniciar sesión</a>
 
                                         <a style="color: black !important;" class="top-link-login" data-toggle="modal" data-target="#registrar"
+                                        <a style="color: black !important;" class="top-link-login" data-toggle="modal" data-target="#registrar"
                                                title="Registrar" href="#">Registrarse</a>
                                         </li>
 
