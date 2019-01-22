@@ -21,6 +21,7 @@ foreach ($categoriasDataNav as $valNav) {
         $banDataBotonera = $bannersNav->listForCategory();
     }
 }
+
 ?>
 
     <div id="sns_header" class="wrap">
@@ -32,12 +33,11 @@ foreach ($categoriasDataNav as $valNav) {
                             <div class="customer-ct content">
                                 <ul class="links">
                                     <?php if (isset($_SESSION["usuarios"])): ?>
-                                        <li>
-                                            <a class="top-link-myaccount" title="cuenta" href="<?/*= URL */?>/sesion">Mi
+                                        <li style="float: right">
+                                            <a style="color: black !important;" class="top-link-myaccount" title="cuenta" href="<?= URL ?>/sesion">Mi
                                                 cuenta</a>
-                                        </li>
-                                        <li>
-                                            <a class="top-link-login" title="salir" href="<?/*= URL*/ ?>/sesion/logout">Salir</a>
+
+                                            <a style="color: black !important;"  class="top-link-login" title="salir" href="<?= URL ?>/sesion/logout">Salir</a>
                                         </li>
                                     <?php else: ?>
 
@@ -71,7 +71,7 @@ foreach ($categoriasDataNav as $valNav) {
         <nav class="navbar navbar-expand-lg navbar-light main_box">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <a class="navbar-brand logo_h" href="index.php"><img src="<?= URL; ?>/assets/img/logo.png" alt=""></a>
+                <a class="navbar-brand logo_h" href="index.php"><img src="<?= URL; ?>/assets/img/Isologo.jpg" alt=""></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

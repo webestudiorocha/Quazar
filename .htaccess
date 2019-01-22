@@ -13,7 +13,13 @@ RewriteRule ^contacto ./contact.php
 RewriteRule ^inicio ./index.php
 RewriteRule ^c/(.*)/(.*)$ ./contenidos.php?id=$2
 RewriteRule ^assets/inc/sesion/panel/(.*)/(.*)$ ./panel.php?op=$2
-
+RewriteRule ^pagar/(.*)/(.*)$ ./pagar.php?metodos-pago=$2
+RewriteRule ^carrito/(.*)/(.*)$ ./carrito.php?metodos-pago=$2
+RewriteRule ^c/(.*)/(.*)$ ./contenidos.php?id=$2
+RewriteRule ^sesion/(.*)/(.*)$ ./sesion.php?op=$2
+RewriteRule ^landing/(.*)/(.*)$ ./landing.php?cod=$2
+RewriteRule ^servicios/(.*)/(.*)$ ./servicios.php?cod=$2
+RewriteRule ^portfolio/(.*)/(.*)$ ./portfolio.php?cod=$2
 
 #ErrorDocument 404 https://www.cordobapymes.com.ar/404
 #ErrorDocument 400 https://www.cordobapymes.com.ar/404
