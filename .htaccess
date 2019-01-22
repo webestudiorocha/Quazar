@@ -6,10 +6,9 @@ RewriteCond %{SCRIPT_FILENAME} !-f
 RewriteRule ^(.*)$ $1.php
 
 RewriteRule ^producto/(.*)/(.*)$ ./producto.php?cod=$2
-RewriteRule ^productos/(.*)/(.*)/(.*)/(.*)$ ./productos.php?$1=$2&$3=$4&$5=$6
+#RewriteRule ^productos/(.*)/(.*)/(.*)/(.*)$ ./productos.php?$1=$2&$3=$4&$5=$6
 RewriteRule ^blog/(.*)/(.*)$ ./blog.php?cod=$2
-#RewriteRule ^productos/(.*)/(.*)/(.*)$ ./productos.php?pagina=$3&categoria=$3
-#RewriteRule ^productos/(.*)/(.*)$ ./productos.php?pagina=$2
+RewriteRule ^productos/(.*)/(.*)$ ./productos.php?categoria=$2 [QSA]
 RewriteRule ^contacto ./contact.php
 RewriteRule ^inicio ./index.php
 RewriteRule ^c/(.*)/(.*)$ ./contenidos.php?id=$2

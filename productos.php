@@ -8,15 +8,14 @@ $template->set("description", "");
 $template->set("keywords", "");
 $template->set("favicon", LOGO);
 $template->themeInit();
-$cod = isset($_GET["cod"]) ? $_GET["cod"] : '';
+$categoria = isset($_GET["categoria"]) ? $_GET["categoria"] : '';
 $productos = new Clases\Productos();
-$productos->set("cod", $cod);
-$pagina = isset($_GET["pagina"]) ? $_GET["pagina"] : '0';
+$productos->set("categoria", $categoria);
 $novedadesPaginador = $productos->paginador('', 3);
 $imagenes = new Clases\Imagenes();
 $categorias = new Clases\Categorias();
 $categoria_data = $categorias->list("");
-$pagina = isset($_GET["pagina"]) ? $_GET["pagina"] : '0';
+$pagina = !empty($_GET["pagina"]) ? $_GET["pagina"] : '0';
 
 $cantidad = 4;
 
@@ -36,8 +35,13 @@ else:
     $url = CANONICAL;
 endif;
 
-$producto_Data = $productos->listWithOps("", "", $cantidad * $pagina . ',' . $cantidad);
-$numeroPaginas = $productos->paginador("", $cantidad);
+$filter = "";
+if (!empty($categoria)) {
+    $filter = array("categoria = '" . $categoria . "'");
+}
+
+$producto_Data = $productos->listWithOps($filter, "", $cantidad * $pagina . ',' . $cantidad);
+$numeroPaginas = $productos->paginador($filter, $cantidad);
 
 ?>
     <!-- Start Banner Area -->
@@ -58,10 +62,10 @@ $numeroPaginas = $productos->paginador("", $cantidad);
                 <div class="sidebar-categories">
                     <div class="head">Categorias</div>
                     <ul class="main-categories">
-                        <?php foreach ($categoria_data as $categorias): ?>
+                        <?php foreach ($categoria_data as $categoria): ?>
                             <li class="main-nav-list">
-                                <a  href="<?= CANONICAL; ?>">
-                                    <span class="lnr lnr-arrow-right"></span><?= $categorias['titulo']; ?></a>
+                                <a  href="<?= URL; ?>/productos/<?= $categoria['titulo']; ?>/<?= $categoria['cod']; ?>">
+                                    <span class="lnr lnr-arrow-right"></span><?= $categoria['titulo']; ?></a>
                             </li>
                         <?php endforeach; ?>
                     </ul>
@@ -172,4 +176,5 @@ $numeroPaginas = $productos->paginador("", $cantidad);
         </div>
     </div>
 </br>
-<?php $template->themeEnd(); ?>
+<?php
+$template->themeEnd(); ?>
