@@ -12,7 +12,7 @@ $pedidosArrayAgrupados = $pedidos->list($filterPedidosAgrupados);
 $filterPedidosSinAgrupar = array("usuario = '" . $usuarioData['cod'] . "'");
 $pedidosArraySinAgrupar = $pedidos->list($filterPedidosSinAgrupar);
 asort($pedidosArraySinAgrupar);
-?><!--
+?>
 <div class="col-md-12">
     <?php if (empty($pedidosArrayAgrupados)): ?>
         <?php echo "<h4>No has realizado ningún pedido todavía.</h4>"; ?>
@@ -111,7 +111,7 @@ asort($pedidosArraySinAgrupar);
             </div>
         <?php endforeach; ?>
     <?php endif; ?>
-</div>-->
+</div>
 <div class="col-md-12">
     <?php foreach ($pedidosArrayAgrupados as $key => $value): ?>
         <?php $usuarios->set("cod", $value["usuario"]); ?>

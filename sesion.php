@@ -16,6 +16,8 @@ if (count($usuarioSesion) == 0) {
 ?>
 <br>
 <br>
+<br>
+
 <section class="categories_product_main p_80">
     <div class="container">
         <div class="categories_main_inner">
@@ -54,6 +56,8 @@ if (count($usuarioSesion) == 0) {
         </div>
     </div>
 </section>
+<br>
+<br>
 <?php
 $template->themeEnd();
 ?>

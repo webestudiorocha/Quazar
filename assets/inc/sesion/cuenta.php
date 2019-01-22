@@ -4,6 +4,8 @@ $usuario = new Clases\Usuarios();
 $usuario->set("cod", $_SESSION["usuarios"]["cod"]);
 $usuarioData = $usuario->view();
 ?>
+<br>
+<br>
 <div class="col-lg-9 float-md-right">
     <?php
     if (isset($_POST["guardar"])):
@@ -45,6 +47,8 @@ $usuarioData = $usuario->view();
         $funciones->headerMove(URL . '/sesion/cuenta');
     endif;
     ?>
+    <br>
+    <br>
     <div class="categories_product_area">
         <div class="row">
             <div class="col-md-12">

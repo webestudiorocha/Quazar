@@ -23,30 +23,29 @@ foreach ($categoriasDataNav as $valNav) {
 }
 ?>
 
-    <div id="sns_header" class="wrap">
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="sns_header_top">
             <div class="container">
                 <div class="sns_module">
                     <div class="header-account">
                         <div class="myaccount">
                             <div class="customer-ct content">
-                                <ul class="links">
+                                <ul class="navbar-nav mr-auto">
                                     <?php if (isset($_SESSION["usuarios"])): ?>
                                         <li>
                                             <a class="top-link-myaccount" title="cuenta" href="<?= URL ?>/sesion">Mi
                                                 cuenta</a>
-                                        </li>
-                                        <li>
+
                                             <a class="top-link-login" title="salir" href="<?= URL ?>/sesion/logout">Salir</a>
                                         </li>
                                     <?php else: ?>
 
-                                        <li style="float: right">
+                                        <li  class="nav-item ">
                                             <a style="color: black !important;" class="top-link-login" data-toggle="modal" data-target="#login"
                                                title="Iniciar sesion" href="#">Iniciar sesión</a>
 
-                                        <a style="color: black !important;" class="top-link-login" data-toggle="modal" data-target="#registrar"
-                                        <a style="color: black !important;" class="top-link-login" data-toggle="modal" data-target="#registrar"
+
+                                        <a style="color: black !important;" class="fa fa-pencil" data-toggle="modal" data-target="#registrar"
                                                title="Registrar" href="#">Registrarse</a>
                                         </li>
 
