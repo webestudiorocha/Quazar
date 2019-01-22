@@ -21,7 +21,6 @@ foreach ($categoriasDataNav as $valNav) {
         $banDataBotonera = $bannersNav->listForCategory();
     }
 }
-
 ?>
 
     <div id="sns_header" class="wrap">
@@ -33,11 +32,12 @@ foreach ($categoriasDataNav as $valNav) {
                             <div class="customer-ct content">
                                 <ul class="links">
                                     <?php if (isset($_SESSION["usuarios"])): ?>
-                                        <li style="float: right">
-                                            <a style="color: black !important;" class="top-link-myaccount" title="cuenta" href="<?= URL ?>/sesion">Mi
+                                        <li>
+                                            <a class="top-link-myaccount" title="cuenta" href="<?= URL ?>/sesion">Mi
                                                 cuenta</a>
-
-                                            <a style="color: black !important;"  class="top-link-login" title="salir" href="<?= URL ?>/sesion/logout">Salir</a>
+                                        </li>
+                                        <li>
+                                            <a class="top-link-login" title="salir" href="<?= URL ?>/sesion/logout">Salir</a>
                                         </li>
                                     <?php else: ?>
 

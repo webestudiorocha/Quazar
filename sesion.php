@@ -4,10 +4,9 @@ Config\Autoload::runSitio();
 $template = new Clases\TemplateSite();
 $funciones = new Clases\PublicFunction();
 $enviar = new Clases\Email();
-$template->set("title", "Pinturería Ariel | Contacto");
-$template->set("description", "Contacto Pinturería Ariel");
-$template->set("keywords", "Contacto Pinturería Ariel");
-$template->set("favicon", LOGO);
+$template->set("title", TITULO . " | Panel");
+$template->set("description", "Panel " . TITULO);
+$template->set("keywords", "Panel " . TITULO);
 $template->themeInit();
 $usuarios = new Clases\Usuarios();
 $usuarioSesion = $usuarios->view_sesion();
@@ -15,85 +14,46 @@ if (count($usuarioSesion) == 0) {
     $funciones->headerMove(URL . "/index");
 }
 ?>
-<body id="bd" class="cms-index-index2 header-style2 prd-detail sns-contact-us cms-simen-home-page-v2 default cmspage">
-<div id="sns_wrapper">
-    <?php $template->themeNav(); ?>
-    <!-- BREADCRUMBS -->
-    <div id="sns_breadcrumbs" class="wrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div id="sns_titlepage"></div>
-                    <div id="sns_pathway" class="clearfix">
-                        <div class="pathway-inner">
-                            <span class="icon-pointer "></span>
-                            <ul class="breadcrumbs">
-                                <li class="home">
-                                    <a href="<?= URL . '/index' ?>">
-                                        <i class="fa fa-home"></i>
-                                        <span>Inicio</span>
-                                    </a>
+<br>
+<br>
+<section class="categories_product_main p_80">
+    <div class="container">
+        <div class="categories_main_inner">
+            <div class="row row_disable">
+                <div class="col-lg-3 float-md-right">
+                    <div class="categories_sidebar">
+                        <aside class="l_widgest l_menufacture_widget">
+                            <div class="l_w_title"><h3>Panel</h3></div>
+                            <ul>
+                                <li><a href="<?= URL ?>/sesion/cuenta"> <span class="no_line_h"><i
+                                                    class="fa fa-user" aria-hidden="true"></i></span> Mi cuenta </a>
                                 </li>
-                                <li class="category3 last">
-                                    <span>Panel de usuario</span>
-                                </li>
+                                <li><a href="<?= URL ?>/sesion/pedidos"> <span class="no_line_h"><i
+                                                    class="fa fa-bookmark" aria-hidden="true"></i></span> Mis pedidos
+                                    </a></li>
+                                <li><a href="<?= URL ?>/sesion/logout"> <span class="no_line_h"><i
+                                                    class="fa fa-sign-out" aria-hidden="true"></i></span>Salir </a></li>
                             </ul>
-                        </div>
+                        </aside>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <!-- END BREADCRUMBS -->
-    <div id="sns_content" class="wrap layout-m">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="wrap-in">
-                        <div class="block block-blog-inner">
-                            <div class="block-content">
-                                <div class="menu-categories">
-                                    <div class="block-title">
-                                        <strong>Panel</strong>
-                                    </div>
-                                    <ul>
-                                        <li>
-                                            <a href="<?= URL ?>/sesion/cuenta">
-                                                <span class="no_line_h"><i class="fa fa-user"
-                                                                           aria-hidden="true"></i></span> Mi cuenta
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="<?= URL ?>/sesion/pedidos">
-                                                <span class="no_line_h"><i class="fa fa-bookmark"
-                                                                           aria-hidden="true"></i></span> Mis
-                                                pedidos
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="<?= URL ?>/sesion/logout">
-                                                <span class="no_line_h"><i class="fa fa-sign-out" aria-hidden="true"></i></span>Salir
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                <div class="col-lg-9 float-md-right">
+                    <div class="categories_product_area">
+                        <div class="row">
+                            <?php
+                            $op = isset($_GET["op"]) ? $_GET["op"] : 'pedidos';
+                            if ($op != '') {
+                                include("assets/inc/sesion/" . $op . ".php");
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
 
-                <?php
-                $op = isset($_GET["op"]) ? $_GET["op"] : 'pedidos';
-                if ($op != '') {
-                    include("assets/inc/sesion/" . $op . ".php");
-                }
-                ?>
-
             </div>
         </div>
     </div>
-</div>
-</body>
+</section>
 <?php
 $template->themeEnd();
 ?>

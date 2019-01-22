@@ -9,7 +9,6 @@ $template->set("keywords", "");
 $template->set("favicon", LOGO);
 $template->themeInit();
 $categoria = isset($_GET["categoria"]) ? $_GET["categoria"] : '';
-var_dump($categoria);
 $productos = new Clases\Productos();
 $productos->set("categoria", $categoria);
 $novedadesPaginador = $productos->paginador('', 3);
