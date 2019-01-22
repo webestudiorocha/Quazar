@@ -49,7 +49,7 @@ $usuarioData = $usuario->view();
     ?>
     <br>
     <br>
-    <div class="categories_product_area">
+    <div class="categories_product_area ">
         <div class="row">
             <div class="col-md-12">
                 <form class="login_form" id="registro" method="post" autocomplete="off">

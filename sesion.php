@@ -22,7 +22,7 @@ if (count($usuarioSesion) == 0) {
     <div class="container">
         <div class="categories_main_inner">
             <div class="row row_disable">
-                <div class="col-lg-3 float-md-right">
+                <div class="col-lg-3 float-md-right" style="padding-top: 40px !important;">
                     <div class="categories_sidebar">
                         <aside class="l_widgest l_menufacture_widget">
                             <div class="l_w_title"><h3>Panel</h3></div>
