@@ -3,6 +3,8 @@ require_once "Config/Autoload.php";
 Config\Autoload::runSitio();
 $template = new Clases\TemplateSite();
 $template->themeInit();
+$template->themeNav();
+
 ?>
 
 

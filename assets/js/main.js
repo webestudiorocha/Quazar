@@ -14,7 +14,7 @@ $(document).ready(function(){
 
   //------- Active Nice Select --------//
 
-    $('select').niceSelect();
+    //$('select').niceSelect();
 
 
     $('.navbar-nav li.dropdown').hover(function() {
@@ -54,7 +54,7 @@ $(document).ready(function(){
         autoplayTimeout: 5000,
         loop:true,
         nav:true,
-        navText:["<img src='img/banner/prev.png'>","<img src='img/banner/next.png'>"],
+        navText:["<i class='fa fa-chevron-left' aria-hidden='true'></i>","<i class='fa fa-chevron-right' aria-hidden='true'></i>"],
         dots:false
     });
 
@@ -67,7 +67,7 @@ $(document).ready(function(){
         autoplayTimeout: 5000,
         loop:true,
         nav:true,
-        navText:["<img src='img/product/prev.png'>","<img src='img/product/next.png'>"],
+        navText:["<i class='fa fa-chevron-left' aria-hidden='true'></i>","<i class='fa fa-chevron-right' aria-hidden='true'></i>"],
         dots:false
     });
 
@@ -75,7 +75,7 @@ $(document).ready(function(){
     Javascript for single product area carousel
     ==================================*/
     $(".s_Product_carousel").owlCarousel({
-      items:1,
+      items:0,
       autoplay:false,
       autoplayTimeout: 5000,
       loop:true,
@@ -92,7 +92,7 @@ $(document).ready(function(){
         autoplayTimeout: 5000,
         loop:true,
         nav:true,
-        navText:["<img src='img/product/prev.png'>","<img src='img/product/next.png'>"],
+        navText:["<i class='fa fa-chevron-left' aria-hidden='true'></i>","<i class='fa fa-chevron-right' aria-hidden='true'></i>"],
         dots:false
     });
 

@@ -38,6 +38,7 @@ class Carrito
 
         if (count($_SESSION["carrito"]) == 0) {
             array_push($_SESSION["carrito"], $add);
+            return true;
         } else {
             for ($i = 0; $i < count($_SESSION["carrito"]); $i++) {
                 if ($_SESSION["carrito"][$i]["id"] == $this->id) {
@@ -46,9 +47,16 @@ class Carrito
             }
 
             if (is_numeric($condition)) {
-                $_SESSION["carrito"][$condition]["cantidad"] = $_SESSION["carrito"][$condition]["cantidad"] + $this->cantidad;
+                $stock_carrito = $_SESSION["carrito"][$condition]["cantidad"] + $add["cantidad"];
+                if($stock_carrito <= $add["stock"]) {
+                    $_SESSION["carrito"][$condition]["cantidad"] = $_SESSION["carrito"][$condition]["cantidad"] + $this->cantidad;
+                    return true;
+                } else {
+                    return false;
+                }
             } else {
                 array_push($_SESSION["carrito"], $add);
+                return true;
             }
         }
     }
@@ -113,6 +121,16 @@ class Carrito
     {
         foreach ($_SESSION["carrito"] as $key => $val) {
             if ($val['id'] === "Envio-Seleccion") {
+                return $key;
+            }
+        }
+        return null;
+    }
+
+    public function checkPago()
+    {
+        foreach ($_SESSION["carrito"] as $key => $val) {
+            if ($val['id'] === "Metodo-Pago") {
                 return $key;
             }
         }

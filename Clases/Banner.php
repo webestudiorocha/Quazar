@@ -72,16 +72,16 @@ class Banner
         }
     }
 
-    public function increaseViews()
+    public function increase_views()
     {
         $sql   = "UPDATE `banners` SET vistas = '{$this->vistas}' WHERE `id`='{$this->id}'";
         $query = $this->con->sql($sql);
         return $query;
     }
 
-    function listForCategory() {
+    function list_for_category($categoria,$limit) {
         $array = array();
-        $sql = "SELECT * FROM `banners` WHERE categoria = '{$this->categoria}'  ORDER BY id DESC";
+        $sql = "SELECT DISTINCT * FROM `banners` WHERE categoria = '$categoria' ORDER BY RAND()   LIMIT $limit";
         $notas = $this->con->sqlReturn($sql);
         if ($notas) {
             while ($row = mysqli_fetch_assoc($notas)) {

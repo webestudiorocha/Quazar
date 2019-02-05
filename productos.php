@@ -14,10 +14,10 @@ $productos->set("categoria", $categoria);
 $novedadesPaginador = $productos->paginador('', 3);
 $imagenes = new Clases\Imagenes();
 $categorias = new Clases\Categorias();
-$categoria_data = $categorias->list("");
+$categoria_data = $categorias->list(array("area = 'productos'"));
 $pagina = !empty($_GET["pagina"]) ? $_GET["pagina"] : '0';
 
-$cantidad = 4;
+$cantidad = 9;
 
 if ($pagina > 0) {
     $pagina = $pagina - 1;
@@ -42,6 +42,8 @@ if (!empty($categoria)) {
 
 $producto_Data = $productos->listWithOps($filter, "", $cantidad * $pagina . ',' . $cantidad);
 $numeroPaginas = $productos->paginador($filter, $cantidad);
+$numeroPaginas = $productos->paginador($filter, $cantidad);
+$template->themeNav();
 
 ?>
     <!-- Start Banner Area -->
@@ -71,80 +73,28 @@ $numeroPaginas = $productos->paginador($filter, $cantidad);
                     </ul>
 
                 </div>
-                <div class="sidebar-filter mt-50">
-                    <div class="top-filter-head">Filtrar Productos</div>
-                    <div class="common-filter">
-                        <div class="head">Marcas</div>
-                        <form action="#">
-                            <ul>
-                                <li class="filter-list"><input class="pixel-radio" type="radio" id="apple" name="brand"><label
-                                            for="apple">Apple<span>(29)</span></label></li>
-                            </ul>
-                        </form>
-                    </div>
-                    <div class="common-filter">
-                        <div class="head">Color</div>
-                        <form action="#">
-                            <ul>
-                                <li class="filter-list"><input class="pixel-radio" type="radio" id="black" name="color"><label
-                                            for="black">Black<span>(29)</span></label></li>
-                            </ul>
-                        </form>
-                    </div>
-                </div>
             </div>
             <div class=" col-md-9">
-                <!-- Start Filter Bar -->
-                <div class="filter-bar d-flex flex-wrap align-items-center">
-
-                    <div class="pagination">
-                        <li>
-                            <?php if (($pagina + 1) > 1): ?>
-                        <li><a href="<?= $url ?><?= $anidador ?>pagina=<?= $pagina ?>"><i
-                                        class="fa fa-angle-left" ></i></a></li>
-                        <?php endif; ?>
-
-                        <?php for ($i = 1; $i <= $numeroPaginas; $i++): ?>
-                            <li class="<?php if ($i == $pagina + 1) {
-                                echo "active";
-                            } ?>"><a href="<?= $url ?><?= $anidador ?>pagina=<?= $i ?>"><?= $i ?></a></li>
-                        <?php endfor; ?>
-
-                        <?php if (($pagina + 2) <= $numeroPaginas): ?>
-                            <li><a href="<?= $url ?><?= $anidador ?>pagina=<?= ($pagina + 2) ?>"><i
-                                            class="fa fa-angle-right" ></i></a></li>
-                        <?php endif; ?>
-                    </div>
-                </div>
-                <!-- End Filter Bar -->
                 <!-- Start Best Seller -->
                 <section class="lattest-product-area pb-40 category-list">
                     <div class="row">
                         <!-- single product -->
                         <?php foreach ($producto_Data as $prod):?>
-                        <div class="col-md-6">
-
-                             <?php   $imagenes->set("cod", $prod['cod']);
+                            <div class="col-md-4">
+                                <?php $imagenes->set("cod", $prod["cod"]);
                                 $img = $imagenes->view(); ?>
-                            <div class="single-product">
-                                <a href="<?= URL . '/producto/' . $funciones->normalizar_link($prod['titulo']) . "/" . $prod['cod'] ?>" ><img class="img-fluid" style=" height: 200px; background: url(<?= URL . '/' . $img['ruta'] ?>) no-repeat center center/cover;" alt=""></a>
-                                <div class="product-details">
-                                    <a href="<?= URL . '/producto/' . $funciones->normalizar_link($prod['titulo']) . "/" . $prod['cod'] ?>" ><h6><?= ucfirst($prod['titulo'])?></h6></a>
-                                    <p><?php echo strip_tags(substr($prod["desarrollo"],0,100)); ?>...</p>
-                                    <div class="price">
-                                        <h6>Precio: $<?= $prod['precio']; ?></h6>
-                                        <h6>Precio de contado: $<?= $prod['precioDescuento']; ?></h6>
+                                <a href='<?= URL . '/producto/' . $funciones->normalizar_link($prod["titulo"]) . '/' . $prod["cod"] ?>'>
+                                    <div class="single-product">
+                                        <img class='img-fluid' style='height: 200px; background: url(<?= URL . "/" . $img["ruta"] ?>) no-repeat center center/cover;' alt=''>
+                                        <div class="product-details">
+                                            <h6><?= ucfirst($prod["titulo"]) ?></h6>
+                                            <div class="price">
+                                                <h4>$<?= ucfirst($prod["precio"]); ?> <s class="p_desc">$<?= ucfirst($prod["precio_descuento"]); ?></s></h4>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="prd-bottom">
-                                        <a href="<?= URL . '/producto/' . $funciones->normalizar_link($prod['titulo']) . "/" . $prod['cod'] ?>" class="social-info">
-                                            <span class="lnr lnr-move"></span>
-                                            <p class="hover-text" href="<?= URL . '/producto/' . $funciones->normalizar_link($prod['titulo']) . "/" . $prod['cod'] ?>">Ver Más</p>
-                                        </a>
-                                    </div>
-                                </div>
+                                </a>
                             </div>
-
-                        </div>
                         <?php endforeach;?>
                     </div>
                 </section>

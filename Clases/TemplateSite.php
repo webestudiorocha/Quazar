@@ -20,43 +20,16 @@ class TemplateSite
 
     public function themeInit()
     {
-      ?>
+        ?>
         <!DOCTYPE html>
         <html lang="es">
-    <head>
-        <!-- Mobile Specific Meta -->
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- Favicon-->
-        <link rel="shortcut icon" href="<?= URL; ?>/assets/img/fav.png">
-        <!-- Author Meta -->
-        <meta name="author" content="CodePixar">
-        <!-- Meta Description -->
-        <meta name="description" content="">
-        <!-- Meta Keyword -->
-        <meta name="keywords" content="">
-        <!-- meta character set -->
-        <meta charset="UTF-8">
-        <!-- Site Title -->
-        <title>Quazar</title>
-        <link rel="stylesheet" href="<?= URL; ?>/assets/css/linearicons.css">
-        <link rel="stylesheet" href="<?= URL; ?>/assets/css/font-awesome.min.css">
-        <link rel="stylesheet" href="<?= URL; ?>/assets/css/themify-icons.css">
-        <link rel="stylesheet" href="<?= URL; ?>/assets/css/bootstrap.css">
-        <link rel="stylesheet" href="<?= URL; ?>/assets/css/owl.carousel.css">
-        <link rel="stylesheet" href="<?= URL; ?>/assets/css/nice-select.css">
-        <link rel="stylesheet" href="<?= URL; ?>/assets/css/nouislider.min.css">
-        <link rel="stylesheet" href="<?= URL; ?>/assets/css/ion.rangeSlider.css" />
-        <link rel="stylesheet" href="<?= URL; ?>/assets/css/ion.rangeSlider.skinFlat.css" />
-        <link rel="stylesheet" href="<?= URL; ?>/assets/css/magnific-popup.css">
-        <link rel="stylesheet" href="<?= URL; ?>/assets/css/main.css">
-  <?php include ("assets/inc/nav.inc.php");?>
-    </head>
-      <?php
+        <?php include("assets/inc/header.inc.php"); ?>
+    <body>
+        <?php
     }
-
     public function themeNav()
     {
-      include 'assets/inc/nav.inc.php';
+        include("assets/inc/nav.inc.php");
     }
 
     public function themeSideIndex()
@@ -72,6 +45,7 @@ class TemplateSite
     public function themeEnd()
     {
         include 'assets/inc/footer.inc.php';
+        echo '</body></html>';
     }
 
     public function set($atributo, $valor)

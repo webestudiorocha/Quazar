@@ -24,12 +24,12 @@ if (isset($_POST["agregar"])) {
     $count = 0;
     $cod   = $producto["cod"];
     $productos->set("id", $producto["id"]);
-    $productos->set("cod", $funciones->antihack_mysqli(isset($_POST["cod"]) ? $_POST["cod"] : ''));
+    $productos->set("cod", $producto["cod"]);
     $productos->set("titulo", $funciones->antihack_mysqli(isset($_POST["titulo"]) ? $_POST["titulo"] : ''));
     $productos->set("cod_producto", $funciones->antihack_mysqli(isset($_POST["cod_producto"]) ? $_POST["cod_producto"] : ''));
     $productos->set("precio", $funciones->antihack_mysqli(isset($_POST["precio"]) ? $_POST["precio"] : ''));
     $productos->set("peso", $funciones->antihack_mysqli(isset($_POST["peso"]) ? $_POST["peso"] : 0));
-    $productos->set("precioDescuento", $funciones->antihack_mysqli(isset($_POST["precioDescuento"]) ? $_POST["precioDescuento"] : ''));
+    $productos->set("precio_descuento", $funciones->antihack_mysqli(isset($_POST["precio_descuento"]) ? $_POST["precio_descuento"] : ''));
     $productos->set("stock", $funciones->antihack_mysqli(isset($_POST["stock"]) ? $_POST["stock"] : ''));
     $productos->set("desarrollo", $funciones->antihack_mysqli(isset($_POST["desarrollo"]) ? $_POST["desarrollo"] : ''));
     $productos->set("categoria", $funciones->antihack_mysqli(isset($_POST["categoria"]) ? $_POST["categoria"] : ''));
@@ -111,7 +111,7 @@ if (isset($_POST["agregar"])) {
             <input type="text" name="peso" value="<?=$producto["peso"]?>">
         </label>
         <label class="col-md-3">Precio Descuento:<br/>
-            <input type="text" name="precioDescuento" value="<?=$producto["precioDescuento"]?>">
+            <input type="text" name="precioDescuento" value="<?=$producto["precio_descuento"]?>">
         </label>
         <label class="col-md-3">Url:<br/>
             <input type="text" name="url" value="<?=$producto["url"]?>" id="url">

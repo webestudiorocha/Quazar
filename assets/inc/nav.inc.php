@@ -23,54 +23,13 @@ foreach ($categoriasDataNav as $valNav) {
 }
 ?>
 
-    <div class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="sns_header_top">
-            <div class="container">
-                <div class="sns_module">
-                    <div class="header-account">
-                        <div class="myaccount">
-                            <div class="customer-ct content">
-                                <ul class="navbar-nav mr-auto">
-                                    <?php if (isset($_SESSION["usuarios"])): ?>
-                                        <li>
-                                            <a class="top-link-myaccount" title="cuenta" href="<?= URL ?>/sesion">Mi
-                                                cuenta</a>
-
-                                            <a class="top-link-login" title="salir" href="<?= URL ?>/sesion/logout">Salir</a>
-                                        </li>
-                                    <?php else: ?>
-
-                                        <li  class="nav-item ">
-                                            <a style="color: black !important;" class="top-link-login" data-toggle="modal" data-target="#login"
-                                               title="Iniciar sesion" href="#">Iniciar sesión</a>
-
-
-                                        <a style="color: black !important;" class="fa fa-pencil" data-toggle="modal" data-target="#registrar"
-                                               title="Registrar" href="#">Registrarse</a>
-                                        </li>
-
-                                    <?php endif; ?>
-                                </ul>
-
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
 <header class="header_area sticky-header">
     <div class="main_menu">
 
         <nav class="navbar navbar-expand-lg navbar-light main_box">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <a class="navbar-brand logo_h" href="index.php"><img src="<?= URL; ?>/assets/img/Isologo.jpg" alt=""></a>
+                <a class="navbar-brand logo_h" href="index.php"><img src="<?= URL; ?>/assets/img/Isologo.png" alt=""></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,21 +41,35 @@ foreach ($categoriasDataNav as $valNav) {
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                     <ul class="nav navbar-nav menu_nav ml-auto">
                         <li class="nav-item "><a class="nav-link" href="<?= URL; ?>/index.php">Inicio</a></li>
-                        <li class="nav-item submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-haspopup="true"
-                               aria-expanded="false">Shop</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link" href="<?= URL; ?>/productos.php">Productos</a>
-                                </li>
-                            </ul>
-                        </li>
+                        <li class="nav-item "><a class="nav-link" href="<?= URL; ?>/productos.php">Productos</a></li>
                         <li class="nav-item "><a class="nav-link" href="<?= URL; ?>/blogs.php">Blog</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?= URL; ?>/contact.php">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?= URL; ?>/contacto.php">Contacto</a></li>
+                        <?php if (isset($_SESSION["usuarios"])): ?>
+                            <li class="nav-item">
+                                <a class="nav-link" title="cuenta" href="<?= URL ?>/sesion">Mi cuenta</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" title="salir" href="<?= URL ?>/sesion/logout">Salir</a>
+                            </li>
+                        <?php else: ?>
+                            <li class="nav-item ">
+                                <a class="nav-link" data-toggle="modal" data-target="#login"
+                                   title="Iniciar sesion" href="#">Iniciar sesión</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" data-toggle="modal" data-target="#registrar"
+                                   title="Registrar" href="#">Registrarse</a>
+                            </li>
+                        <?php endif; ?>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item">
                             <button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a href="" class="search"><span class="lnr lnr-cart"></span></a>
                         </li>
                     </ul>
                 </div>

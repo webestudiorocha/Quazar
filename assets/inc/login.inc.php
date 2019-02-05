@@ -1,6 +1,7 @@
 <?php
 $funcionesNav = new Clases\PublicFunction();
 //Clases
+$enviar=new Clases\Email();
 $imagenesNav = new Clases\Imagenes();
 $usuario = new Clases\Usuarios();
 $categoriasNav = new Clases\Categorias();
@@ -33,12 +34,15 @@ endif;
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myLogin" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-body">
+            <div class="modal-header">
                 <div class="login_title">
                     <h2>Iniciar Sesión</h2>
                     <p>Si aún no estas registrado, haz click <a href="#registrar" onclick="$('.modal').modal('hide');"
                                                                 data-toggle="modal">aquí</a>.</p>
                 </div>
+            </div>
+
+            <div class="modal-body">
                 <div id="errorLogin"></div>
                 <form class="login_form row" id="login" method="post">
                     <div class="col-lg-12 form-group">
@@ -53,7 +57,7 @@ endif;
                         <h4><a href="#">¿Olvidaste tu contraseña?</a></h4>
                     </div>
                     <div class="col-lg-12 form-group">
-                        <button type="submit" name="login" class="btn update_btn form-control">Ingresar</button>
+                        <button type="submit" name="login" class="btn btn-y">Ingresar</button>
                     </div>
                 </form>
             </div>
@@ -91,6 +95,26 @@ if (isset($_POST["registrar"])):
         <?php
         else:
             $usuario->login();
+            //Envio de mail al usuario
+            $mensaje = 'Gracias por registrarse ' . ucfirst($nombre) . '<br/>';
+            $asunto = TITULO . ' - Registro';
+            $receptor = $email;
+            $emisor = EMAIL;
+            $enviar->set("asunto", $asunto);
+            $enviar->set("receptor", $receptor);
+            $enviar->set("emisor", $emisor);
+            $enviar->set("mensaje", $mensaje);
+            $enviar->emailEnviar();
+            //Envio de mail a la empresa
+            $mensaje2 = 'El usuario ' . ucfirst($nombre).' '. ucfirst($apellido) . ' acaba de registrarse en nuestra plataforma' . '<br/>';
+            $asunto2 = TITULO . ' - Registro';
+            $receptor2 = EMAIL;
+            $emisor2 = EMAIL;
+            $enviar->set("asunto", $asunto2);
+            $enviar->set("receptor", $receptor2);
+            $enviar->set("emisor", $emisor2);
+            $enviar->set("mensaje", $mensaje2);
+            $enviar->emailEnviar();
             $funcionesNav->headerMove(CANONICAL);
         endif;
     else:
@@ -109,10 +133,12 @@ endif;
 <div class="modal fade" id="registrar" tabindex="-1" role="dialog" aria-labelledby="registrar" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-body">
+            <div class="modal-header">
                 <div class="login_title">
                     <h2>Registro</h2>
                 </div>
+            </div>
+            <div class="modal-body">
                 <p id="errorRegistro"></p>
                 <form class="login_form row" id="registro" method="post">
                     <div class="col-lg-12 form-group">
@@ -137,7 +163,7 @@ endif;
                                required>
                     </div>
                     <div class="col-lg-12 form-group">
-                        <button type="submit" name="registrar" class="btn subs_btn form-control">Registrar</button>
+                        <button type="submit" name="registrar" class="btn btn-y">Registrar</button>
                     </div>
                 </form>
             </div>

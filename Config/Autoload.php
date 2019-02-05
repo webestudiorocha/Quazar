@@ -8,7 +8,7 @@ class autoload
         $_SESSION["cod_pedido"] = isset($_SESSION["cod_pedido"]) ? $_SESSION["cod_pedido"] : substr(md5(uniqid(rand())), 0, 10);
         define('URL', "http://".$_SERVER['HTTP_HOST']."/quazar");
         define('CANONICAL', "http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"]);
-        define('TITULO', "Pintureria Ariel");
+        define('TITULO', "Quazar");
         define('TELEFONO', "5555555");
         define('CIUDAD', "San Francisco");
         define('PROVINCIA', "Cordoba");
@@ -16,7 +16,7 @@ class autoload
         define('PASS_EMAIL', "weAr2010");
         define('SMTP_EMAIL', "estudiorochayasoc.com.ar");
         define('DIRECCION', "asdasdas a22");
-        define('LOGO', URL . "/assets/images/logo.png");
+        define('LOGO', URL . "/assets/img/Isologo.png");
         define('APP_ID_FB', "");
         spl_autoload_register(
             function($clase)

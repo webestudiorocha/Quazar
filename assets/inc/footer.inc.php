@@ -1,4 +1,4 @@
-<footer class="footer-area section_gap">
+<footer class="footer-area section_gap mt-50">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -16,8 +16,7 @@
                     <div class="footer-social d-flex align-items-center">
                         <a href="#"><i class="fa fa-facebook"></i></a>
                         <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-dribbble"></i></a>
-                        <a href="#"><i class="fa fa-behance"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -47,5 +46,27 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 <script src="<?= URL; ?>/assets/js/gmaps.min.js"></script>
 <script src="<?= URL; ?>/assets/js/main.js"></script>
-
+<script>
+    $("#provincia").change(function () {
+        $("#provincia option:selected").each(function () {
+            elegido = $(this).val();
+            $.ajax({
+                type: "GET",
+                url: "<?=URL ?>/assets/inc/localidades.inc.php",
+                data: "elegido=" + elegido,
+                dataType: "html",
+                success: function (data) {
+                    $('#localidad option').remove();
+                    var substr = data.split(';');
+                    for (var i = 0; i < substr.length; i++) {
+                        var value = substr[i];
+                        $("#localidad").append(
+                            $("<option></option>").attr("value", value).text(value)
+                        );
+                    }
+                }
+            });
+        });
+    })
+</script>
 <?php include 'assets/inc/login.inc.php'; ?>

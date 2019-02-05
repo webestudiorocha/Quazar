@@ -10,54 +10,68 @@ $template->set("keywords", "Panel " . TITULO);
 $template->themeInit();
 $usuarios = new Clases\Usuarios();
 $usuarioSesion = $usuarios->view_sesion();
-if (count($usuarioSesion) == 0) {
+if (!is_array($usuarioSesion)) {
     $funciones->headerMove(URL . "/index");
 }
+$template->themeNav();
+
 ?>
-<br>
-<br>
-<br>
-
-<section class="categories_product_main p_80">
+<section class="banner-area organic-breadcrumb">
     <div class="container">
-        <div class="categories_main_inner">
-            <div class="row row_disable">
-                <div class="col-lg-3 float-md-right" style="padding-top: 40px !important;">
-                    <div class="categories_sidebar">
-                        <aside class="l_widgest l_menufacture_widget">
-                            <div class="l_w_title"><h3>Panel</h3></div>
-                            <ul>
-                                <li><a href="<?= URL ?>/sesion/cuenta"> <span class="no_line_h"><i
-                                                    class="fa fa-user" aria-hidden="true"></i></span> Mi cuenta </a>
-                                </li>
-                                <li><a href="<?= URL ?>/sesion/pedidos"> <span class="no_line_h"><i
-                                                    class="fa fa-bookmark" aria-hidden="true"></i></span> Mis pedidos
-                                    </a></li>
-                                <li><a href="<?= URL ?>/sesion/logout"> <span class="no_line_h"><i
-                                                    class="fa fa-sign-out" aria-hidden="true"></i></span>Salir </a></li>
-                            </ul>
-                        </aside>
-                    </div>
-                </div>
-                <div class="col-lg-9 float-md-right">
-                    <div class="categories_product_area">
-                        <div class="row">
-                            <?php
-                            $op = isset($_GET["op"]) ? $_GET["op"] : 'pedidos';
-                            if ($op != '') {
-                                include("assets/inc/sesion/" . $op . ".php");
-                            }
-                            ?>
-                        </div>
-                    </div>
-                </div>
-
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Mi cuenta</h1>
             </div>
         </div>
     </div>
 </section>
-<br>
-<br>
+</br>
+<!-- End Banner Area -->
+<div class="container pt-50 pb-50">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="blog_right_sidebar">
+                <aside class="single_sidebar_widget popular_post_widget">
+                    <h3 class="widget_title">MENU</h3>
+                    <div class="media post_item">
+                        <div class="media-body">
+                            <a href="<?= URL ?>/sesion/cuenta">
+                                <h3>Mi cuenta</h3>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="media post_item">
+                        <div class="media-body">
+                            <a href="<?= URL ?>/sesion/pedidos">
+                                <h3>Mis pedidos</h3>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="media post_item">
+                        <div class="media-body">
+                            <a href="<?= URL ?>/sesion/logout">
+                                <h3>Salir</h3>
+                            </a>
+                        </div>
+                    </div>
+                    <br/>
+                </aside>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <section class="">
+                <section class="">
+                    <?php
+                    $op = isset($_GET["op"]) ? $_GET["op"] : 'pedidos';
+                    if ($op != '') {
+                        include("assets/inc/sesion/" . $op . ".php");
+                    }
+                    ?>
+                </section>
+            </section>
+        </div>
+    </div>
+</div>
 <?php
 $template->themeEnd();
 ?>
