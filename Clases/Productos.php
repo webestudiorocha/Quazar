@@ -41,7 +41,7 @@ class Productos
 
     public function add()
     {
-        $sql   = "INSERT INTO `productos`(`cod`, `titulo`,`cod_producto`, `precio`, `peso`, `precio_descuento`, `stock`, `desarrollo`, `categoria`, `subcategoria`, `keywords`, `description`, `fecha`, `meli`, `url`) VALUES ('{$this->cod}', '{$this->titulo}','{$this->cod_producto}', '{$this->precio}', '{$this->peso}', '{$this->precio_descuento}', '{$this->stock}', '{$this->desarrollo}', '{$this->categoria}', '{$this->subcategoria}', '{$this->keywords}', '{$this->description}', '{$this->fecha}', '{$this->meli}', '{$this->url}')";
+        $sql = "INSERT INTO `productos`(`cod`, `titulo`,`cod_producto`, `precio`, `peso`, `precio_descuento`, `stock`, `desarrollo`, `categoria`, `subcategoria`, `keywords`, `description`, `fecha`, `meli`, `url`) VALUES ('{$this->cod}', '{$this->titulo}','{$this->cod_producto}', '{$this->precio}', '{$this->peso}', '{$this->precio_descuento}', '{$this->stock}', '{$this->desarrollo}', '{$this->categoria}', '{$this->subcategoria}', '{$this->keywords}', '{$this->description}', '{$this->fecha}', '{$this->meli}', '{$this->url}')";
         $query = $this->con->sql($sql);
         return $query;
     }
@@ -71,20 +71,21 @@ class Productos
 
     public function delete()
     {
-        $sql   = "DELETE FROM `productos` WHERE `cod`  = '{$this->cod}'";
+        $sql = "DELETE FROM `productos` WHERE `cod`  = '{$this->cod}'";
         $query = $this->con->sql($sql);
         return $query;
     }
 
     public function view()
     {
-        $sql   = "SELECT * FROM `productos` WHERE id = '{$this->id}' ||  cod = '{$this->cod}' ORDER BY id, cod DESC";
+        $sql = "SELECT * FROM `productos` WHERE id = '{$this->id}' ||  cod = '{$this->cod}' ORDER BY id, cod DESC";
         $notas = $this->con->sqlReturn($sql);
-        $row   = mysqli_fetch_assoc($notas);
+        $row = mysqli_fetch_assoc($notas);
         return $row;
     }
 
-    function list($filter) {
+    function list($filter)
+    {
         $array = array();
         if (is_array($filter)) {
             $filterSql = "WHERE ";
@@ -93,7 +94,7 @@ class Productos
             $filterSql = '';
         }
 
-        $sql   = "SELECT * FROM `productos` $filterSql  ORDER BY id DESC";
+        $sql = "SELECT * FROM `productos` $filterSql  ORDER BY id DESC";
         $notas = $this->con->sqlReturn($sql);
 
         if ($notas) {
@@ -104,7 +105,8 @@ class Productos
         }
     }
 
-    function listWithOps($filter,$order,$limit) {
+    function listWithOps($filter, $order, $limit)
+    {
         $array = array();
         if (is_array($filter)) {
             $filterSql = "WHERE ";
@@ -127,16 +129,17 @@ class Productos
 
         $sql = "SELECT * FROM `productos` $filterSql  ORDER BY $orderSql $limitSql";
 
-        $notas = $this->con->sqlReturn($sql); 
+        $notas = $this->con->sqlReturn($sql);
         if ($notas) {
             while ($row = mysqli_fetch_assoc($notas)) {
                 $array[] = $row;
             }
-            return $array ;
+            return $array;
         }
-     }
+    }
 
-    function paginador($filter,$cantidad) {
+    function paginador($filter, $cantidad)
+    {
         $array = array();
         if (is_array($filter)) {
             $filterSql = "WHERE ";
@@ -149,5 +152,13 @@ class Productos
         $total = mysqli_num_rows($contar);
         $totalPaginas = $total / $cantidad;
         return ceil($totalPaginas);
+    }
+
+    public function editUnico($atributo, $valor)
+    {
+        $sql = "UPDATE `productos` SET
+`$atributo` = '{$valor}'
+WHERE `id`='{$this->id}' || `cod`='{$this->cod}'";
+        $this->con->sql($sql);
     }
 }

@@ -7,10 +7,10 @@ $imagenes = new Clases\Imagenes();
 $portfolio = new Clases\Portfolio();
 $novedades = new Clases\Novedades();
 $sliders = new Clases\Sliders();
-$template->set("title", TITULO . " | Inicio");
-$template->set("description", "Inicio " . TITULO);
-$template->set("keywords", "Inicio," . TITULO);
-$template->set("imagen", LOGO);
+$template->set("title", TITULO . " | Contacto");
+$template->set("description", "Contacto de " . TITULO);
+$template->set("keywords", "Contacto de " . TITULO);
+$template->set("favicon", FAVICON);
 $enviar = new Clases\Email();
 $template->themeInit();
 $template->themeNav();
@@ -20,8 +20,19 @@ $template->themeNav();
 	<section class="banner-area organic-breadcrumb">
 		<div class="container">
 			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
-				<div class="col-first">
+				<div class="col-first d-none d-md-block">
 					<h1>Contacto</h1>
+                    <nav class="d-flex align-items-center">
+                        <a href="<?= URL ?>/index">Inicio<span class="lnr lnr-arrow-right"></span></a>
+                        <a href="<?= URL ?>/contacto">Contacto</a>
+                    </nav>
+				</div>
+                <div class="col-md-12 d-md-none">
+					<h1>Contacto</h1>
+                    <nav class="d-flex align-items-center">
+                        <a href="<?= URL ?>/index">Inicio<span class="lnr lnr-arrow-right"></span></a>
+                        <a href="<?= URL ?>/contacto">Contacto</a>
+                    </nav>
 				</div>
 			</div>
 		</div>
@@ -38,9 +49,7 @@ $template->themeNav();
             $telefono = $funciones->antihack_mysqli(isset($_POST["telefono"]) ? $_POST["telefono"] : '');
             $consulta = $funciones->antihack_mysqli(isset($_POST["consulta"]) ? $_POST["consulta"] : '');
 
-            $mensajeFinal = "<b>Nombre</b>: " . $nombre . " <br/>";
-            $mensajeFinal .= "<b>Email</b>: " . $email . "<br/>";
-            $mensajeFinal .= "<b>Teléfono</b>: " . $telefono . " <br/>";
+            $mensajeFinal = "<b>Gracias por realizar tu consulta, te contactaremos a la brevedad</b><br/>";
             $mensajeFinal .= "<b>Consulta</b>: " . $consulta . "<br/>";
 
             //USUARIO

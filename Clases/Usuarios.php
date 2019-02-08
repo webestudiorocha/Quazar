@@ -101,7 +101,7 @@ class Usuarios
 
     public function delete()
     {
-        $sql = "DELETE FROM `usuarios`WHERE `cod`= '{$this->cod}'";
+        $sql = "DELETE FROM `usuarios` WHERE `cod`= '{$this->cod}'";
         $query = $this->con->sql($sql);
         return $query;
     }
@@ -168,8 +168,8 @@ class Usuarios
             while ($row = mysqli_fetch_assoc($notas)) {
                 $array[] = $row;
             }
-            return $array;
         }
+        return $array;
     }
 
 }

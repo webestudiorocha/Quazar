@@ -81,10 +81,10 @@ if (isset($_POST["agregar"])) {
     <h4>Productos</h4>
     <hr/>
     <form method="post" class="row" enctype="multipart/form-data">
-        <label class="col-md-4">Título:<br/>
+        <label class="col-md-3">Título:<br/>
             <input type="text" name="titulo" value="<?=$producto["titulo"]?>">
         </label>
-        <label class="col-md-4">Categoría:<br/>
+        <label class="col-md-3">Categoría:<br/>
             <select name="categoria">
                <?php
                 foreach ($data as $categoria) {
@@ -97,7 +97,7 @@ if (isset($_POST["agregar"])) {
                 ?>
             </select>
         </label>
-        <label class="col-md-4">Stock:<br/>
+        <label class="col-md-3">Stock:<br/>
             <input type="number" name="stock" value="<?=$producto["stock"]?>">
         </label>
         <div class="clearfix"></div>
@@ -112,9 +112,6 @@ if (isset($_POST["agregar"])) {
         </label>
         <label class="col-md-3">Precio Descuento:<br/>
             <input type="text" name="precioDescuento" value="<?=$producto["precio_descuento"]?>">
-        </label>
-        <label class="col-md-3">Url:<br/>
-            <input type="text" name="url" value="<?=$producto["url"]?>" id="url">
         </label>
         <div class="clearfix"></div>
         <label class="col-md-12">Desarrollo:<br/>

@@ -76,14 +76,6 @@ if (isset($_POST["agregar"])) {
             Celular:<br/>
             <input type="text" name="celular" />
         </label>
-        <label class="col-md-2">
-            Invitado (1 Si, 0 No):<br/>
-            <input type="number" min="0" max="1" name="invitado" />
-        </label>
-        <label class="col-md-2">
-            Tipo (1 Mayorista, 0 Minorista):<br/>
-            <input type="number" min="0" max="1" name="descuento" />
-        </label>
         <div class="clearfix">
         </div><br/>
         <div class="col-md-12">

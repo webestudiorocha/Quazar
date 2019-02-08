@@ -2017,10 +2017,10 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 767px) {
     .organic-breadcrumb {
         background: none;
-        background: -webkit-linear-gradient(90deg, #ffba00 0%, #ff6c00 100%);
-        background: -moz-linear-gradient(90deg, #ffba00 0%, #ff6c00 100%);
-        background: -o-linear-gradient(90deg, #ffba00 0%, #ff6c00 100%);
-        background: linear-gradient(90deg, #ffba00 0%, #ff6c00 100%);
+        background: -webkit-linear-gradient(90deg, #592626 0%, #592626 100%);
+        background: -moz-linear-gradient(90deg, #592626 0%, #592626 100%);
+        background: -o-linear-gradient(90deg, #592626 0%, #592626 100%);
+        background: linear-gradient(90deg, #592626 0%, #592626 100%);
     }
 }
 
@@ -4772,7 +4772,7 @@ label {
 }
 
 .pagination a:hover {
-    color: #592626 !important;
+    color: #fff !important;
     border-radius: 20px;
 }
 
@@ -5811,7 +5811,6 @@ label {
 }
 
 .s_product_text .list li a span {
-    width: 90px;
     display: inline-block;
 }
 
@@ -5877,6 +5876,23 @@ label {
 .s_product_text .card_area .icon_btn:hover:after {
     opacity: 1;
     visibility: visible;
+}
+
+.hidden{
+    display: none;
+}
+
+.text-bold{
+    font-weight: bolder;
+}
+
+.bg-pedido{
+    background: #592626;
+}
+
+.pedidos_box{
+    border: 1px solid #59262626;
+    border-radius: 5px;
 }
 
 .product_count {
@@ -7556,11 +7572,12 @@ label {
 
 .blog_right_sidebar .widget_title {
     font-size: 18px;
+    height: 45px;
     line-height: 25px;
     background: #592626;
     text-align: center;
     color: #fff;
-    padding: 8px 0px;
+    padding: 12px 0px;
     margin-bottom: 30px;
 }
 
@@ -7763,6 +7780,7 @@ label {
     font-weight: 500;
     padding: 0px 24px 0px 24px;
     border-radius: 0;
+    border: none;
 }
 
 .blog_right_sidebar .newsletter_widget .text-bottom {
@@ -8836,4 +8854,26 @@ label {
 
 .single_sidebar_widget .media  {
     padding-left: 20px;
+}
+.oculto{
+    visibility: hidden !important;
+}
+@media screen and (max-width: 900px) {
+    .hidden-xs {
+        display: none;
+    }
+    .total-mobile{
+        width: 30%;
+    }
+}
+@media screen and (min-width: 900px){
+    .visible-xs{
+        display: none;
+    }
+}
+.anchobtn{
+    line-height: unset !important;
+}
+.espaciosbtn{
+    white-space: unset !important;
 }

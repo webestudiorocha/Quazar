@@ -3,16 +3,19 @@ require_once "Config/Autoload.php";
 Config\Autoload::runSitio();
 $template = new Clases\TemplateSite();
 $funciones = new Clases\PublicFunction();
-$template->set("title", "Compra finalizada");
+$template->set("title", TITULO." | Compra finalizada");
 $template->set("description", "Compra finalizada");
 $template->set("keywords", "Compra finalizada");
+$template->set("favicon", FAVICON);
 $template->themeInit();
 $estado_get = isset($_GET["estado"]) ? $_GET["estado"] : '';
 $pedidos = new Clases\Pedidos();
 $carritos = new Clases\Carrito();
+$usuarios = new Clases\Usuarios();
 $imagenes = new Clases\Imagenes();
 $contenido = new Clases\Contenidos();
 $correo = new Clases\Email();
+$producto = new Clases\Productos();
 $cod_pedido = $_SESSION["cod_pedido"];
 $pedidos->set("cod", $cod_pedido);
 $pedido_info = $pedidos->info();
@@ -21,6 +24,8 @@ if (count($_SESSION["carrito"]) == 0) {
     $funciones->headerMove(URL . "/index");
 }
 
+$usuarios->set("cod",$_SESSION["usuarios"]["cod"]);
+$usuario_data = $usuarios->view();
 
 if ($estado_get != '') {
     $pedidos->set("estado", $estado_get);
@@ -108,10 +113,16 @@ $template->themeNav();
     <section class="banner-area organic-breadcrumb">
         <div class="container">
             <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
-                <div class="col-first">
+                <div class="col-first d-none d-md-block">
                     <h1>Carrito</h1>
                     <nav class="d-flex align-items-center">
-                        <a href="#">¡COMPRA FINALIZADA!<span class="lnr lnr-arrow-right"></span></a>
+                        <a href="#">¡COMPRA FINALIZADA!</a>
+                    </nav>
+                </div>
+                <div class="col-md-12 d-md-none">
+                    <h1>Carrito</h1>
+                    <nav class="d-flex align-items-center">
+                        <a href="#">¡COMPRA FINALIZADA!</a>
                     </nav>
                 </div>
             </div>
@@ -133,20 +144,26 @@ $template->themeNav();
                         <thead class="thead-dark">
                         <tr>
                             <th scope="col">Producto</th>
-                            <th scope="col">Precio Unitario</th>
-                            <th scope="col">Cantidad</th>
+                            <th class="hidden-xs" scope="col">Precio Unitario</th>
+                            <th class="hidden-xs" scope="col">Cantidad</th>
                             <th scope="col">Total</th>
                         </tr>
                         </thead>
                         <tbody>
                         <?php
                         $precio = 0;
+                        echo '<br>';
                         foreach ($carro as $carroItem) {
                             $precio += ($carroItem["precio"] * $carroItem["cantidad"]);
                             if ($carroItem["id"] == "Envio-Seleccion" || $carroItem["id"] == "Metodo-Pago") {
                                 $clase = "text-bold";
                                 $none = "hidden";
                             } else {
+                                $producto->set("cod",$carroItem['id']);
+                                $producto_data=$producto->view();
+                                if (!empty($producto_data)){
+                                    $producto->editUnico("stock",$producto_data['stock']-$carroItem['cantidad']);
+                                }
                                 $clase = '';
                                 $none = '';
                             }
@@ -163,44 +180,52 @@ $template->themeNav();
                             ?>
                             <tr class="<?= $clase ?>">
                                 <td>
-                                    <div class="media">
+                                    <div class="media hidden-xs">
                                         <div class="d-flex">
-                                            <div style="background: url(<?= $imgMostrar; ?>)center/cover;height: 100px;width: 100px;"></div>
+                                            <div style="background: url(<?= $imgMostrar; ?>)center/cover;height: 70px;width: 70px;"></div>
                                         </div>
                                         <div class="media-body">
                                             <p><?= mb_strtoupper($carroItem["titulo"]); ?></p>
                                         </div>
                                     </div>
+                                    <div class="media d-md-none">
+                                        <div class="media-body">
+                                            <p><?= mb_strtoupper($carroItem["titulo"]); ?></p>
+                                            <p class="<?= $none ?>">Cantidad: <?= $carroItem["cantidad"]; ?></p>
+                                            <p class="<?= $none ?>">Precio: $<?= $carroItem["precio"]; ?></p>
+                                        </div>
+                                    </div>
                                 </td>
-                                <td><p class="<?= $none ?>"><?= "$" . $carroItem["precio"]; ?></p></td>
-                                <td><p class="<?= $none ?>"><?= $carroItem["cantidad"]; ?></p></td>
-                                <?php
-                                if ($carroItem["precio"] != 0) {
-                                    ?>
-                                    <td><?= "$" . ($carroItem["precio"] * $carroItem["cantidad"]); ?></td>
-                                    <?php
-                                } else {
-                                    echo "<td>¡Gratis!</td>";
-                                }
-                                ?>
+                                <td class="hidden-xs"><p class="<?= $none ?>"><?= "$" . $carroItem["precio"]; ?></p></td>
+                                <td class="hidden-xs"><p class="<?= $none ?>"><?= $carroItem["cantidad"]; ?></p></td>
+                                <td class="total-mobile">
+                                    <?php if ($carroItem["precio"] != 0) { ?>
+                                        <h5>$ <?= $carroItem["precio"] * $carroItem["cantidad"] ?></h5>
+                                    <?php } else {
+                                        echo "<h5>¡Gratis!</h5>";
+                                    } ?>
+                                </td>
                             </tr>
                             <?php
                         }
                         ?>
                         <tr>
-                            <td>
+                            <td class="hidden-xs">
 
                             </td>
-                            <td>
+                            <td class="hidden-xs">
 
                             </td>
-                            <td>
+                            <td class="hidden-xs">
                                 <h3>Total</h3>
                             </td>
-                            <td><h3>$<?= number_format($precio, "2", ",", ".") ?></h3></td>
+                            <td class="hidden-xs"><h3>$<?= number_format($precio, "2", ",", ".") ?></h3></td>
                         </tr>
                         </tbody>
                     </table>
+                    <div class="col-md-12 d-md-none mb-10 mt-5" style="float: right;text-align: center;">
+                        <h3>Total: $<?= number_format($precio, "2", ",", ".") ?></h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -209,5 +234,8 @@ $template->themeNav();
 <?php
 $carritos->destroy();
 unset($_SESSION["cod_pedido"]);
+if($usuario_data["invitado"] == 1){
+    unset($_SESSION["usuarios"]);
+}
 $template->themeEnd();
 ?>

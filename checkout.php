@@ -6,6 +6,7 @@ $funciones = new Clases\PublicFunction();
 $template->set("title", "Cierre de compra");
 $template->set("description", "Cierre de compra");
 $template->set("keywords", "Cierre de compra");
+$template->set("favicon", FAVICON);
 $template->themeInit();
 
 $cod_pedido = isset($_GET["cod_pedido"]) ? $_GET["cod_pedido"] : '';
@@ -76,7 +77,7 @@ switch ($pago["tipo"]) {
         $pedidos->set("cod", $cod_pedido);
         $pedidos->set("estado", $pago["defecto"]);
         $pedidos->cambiar_estado();
-        $funciones->headerMove(URL . "/compra-finalizada.php");
+        $funciones->headerMove(URL . "/compra-finalizada");
         break;
     case 1:
         include("vendor/mercadopago/sdk/lib/mercadopago.php");

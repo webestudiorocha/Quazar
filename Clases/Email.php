@@ -30,6 +30,7 @@ class Email
             //Server settings
             $mail->SMTPDebug = 0;                                 // Enable verbose debug output
             $mail->isSMTP();                                      // Set mailer to use SMTP
+            $mail->CharSet = 'UTF-8';
             $mail->Host = SMTP_EMAIL;  // Specify main and backup SMTP servers
             $mail->SMTPAuth = true;                               // Enable SMTP authentication
             $mail->Username = EMAIL;                 // SMTP username

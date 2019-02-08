@@ -80,10 +80,6 @@ if (isset($_POST["agregar"])) {
             Invitado (1 Si, 0 No):<br/>
             <input type="number" min="0" max="1" name="invitado" value="<?=$usuario['invitado'];?>" />
         </label>
-        <label class="col-md-2">
-            Tipo (1 Mayorista, 0 Minorista):<br/>
-            <input type="number" min="0" max="1" name="descuento" value="<?=$usuario['descuento'];?>" />
-        </label>
         <div class="clearfix"></div><br/>
         <div class="col-md-12">
             <input type="submit" class="btn btn-primary" name="agregar" value="Crear Usuarios" />

@@ -11,6 +11,7 @@ class Carrito
     public $peso;
     public $precio;
     public $opciones;
+    public $stock;
     private $con;
 
 
@@ -34,8 +35,7 @@ class Carrito
     {
         $condition = '';
 
-        $add = array('id' => $this->id, 'titulo' => $this->titulo, 'cantidad' => $this->cantidad, 'precio' => $this->precio, 'peso' => $this->peso, 'opciones' => $this->opciones);
-
+        $add = array('id' => $this->id, 'titulo' => $this->titulo, 'cantidad' => $this->cantidad, 'precio' => $this->precio, 'stock' => $this->stock, 'peso' => $this->peso, 'opciones' => $this->opciones);
         if (count($_SESSION["carrito"]) == 0) {
             array_push($_SESSION["carrito"], $add);
             return true;
@@ -48,7 +48,7 @@ class Carrito
 
             if (is_numeric($condition)) {
                 $stock_carrito = $_SESSION["carrito"][$condition]["cantidad"] + $add["cantidad"];
-                if($stock_carrito <= $add["stock"]) {
+                if ($stock_carrito <= $add["stock"]) {
                     $_SESSION["carrito"][$condition]["cantidad"] = $_SESSION["carrito"][$condition]["cantidad"] + $this->cantidad;
                     return true;
                 } else {
@@ -75,7 +75,7 @@ class Carrito
     {
         $peso = 0;
         foreach ($_SESSION["carrito"] as $carrito) {
-            $peso += ($carrito["peso"]*$carrito["cantidad"]);
+            $peso += ($carrito["peso"] * $carrito["cantidad"]);
         }
         return $peso;
     }
@@ -84,7 +84,7 @@ class Carrito
     {
         $precio = 0;
         for ($i = 0; $i < count($_SESSION["carrito"]); $i++) {
-            $precio += ($_SESSION["carrito"][$i]["precio"]*$_SESSION["carrito"][$i]["cantidad"]);
+            $precio += ($_SESSION["carrito"][$i]["precio"] * $_SESSION["carrito"][$i]["cantidad"]);
         }
         return $precio;
     }

@@ -54,7 +54,7 @@ endif;
                                required>
                     </div>
                     <div class="col-lg-12 form-group">
-                        <h4><a href="#">¿Olvidaste tu contraseña?</a></h4>
+                        <h4><a href="#recuperar" onclick="$('.modal').hide()" data-toggle="modal">¿Olvidaste tu contraseña?</a></h4>
                     </div>
                     <div class="col-lg-12 form-group">
                         <button type="submit" name="login" class="btn btn-y">Ingresar</button>
@@ -72,6 +72,7 @@ if (isset($_POST["registrar"])):
         $nombre = $funcionesNav->antihack_mysqli(isset($_POST["nombre"]) ? $_POST["nombre"] : '');
         $apellido = $funcionesNav->antihack_mysqli(isset($_POST["apellido"]) ? $_POST["apellido"] : '');
         $email = $funcionesNav->antihack_mysqli(isset($_POST["email"]) ? $_POST["email"] : '');
+        $telefono = $funcionesNav->antihack_mysqli(isset($_POST["telefono"]) ? $_POST["telefono"] : '');
         $password = $funcionesNav->antihack_mysqli(isset($_POST["password"]) ? $_POST["password"] : '');
         $cod = substr(md5(uniqid(rand())), 0, 10);
         $fecha = getdate();
@@ -81,6 +82,7 @@ if (isset($_POST["registrar"])):
         $usuario->set("nombre", $nombre);
         $usuario->set("apellido", $apellido);
         $usuario->set("email", $email);
+        $usuario->set("telefono", $telefono);
         $usuario->set("password", $password);
         $usuario->set("fecha", $fecha);
 
@@ -154,10 +156,14 @@ endif;
                                required>
                     </div>
                     <div class="col-lg-12 form-group">
+                        <input class="form-control" type="number" placeholder="Teléfono" name="telefono"
+                               required>
+                    </div>
+                    <div class="col-lg-6 form-group">
                         <input class="form-control" type="password" placeholder="Contraseña" name="password"
                                required>
                     </div>
-                    <div class="col-lg-12 form-group">
+                    <div class="col-lg-6 form-group">
                         <input class="form-control" type="password" placeholder="Confirmar Contraseña"
                                name="password2"
                                required>
@@ -171,3 +177,76 @@ endif;
     </div>
 </div>
 <!-- End Register modal -->
+<!-- Recuperar -->
+<?php
+if (isset($_POST["recuperar"])) {
+    $email = $funcionesNav->antihack_mysqli(isset($_POST["email"]) ? $_POST["email"] : '');
+    $usuario->set("email", $email);
+    $data = $usuario->validate();
+    if (!empty($data)) {
+        //Envio de mail al usuario
+        $mensaje = 'Su contraseña recuperada es ' . $data['password'] . '<br/>';
+        $asunto = TITULO . ' - Recuperación de contraseña';
+        $receptor = $email;
+        $emisor = EMAIL;
+        $enviar->set("asunto", $asunto);
+        $enviar->set("receptor", $receptor);
+        $enviar->set("emisor", $emisor);
+        $enviar->set("mensaje", $mensaje);
+
+        if ($enviar->emailEnviar() == 1) {
+            ?>
+            <script>
+                $(document).ready(function () {
+                    $("#errorRecuperar").html('<br/><div class="alert alert-success" role="alert">Enviado con éxito.</div>');
+                    $('#recuperar').modal("show");
+                });
+            </script>
+            <?php
+        }else{
+            ?>
+            <script>
+                $(document).ready(function () {
+                    $("#errorRecuperar").html('<br/><div class="alert alert-warning" role="alert">Ocurrió un error, intente de nuevo.</div>');
+                    $('#recuperar').modal("show");
+                });
+            </script>
+            <?php
+        }
+    } else {
+        ?>
+        <script>
+            $(document).ready(function () {
+                $("#errorRecuperar").html('<br/><div class="alert alert-warning" role="alert">El email no existe.</div>');
+                $('#recuperar').modal("show");
+            });
+        </script>
+        <?php
+    }
+}
+?>
+
+<div class="modal fade" id="recuperar" tabindex="-1" role="dialog" aria-labelledby="recuperar" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="login_title">
+                    <h2>Registro</h2>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="errorRecuperar"></p>
+                <form class="login_form row" id="recuperar" method="post">
+                    <div class="col-lg-12 form-group">
+                        <input class="form-control" type="email" placeholder="Email" name="email"
+                               required>
+                    </div>
+                    <div class="col-lg-12 form-group">
+                        <button type="submit" name="recuperar" class="btn btn-y">Recuperar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Recuperar modal -->

@@ -3,10 +3,10 @@ require_once "Config/Autoload.php";
 Config\Autoload::runSitio();
 $template = new Clases\TemplateSite();
 $funciones= new Clases\PublicFunction();
-$template->set("title", "Quazar| Blogs");
-$template->set("description", "");
-$template->set("keywords", "");
-$template->set("favicon", LOGO);
+$template->set("title", TITULO." | Productos");
+$template->set("description", "Productos de".TITULO);
+$template->set("keywords", "Productos de".TITULO);
+$template->set("favicon", FAVICON);
 $template->themeInit();
 $categoria = isset($_GET["categoria"]) ? $_GET["categoria"] : '';
 $productos = new Clases\Productos();
@@ -50,8 +50,19 @@ $template->themeNav();
     <section class="banner-area organic-breadcrumb">
         <div class="container">
             <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
-                <div class="col-first">
+                <div class="col-first d-none d-md-block">
                     <h1>Productos</h1>
+                    <nav class="d-flex align-items-center">
+                        <a href="<?= URL ?>/index">Inicio<span class="lnr lnr-arrow-right"></span></a>
+                        <a href="<?= URL ?>/productos">Productos</a>
+                    </nav>
+                </div>
+                <div class="col-md-12 d-md-none">
+                    <h1>Productos</h1>
+                    <nav class="d-flex align-items-center">
+                        <a href="<?= URL ?>/index">Inicio<span class="lnr lnr-arrow-right"></span></a>
+                        <a href="<?= URL ?>/productos">Productos</a>
+                    </nav>
                 </div>
             </div>
         </div>
@@ -84,9 +95,9 @@ $template->themeNav();
                                 <?php $imagenes->set("cod", $prod["cod"]);
                                 $img = $imagenes->view(); ?>
                                 <a href='<?= URL . '/producto/' . $funciones->normalizar_link($prod["titulo"]) . '/' . $prod["cod"] ?>'>
-                                    <div class="single-product">
+                                    <div class="single-product" style="height: 300px;">
                                         <img class='img-fluid' style='height: 200px; background: url(<?= URL . "/" . $img["ruta"] ?>) no-repeat center center/cover;' alt=''>
-                                        <div class="product-details">
+                                        <div class="product-details" style="text-align: center;">
                                             <h6><?= ucfirst($prod["titulo"]) ?></h6>
                                             <div class="price">
                                                 <h4>$<?= ucfirst($prod["precio"]); ?> <s class="p_desc">$<?= ucfirst($prod["precio_descuento"]); ?></s></h4>

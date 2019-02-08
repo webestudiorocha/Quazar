@@ -3,8 +3,6 @@
 $usuario = new Clases\Usuarios();
 $usuario->set("cod", $_SESSION["usuarios"]["cod"]);
 $usuarioData = $usuario->view();
-var_dump($_SESSION['usuarios']);
-var_dump($usuarioData);
 ?>
 <?php
 if (isset($_POST["guardar"])):
@@ -83,32 +81,17 @@ endif;
             </div>
             <br>
             <div class="row">
-                <div class="col-md-6">Provincia
-                    <div class="input-group"><select class="pull-right form-control h40" name="prov"
-                                                     id="prov" required="">
-                            <option value="" selected=""></option>
-                        </select> <span class="input-group-addon"><i
-                                    class="login_icon glyphicon glyphicon-map-marker"></i></span></div>
-                </div>
-                <div class="col-md-6">Localidad
-                    <div class="input-group"><select class="form-control h40" name="loca" id="loca"
-                                                     required="">
-                            <option value="" selected=""></option>
-                        </select> <span class="input-group-addon"><i
-                                    class="login_icon glyphicon glyphicon-map-marker"></i></span></div>
-                </div>
-
                 <div class="col-md-6 col-xs-6">
                     <label>Provincia</label>
-                    <select class="form-control" name="provinciaPerfil" id="provincia" required>
-                        <option value="" selected disabled>Provincia</option>
+                    <select class="form-control" name="provincia" id="provincia" required>
+                        <option value="<?php if(!empty($usuarioData['provincia'])){echo $usuarioData['provincia'];} ?>" selected><?php if(!empty($usuarioData['provincia'])){echo $usuarioData['provincia'];}else{echo 'Seleciconar provincia';} ?></option>
                         <?php $funciones->provincias() ?>
                     </select>
                 </div>
                 <div class="col-md-6 col-xs-6">
                     <label>Localidad</label>
-                    <select class="form-control" name="localidadPerfil" id="localidad" required>
-                        <option value="" selected disabled>Localidad</option>
+                    <select class="form-control" name="localidad" id="localidad" required>
+                        <option value="<?php if(!empty($usuarioData['localidad'])){echo $usuarioData['localidad'];} ?>" selected><?php if(!empty($usuarioData['localidad'])){echo $usuarioData['localidad'];}else{echo 'Seleciconar localidad';} ?></option>
                     </select>
                 </div>
             </div>

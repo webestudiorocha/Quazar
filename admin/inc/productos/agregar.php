@@ -69,11 +69,11 @@ if (isset($_POST["agregar"])) {
     </h4>
     <hr/>
     <form method="post" class="row" enctype="multipart/form-data">
-        <label class="col-md-4">
+        <label class="col-md-3">
             Título:<br/>
             <input type="text" name="titulo">
         </label>
-        <label class="col-md-4">
+        <label class="col-md-3">
             Categoría:<br/>
             <select name="categoria">
                 <option value="" disabled selected>-- categorías --</option> 
@@ -84,7 +84,7 @@ if (isset($_POST["agregar"])) {
                 ?>
             </select>
         </label>
-        <label class="col-md-4">
+        <label class="col-md-3">
             Stock:<br/>
             <input type="number" name="stock">
         </label>
@@ -105,10 +105,6 @@ if (isset($_POST["agregar"])) {
         <label class="col-md-3">
             Precio Descuento:<br/>
             <input type="text" name="precio_descuento">
-        </label>
-        <label class="col-md-3">
-            Url:<br/>
-            <input type="text" name="url" id="url">
         </label>
         <div class="clearfix">
         </div>

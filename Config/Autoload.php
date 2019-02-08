@@ -17,6 +17,7 @@ class autoload
         define('SMTP_EMAIL', "estudiorochayasoc.com.ar");
         define('DIRECCION', "asdasdas a22");
         define('LOGO', URL . "/assets/img/Isologo.png");
+        define('FAVICON', URL . "/assets/img/fav.png");
         define('APP_ID_FB', "");
         spl_autoload_register(
             function($clase)

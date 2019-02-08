@@ -3,10 +3,10 @@ require_once "Config/Autoload.php";
 Config\Autoload::runSitio();
 $template = new Clases\TemplateSite();
 $funciones = new Clases\PublicFunction();
-$template->set("title", "Quazar | Inicio");
-$template->set("description", "");
-$template->set("keywords", "");
-$template->set("favicon", LOGO);
+$template->set("title", TITULO." | Inicio");
+$template->set("description", "Inicio de ".TITULO);
+$template->set("keywords", "Inicio de ".TITULO);
+$template->set("favicon", FAVICON);
 $template->themeInit();
 $productos = new Clases\Productos();
 $imagenes = new Clases\Imagenes();
@@ -27,18 +27,23 @@ $categoria_banner = $categorias->view();
 $banner_data = $banner->list_for_category($categoria_banner["cod"], "2");
 $producto_data = $productos->listWithOps("", "RAND()", 12);
 $novedades_data = $novedades->listWithOps("", "", 12);
-$template->themeNav();
 
+$contarProductos = count($producto_data);
+$contarNovedades = count($novedades_data);
+
+$template->themeNav();
 ?>
     <div class="carousel slide carousel-fade" data-ride="carousel" data-interval="3000" id="carousel-1">
         <div class="carousel-inner" role="listbox">
             <?php for ($i = 0; $i < $sliders_array_count; $i++) {
-                $imagenes->set("cod",$sliders_array[$i]['cod']);
+                $imagenes->set("cod", $sliders_array[$i]['cod']);
                 $img_slider_data = $imagenes->view();
                 ?>
-                <div class="carousel-item <?php if ($i == 0) { echo 'active'; } ?>">
-                    <a href="<?=$sliders_array[$i]['link']?>">
-                    <div class="img-fluid w-100 d-block" style="background: url(<?=URL?>/<?= $img_slider_data['ruta'] ?>)center/cover;"></div>
+                <div class="carousel-item <?php if ($i == 0) {
+                    echo 'active';
+                } ?>">
+                    <a href="<?= $sliders_array[$i]['link'] ?>">
+                        <div class="img-fluid w-100 d-block" style="background: url(<?= URL ?>/<?= $img_slider_data['ruta'] ?>)center/cover;"></div>
                     </a>
                 </div>
             <?php } ?>
@@ -52,18 +57,20 @@ $template->themeNav();
         </ol>
     </div>
 
-<br/>
+    <br/>
     <!-- Start category Area -->
-    <section class="category-area">
+    <section class="category-area" style="padding-top: 50px;">
         <div class="container">
             <div class="row justify-content-center">
                 <?php
-                foreach ($banner_data as $banner) {
-                    $imagenes->set("cod", $banner["cod"]);
-                    $img_ = $imagenes->view();
-                    ?>
-                    <div class="col-md-6"><img src="<?= $img_["ruta"] ?>" width="100%"/></div>
-                    <?php
+                if (@count($banner_data) == 2) {
+                    foreach ($banner_data as $banner) {
+                        $imagenes->set("cod", $banner["cod"]);
+                        $img_ = $imagenes->view();
+                        ?>
+                        <div class="col-md-6 mt-5"><img src="<?= $img_["ruta"] ?>" width="100%"/></div>
+                        <?php
+                    }
                 }
                 ?>
             </div>
@@ -99,11 +106,11 @@ $template->themeNav();
                                 <?php $imagenes->set("cod", $producto_data[$j]["cod"]);
                                 $img = $imagenes->view(); ?>
                                 <a href='<?= URL . '/producto/' . $funciones->normalizar_link($producto_data[$j]["titulo"]) . '/' . $producto_data[$j]["cod"] ?>'>
-                                    <div class="single-product">
+                                    <div class="single-product" style="height: 300px;">
                                         <img class='img-fluid'
                                              style='height: 200px; background: url(<?= URL . "/" . $img["ruta"] ?>) no-repeat center center/cover;'
                                              alt=''>
-                                        <div class="product-details">
+                                        <div class="product-details" style="text-align: center;">
                                             <h6><?= ucfirst($producto_data[$j]["titulo"]) ?></h6>
                                             <div class="price">
                                                 <h4>$<?= ucfirst($producto_data[$j]["precio"]); ?> <s
@@ -143,28 +150,31 @@ $template->themeNav();
                         </div>
                     </div>
                     <div class="row">
-                        <?php for ($j = $cantidad; $j < ($cantidad + 4); $j++) { ?>
-                            <!-- single product -->
-                            <div class="col-md-3">
-                                <?php $imagenes->set("cod", $novedades_data[$j]["cod"]);
-                                $img = $imagenes->view(); ?>
-                                <a href='<?= URL . '/blog/' . $funciones->normalizar_link($novedades_data[$j]["titulo"]) . '/' . $novedades_data[$j]["cod"] ?>'>
-                                    <div class="single-product">
-                                        <img class='img-fluid'
-                                             style='height: 200px; background: url(<?= URL . "/" . $img["ruta"] ?>) no-repeat center center/cover;'
-                                             alt=''>
-                                        <div class="product-details">
-                                            <h6><?= ucfirst($novedades_data[$j]["titulo"]) ?></h6>
-                                            <div class="n_color"><?= substr($novedades_data[$j]["desarrollo"], 0, 100) ?>
-                                                ..
+                        <?php if (floor($contarNovedades / 4) > 1 || (floor($contarNovedades / 4) == 1 && $i == 0)) {
+                            for ($j = $cantidad; $j < ($cantidad + 4); $j++) { ?>
+                                <!-- single product -->
+                                <div class="col-md-3">
+                                    <?php $imagenes->set("cod", $novedades_data[$j]["cod"]);
+                                    $img = $imagenes->view(); ?>
+                                    <a href='<?= URL . '/blog/' . $funciones->normalizar_link($novedades_data[$j]["titulo"]) . '/' . $novedades_data[$j]["cod"] ?>'>
+                                        <div class="single-product" style="height: 350px;">
+                                            <img class='img-fluid'
+                                                 style='height: 200px; background: url(<?= URL . "/" . $img["ruta"] ?>) no-repeat center center/cover;'
+                                                 alt=''>
+                                            <div class="product-details">
+                                                <h6><?= ucfirst($novedades_data[$j]["titulo"]) ?></h6>
+                                                <div class="n_color"><?= substr($novedades_data[$j]["desarrollo"], 0, 80) ?>
+                                                    ..
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </a>
-                            </div>
-                        <?php }
-                        $cantidad += 4;
-                        ?>
+                                    </a>
+                                </div>
+                            <?php }
+                            $cantidad += 4;
+                        } else {
+                            echo '<div class="text-center" style="width: 100%;"><h2>¡No hay más novedades por el momento!</h2></div>';
+                        } ?>
                     </div>
                 </div>
             </div>

@@ -1,10 +1,10 @@
 <?php
-$pages = ["ecommerce","contenidos", "novedades", "multimedia","usuarios", "banners", "productos", "portfolio", "servicios", "configuracion", "categorias"];
+$pages = ["ecommerce", "novedades", "multimedia","usuarios", "banners", "productos", "configuracion", "categorias"];
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-30">
     <div class="col-md-12">
         <a class="navbar-brand" href="#">
-            AdWeb
+            Quazar | Administrador web
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">
@@ -39,14 +39,8 @@ $pages = ["ecommerce","contenidos", "novedades", "multimedia","usuarios", "banne
                         <a class="dropdown-item" href="<?=URL?>/index.php?op=novedades&accion=ver">
                             Novedades
                         </a>
-                        <a class="dropdown-item" href="<?=URL?>/index.php?op=videos&accion=ver">
-                            Videos
-                        </a>
                         <a class="dropdown-item" href="<?=URL?>/index.php?op=sliders&accion=ver">
                             Sliders
-                        </a>
-                        <a class="dropdown-item" href="<?=URL?>/index.php?op=galerias&accion=ver">
-                            Galerias
                         </a>
                         <a class="dropdown-item" href="<?=URL?>/index.php?op=banners&accion=ver">
                             Banners
