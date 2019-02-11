@@ -2062,7 +2062,7 @@ h1, h2, h3, h4, h5, h6 {
 .breadcrumb-banner .col-first {
     position:relative;
     top:60px;
-    right:50px;
+    right:90px !important;
 }
 
 @media (max-width: 1380px) {

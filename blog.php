@@ -98,7 +98,7 @@ $template->themeNav();
                                 <?php
                                 if (isset($_POST["subs"])) {
                                     $email = $funciones->antihack_mysqli(isset($_POST["email"]) ? $_POST["email"] : '');
-                                    $mensajeFinal = "<b>Gracias por realizar tu suscribirse.</b><br/>";
+                                    $mensajeFinal = "<b>Gracias por realizar tu suscripción.</b><br/>";
 
                                     //USUARIO
                                     $enviar->set("asunto", "Realizaste tu suscripción");

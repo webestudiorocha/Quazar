@@ -2,69 +2,591 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd6b8db1-33f4-413c-9745-f17a6ee1bef7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Clases/Carrito.php" beforeDir="false" afterPath="$PROJECT_DIR$/Clases/Carrito.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Clases/Email.php" beforeDir="false" afterPath="$PROJECT_DIR$/Clases/Email.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Clases/Novedades.php" beforeDir="false" afterPath="$PROJECT_DIR$/Clases/Novedades.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Clases/Pedidos.php" beforeDir="false" afterPath="$PROJECT_DIR$/Clases/Pedidos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Clases/Productos.php" beforeDir="false" afterPath="$PROJECT_DIR$/Clases/Productos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Clases/TemplateSite.php" beforeDir="false" afterPath="$PROJECT_DIR$/Clases/TemplateSite.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Clases/Usuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/Clases/Usuarios.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/Autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/Config/Autoload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/inc/nav.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/inc/nav.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/inc/pagos/agregar.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/inc/pagos/agregar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/inc/pagos/modificar.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/inc/pagos/modificar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/inc/pagos/ver.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/inc/pagos/ver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/inc/productos/agregar.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/inc/productos/agregar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/inc/productos/modificar.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/inc/productos/modificar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/inc/usuarios/agregar.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/inc/usuarios/agregar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/inc/usuarios/modificar.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/inc/usuarios/modificar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/archivos/banner/8a2be79271.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/archivos/recortadas/a_05327bdea1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/archivos/recortadas/a_10ae8092ea.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/archivos/recortadas/a_340c41a95b.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/archivos/recortadas/a_3df1b1840f.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/archivos/recortadas/a_47e6cc782c.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/archivos/recortadas/a_49b0ff37c8.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/archivos/recortadas/a_67b38946c5.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/archivos/recortadas/a_6db8d93558.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/archivos/recortadas/a_80570b3d93.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/archivos/recortadas/a_8eafb28b00.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/archivos/recortadas/a_a07e465351.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/archivos/recortadas/a_d39975d801.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/archivos/recortadas/a_d777a9cb3e.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/archivos/recortadas/a_fce1016af8.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/_DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/css/_DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/css/normalize.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/fonts/_DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/js/_DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/js/custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/js/jquery-1.11.0.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/js/jquery.nav.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/_DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shAutoloader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shBrushAS3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shBrushAppleScript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shBrushBash.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shBrushCSharp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shBrushColdFusion.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shBrushCpp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shBrushCss.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shBrushDelphi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shBrushDiff.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shBrushErlang.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shBrushGroovy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shBrushJScript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shBrushJava.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shBrushJavaFX.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shBrushPerl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shBrushPhp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shBrushPlain.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shBrushPowerShell.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shBrushPython.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shBrushRuby.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shBrushSass.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shBrushScala.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shBrushSql.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shBrushVb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shBrushXml.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shCore.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/scripts/shLegacy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/styles/shCore.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/styles/shCoreDefault.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/styles/shCoreDjango.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/styles/shCoreEclipse.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/styles/shCoreEmacs.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/styles/shCoreFadeToGrey.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/styles/shCoreMDUltra.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/styles/shCoreMidnight.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/styles/shCoreRDark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/styles/shThemeDefault.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/styles/shThemeDjango.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/styles/shThemeEclipse.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/styles/shThemeEmacs.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/styles/shThemeFadeToGrey.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/styles/shThemeMDUltra.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/styles/shThemeMidnight.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Karma Shop-doc/syntax-highlighter/styles/shThemeRDark.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/fav.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/fav.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/inc/header.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/inc/header.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/inc/login.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/inc/login.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/inc/nav.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/inc/nav.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/inc/sesion/cuenta.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/inc/sesion/cuenta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/inc/sesion/pedidos.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/inc/sesion/pedidos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blogs.php" beforeDir="false" afterPath="$PROJECT_DIR$/blogs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carrito.php" beforeDir="false" afterPath="$PROJECT_DIR$/carrito.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/category.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/checkout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/compra-finalizada.php" beforeDir="false" afterPath="$PROJECT_DIR$/compra-finalizada.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/confirmation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/contacto.php" beforeDir="false" afterPath="$PROJECT_DIR$/contacto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/banner/Thumbs.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/banner/banner-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/banner/banner-img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/banner/common-banner.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/banner/next.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/banner/prev.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/add.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/author.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/c1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/c2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/c3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/c4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/c5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/c6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/cat-post/cat-post-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/cat-post/cat-post-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/cat-post/cat-post-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/causes/causes-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/causes/causes-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/causes/causes-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/feature-img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/latest-post/l-post-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/latest-post/l-post-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/latest-post/l-post-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/latest-post/l-post-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/main-blog/m-blog-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/main-blog/m-blog-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/main-blog/m-blog-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/main-blog/m-blog-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/main-blog/m-blog-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/next.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/popular-post/post1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/popular-post/post2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/popular-post/post3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/popular-post/post4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/post-img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/post-img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/blog/prev.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/brand/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/brand/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/brand/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/brand/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/brand/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/cart.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/category/c1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/category/c2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/category/c3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/category/c4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/category/c5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/category/s-p1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/elements/d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/elements/disabled-check.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/elements/disabled-radio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/elements/f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/elements/f2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/elements/f3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/elements/f4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/elements/f5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/elements/f6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/elements/f7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/elements/f8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/elements/g1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/elements/g2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/elements/g3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/elements/g4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/elements/g5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/elements/g6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/elements/g7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/elements/g8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/elements/primary-check.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/elements/primary-radio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/elements/success-check.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/elements/success-radio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/exclusive.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/fav.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/features/f-icon1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/features/f-icon2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/features/f-icon3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/features/f-icon4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/i1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/i2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/i3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/i4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/i5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/i6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/i7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/i8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/l1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/l2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/l3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/l4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/l5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/l6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/l7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/l8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/login.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/men-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/ob1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/ob2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/ob3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/b1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/b2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/b3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/b4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/c1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/c2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/c3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/c4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/cd-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/cd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/ci1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/ci2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/ci3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/f2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/f3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/f4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/m1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/mp1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/mp10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/mp11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/mp12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/mp2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/mp3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/mp4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/mp5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/mp6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/mp7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/mp8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/mp9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/ob1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/ob2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/ob3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/p1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/p2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/p3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/p4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/p5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/p6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/p7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/p8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/pl1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/pl2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/pl3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/pl4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/pl5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/pl6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/pl7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/pl8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/pm.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/q1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/u1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/u2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/organic-food/u3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/product/card.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/product/e-p1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/product/next.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/product/p1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/product/p2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/product/p3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/product/p4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/product/p5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/product/p6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/product/p7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/product/p8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/product/prev.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/product/review-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/product/review-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/product/review-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/q1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/r1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/r10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/r11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/r12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/r2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/r3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/r4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/r5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/r6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/r7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/r8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/r9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/sd/c1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/sd/c2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/sd/c3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/sd/c4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/sd/c5.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pagar.php" beforeDir="false" afterPath="$PROJECT_DIR$/pagar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/_DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/css/_DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/css/normalize.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/fonts/_DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/js/_DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/js/custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/js/jquery-1.11.0.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/js/jquery.nav.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/_DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shAutoloader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shBrushAS3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shBrushAppleScript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shBrushBash.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shBrushCSharp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shBrushColdFusion.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shBrushCpp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shBrushCss.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shBrushDelphi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shBrushDiff.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shBrushErlang.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shBrushGroovy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shBrushJScript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shBrushJava.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shBrushJavaFX.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shBrushPerl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shBrushPhp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shBrushPlain.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shBrushPowerShell.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shBrushPython.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shBrushRuby.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shBrushSass.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shBrushScala.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shBrushSql.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shBrushVb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shBrushXml.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shCore.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/scripts/shLegacy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/styles/shCore.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/styles/shCoreDefault.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/styles/shCoreDjango.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/styles/shCoreEclipse.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/styles/shCoreEmacs.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/styles/shCoreFadeToGrey.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/styles/shCoreMDUltra.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/styles/shCoreMidnight.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/styles/shCoreRDark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/styles/shThemeDefault.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/styles/shThemeDjango.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/styles/shThemeEclipse.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/styles/shThemeEmacs.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/styles/shThemeFadeToGrey.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/styles/shThemeMDUltra.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/styles/shThemeMidnight.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/Karma Shop-doc/syntax-highlighter/styles/shThemeRDark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/blog.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/cart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/category.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/checkout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/confirmation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/contact.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/contact_process.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/css/availability-calendar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/css/bootstrap.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/css/ion.rangeSlider.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/css/ion.rangeSlider.skinFlat.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/css/jquerysctipttop.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/css/linearicons.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/css/magnific-popup.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/css/main.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/css/main.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/css/nice-select.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/css/nouislider.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/css/owl.carousel.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/css/themify-icons.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/elements.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/fonts/Linearicons-Free.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/fonts/Linearicons-Free.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/fonts/Linearicons-Free.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/fonts/Linearicons-Free.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/fonts/Linearicons-Free.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/fonts/themify.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/fonts/themify.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/fonts/themify.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/fonts/themify.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/banner/banner-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/banner/banner-img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/banner/common-banner.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/banner/next.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/banner/prev.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/add.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/author.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/c1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/c2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/c3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/c4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/c5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/c6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/cat-post/cat-post-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/cat-post/cat-post-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/cat-post/cat-post-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/causes/causes-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/causes/causes-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/causes/causes-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/feature-img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/latest-post/l-post-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/latest-post/l-post-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/latest-post/l-post-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/latest-post/l-post-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/main-blog/m-blog-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/main-blog/m-blog-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/main-blog/m-blog-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/main-blog/m-blog-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/main-blog/m-blog-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/next.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/popular-post/post1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/popular-post/post2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/popular-post/post3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/popular-post/post4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/post-img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/post-img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/blog/prev.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/brand/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/brand/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/brand/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/brand/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/brand/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/cart.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/category/c1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/category/c2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/category/c3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/category/c4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/category/c5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/category/s-p1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/elements/d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/elements/disabled-check.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/elements/disabled-radio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/elements/f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/elements/f2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/elements/f3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/elements/f4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/elements/f5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/elements/f6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/elements/f7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/elements/f8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/elements/g1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/elements/g2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/elements/g3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/elements/g4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/elements/g5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/elements/g6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/elements/g7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/elements/g8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/elements/primary-check.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/elements/primary-radio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/elements/success-check.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/elements/success-radio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/exclusive.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/fav.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/features/f-icon1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/features/f-icon2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/features/f-icon3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/features/f-icon4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/i1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/i2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/i3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/i4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/i5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/i6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/i7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/i8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/l1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/l2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/l3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/l4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/l5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/l6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/l7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/l8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/login.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/men-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/ob1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/ob2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/ob3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/b1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/b2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/b3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/b4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/c1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/c2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/c3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/c4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/cd-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/cd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/ci1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/ci2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/ci3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/f2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/f3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/f4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/m1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/mp1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/mp10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/mp11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/mp12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/mp2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/mp3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/mp4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/mp5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/mp6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/mp7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/mp8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/mp9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/ob1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/ob2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/ob3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/p1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/p2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/p3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/p4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/p5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/p6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/p7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/p8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/pl1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/pl2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/pl3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/pl4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/pl5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/pl6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/pl7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/pl8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/pm.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/q1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/u1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/u2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/organic-food/u3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/product/card.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/product/e-p1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/product/next.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/product/p1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/product/p2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/product/p3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/product/p4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/product/p5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/product/p6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/product/p7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/product/p8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/product/prev.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/product/review-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/product/review-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/product/review-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/q1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/r1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/r10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/r11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/r12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/r2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/r3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/r4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/r5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/r6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/r7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/r8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/r9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/sd/c1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/sd/c2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/sd/c3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/sd/c4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/img/sd/c5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/js/countdown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/js/gmaps.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/js/ion.rangeSlider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/js/jquery.ajaxchimp.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/js/jquery.magnific-popup.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/js/jquery.nice-select.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/js/jquery.sticky.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/js/nouislider.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/js/owl.carousel.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/js/parallax.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/js/vendor/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/js/vendor/jquery-2.2.4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/js/vendor/popper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/prepros-6.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/scss/main.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/scss/theme/_banner.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/scss/theme/_blog.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/scss/theme/_common.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/scss/theme/_contact.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/scss/theme/_elements.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/scss/theme/_footer.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/scss/theme/_header.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/scss/theme/_home.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/scss/theme/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/scss/theme/_predefine.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/scss/theme/_product.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/scss/theme/_reset.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/scss/theme/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/single-blog.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/single-product.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma/tracking.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/producto.php" beforeDir="false" afterPath="$PROJECT_DIR$/producto.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productos.php" beforeDir="false" afterPath="$PROJECT_DIR$/productos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sesion.php" beforeDir="false" afterPath="$PROJECT_DIR$/sesion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/single-blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/single-product.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tracking.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,21 +609,33 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/producto.php">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/checkout.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="134" column="46" lean-forward="true" selection-start-line="134" selection-start-column="46" selection-end-line="134" selection-end-column="46" />
+            <state relative-caret-position="1089">
+              <caret line="93" column="2" lean-forward="true" selection-start-line="93" selection-start-column="2" selection-end-line="93" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/compra-finalizada.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
+              <folding>
+                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Clases/Carrito.php">
+        <entry file="file://$PROJECT_DIR$/admin/inc/pedidos/ver.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="45" column="17" lean-forward="true" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
+            <state relative-caret-position="408">
+              <caret line="108" column="36" lean-forward="true" selection-start-line="108" selection-start-column="36" selection-end-line="108" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -110,8 +644,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.cart_inner .table thead tr th</find>
-      <find>envio</find>
       <find>envi</find>
       <find>back</find>
       <find>head</find>
@@ -140,6 +672,8 @@
       <find>organic-breadcrum</find>
       <find>ffba00</find>
       <find>precio</find>
+      <find>50px</find>
+      <find>.breadcrumb-banner .col-first</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -156,7 +690,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/assets/css/font-awesome.min.css" />
         <option value="$PROJECT_DIR$/karma/css/main.css" />
         <option value="$PROJECT_DIR$/assets/inc/sesion/logout.php" />
         <option value="$PROJECT_DIR$/admin/inc/categorias/agregar.php" />
@@ -167,7 +700,6 @@
         <option value="$PROJECT_DIR$/karma/index.html" />
         <option value="$PROJECT_DIR$/assets/css/nice-select.css" />
         <option value="$PROJECT_DIR$/Clases/Pagos.php" />
-        <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/assets/scss/theme/_elements.scss" />
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/Clases/PublicFunction.php" />
@@ -190,30 +722,33 @@
         <option value="$PROJECT_DIR$/assets/inc/nav.inc.php" />
         <option value="$PROJECT_DIR$/assets/inc/sesion/pedidos.php" />
         <option value="$PROJECT_DIR$/sesion.php" />
-        <option value="$PROJECT_DIR$/assets/css/main.css" />
-        <option value="$PROJECT_DIR$/blog.php" />
         <option value="$PROJECT_DIR$/assets/inc/header.inc.php" />
         <option value="$PROJECT_DIR$/Config/Autoload.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/pagar.php" />
-        <option value="$PROJECT_DIR$/productos.php" />
         <option value="$PROJECT_DIR$/carrito.php" />
-        <option value="$PROJECT_DIR$/compra-finalizada.php" />
-        <option value="$PROJECT_DIR$/checkout.php" />
         <option value="$PROJECT_DIR$/contacto.php" />
         <option value="$PROJECT_DIR$/Clases/Novedades.php" />
-        <option value="$PROJECT_DIR$/blogs.php" />
         <option value="$PROJECT_DIR$/admin/inc/nav.inc.php" />
         <option value="$PROJECT_DIR$/Clases/TemplateSite.php" />
         <option value="$PROJECT_DIR$/Clases/Carrito.php" />
+        <option value="$PROJECT_DIR$/blogs.php" />
+        <option value="$PROJECT_DIR$/blog.php" />
+        <option value="$PROJECT_DIR$/sitemap.php" />
+        <option value="$PROJECT_DIR$/assets/css/main.css" />
+        <option value="$PROJECT_DIR$/.htaccess" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/productos.php" />
         <option value="$PROJECT_DIR$/producto.php" />
+        <option value="$PROJECT_DIR$/checkout.php" />
+        <option value="$PROJECT_DIR$/compra-finalizada.php" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="1057" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1456" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -221,7 +756,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -229,37 +763,11 @@
               <item name="Quazar" type="b2602c69:ProjectViewProjectNode" />
               <item name="Quazar" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Quazar" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Quazar" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Quazar" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Quazar" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="inc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Quazar" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Quazar" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Quazar" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Quazar" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="inc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Quazar" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Quazar" type="462c0819:PsiDirectoryNode" />
-              <item name="Clases" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -328,17 +836,18 @@
       <workItem from="1549540829188" duration="11074000" />
       <workItem from="1549626991398" duration="1422000" />
       <workItem from="1549628615526" duration="512000" />
+      <workItem from="1549886537246" duration="11850000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212549000" />
+    <option name="totallyTimeSpent" value="224800000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21418338" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14040114" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -397,55 +906,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/karma/scss/theme/_product.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="478" column="1" selection-start-line="478" selection-start-column="1" selection-end-line="478" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/karma/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="512" column="1" selection-start-line="512" selection-start-column="1" selection-end-line="512" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/single-product.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2125">
-          <caret line="125" column="16" selection-start-line="125" selection-start-column="16" selection-end-line="137" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/superglobals/_superglobals.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="173" selection-start-line="173" selection-end-line="173" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/inc/localidades.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Clases/PublicFunction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/inc/footer.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="37" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -460,9 +920,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html" />
     <entry file="file://$PROJECT_DIR$/admin/inc/productos/modificar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -515,16 +973,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contact.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Clases/Pedidos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/contact.html" />
     <entry file="file://$PROJECT_DIR$/Clases/Email.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -585,20 +1034,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/scss/theme/_home.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4019">
-          <caret line="1157" column="9" lean-forward="true" selection-start-line="1157" selection-start-column="9" selection-end-line="1157" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="2017" column="25" lean-forward="true" selection-start-line="2017" selection-start-column="25" selection-end-line="2017" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/inc/side/side.inc.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -613,13 +1048,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/login.php" />
     <entry file="file://$PROJECT_DIR$/contact_process.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -632,13 +1061,6 @@
             <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pagar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -656,51 +1078,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/checkout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compra-finalizada.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/contacto.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/carrito.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="76" column="14" lean-forward="true" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blogs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="97" column="83" selection-start-line="97" selection-start-column="83" selection-end-line="97" selection-end-column="83" />
         </state>
       </provider>
     </entry>
@@ -718,27 +1099,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/productos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/inc/nav.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Clases/TemplateSite.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
@@ -753,10 +1113,145 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Clases/Conexion.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/inc/nav.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pagar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="105" column="47" selection-start-line="105" selection-start-column="47" selection-end-line="105" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sitemap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="36" lean-forward="true" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/carrito.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="48" column="24" lean-forward="true" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/mercadopago/sdk/lib/mercadopago.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="204" column="20" selection-start-line="204" selection-start-column="20" selection-end-line="204" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/scss/theme/_banner.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1052">
+          <caret line="130" column="5" lean-forward="true" selection-start-line="130" selection-start-column="5" selection-end-line="130" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Clases/Pedidos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="27" column="54" lean-forward="true" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/scss/main.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/scss/theme/_home.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="998" column="4" selection-start-line="998" selection-start-column="4" selection-end-line="998" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="29" column="31" lean-forward="true" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/producto.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="134" column="46" lean-forward="true" selection-start-line="134" selection-start-column="46" selection-end-line="134" selection-end-column="46" />
+        <state relative-caret-position="426">
+          <caret line="100" column="74" selection-start-line="100" selection-start-column="74" selection-end-line="100" selection-end-column="74" />
+          <folding>
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#h2#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="114" column="50" lean-forward="true" selection-start-line="102" selection-start-column="47" selection-end-line="114" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="114" column="44" selection-start-line="114" selection-start-column="44" selection-end-line="114" selection-end-column="63" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="384" column="1" lean-forward="true" selection-start-line="384" selection-start-column="1" selection-end-line="384" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/checkout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1089">
+          <caret line="93" column="2" lean-forward="true" selection-start-line="93" selection-start-column="2" selection-end-line="93" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/inc/pedidos/ver.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="108" column="36" lean-forward="true" selection-start-line="108" selection-start-column="36" selection-end-line="108" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blogs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="156" column="91" selection-start-line="156" selection-start-column="91" selection-end-line="156" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compra-finalizada.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

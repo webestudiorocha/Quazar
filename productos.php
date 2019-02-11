@@ -100,7 +100,19 @@ $template->themeNav();
                                         <div class="product-details" style="text-align: center;">
                                             <h6><?= ucfirst($prod["titulo"]) ?></h6>
                                             <div class="price">
-                                                <h4>$<?= ucfirst($prod["precio"]); ?> <s class="p_desc">$<?= ucfirst($prod["precio_descuento"]); ?></s></h4>
+                                                <?php
+                                                if ($prod["precio_descuento"] > 0) {
+                                                    ?>
+                                                    <h4>$<?= ucfirst($prod["precio"]); ?> <s
+                                                                class="p_desc">$<?= ucfirst($prod["precio_descuento"]); ?></s>
+                                                    </h4>
+                                                    <?php
+                                                } else {
+                                                    ?>
+                                                    <h4>$<?= ucfirst($prod["precio"]); ?></h4>
+                                                    <?php
+                                                }
+                                                ?>
                                             </div>
                                         </div>
                                     </div>

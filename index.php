@@ -3,9 +3,9 @@ require_once "Config/Autoload.php";
 Config\Autoload::runSitio();
 $template = new Clases\TemplateSite();
 $funciones = new Clases\PublicFunction();
-$template->set("title", TITULO." | Inicio");
-$template->set("description", "Inicio de ".TITULO);
-$template->set("keywords", "Inicio de ".TITULO);
+$template->set("title", TITULO . " | Inicio");
+$template->set("description", "Inicio de " . TITULO);
+$template->set("keywords", "Inicio de " . TITULO);
 $template->set("favicon", FAVICON);
 $template->themeInit();
 $productos = new Clases\Productos();
@@ -113,9 +113,19 @@ $template->themeNav();
                                         <div class="product-details" style="text-align: center;">
                                             <h6><?= ucfirst($producto_data[$j]["titulo"]) ?></h6>
                                             <div class="price">
-                                                <h4>$<?= ucfirst($producto_data[$j]["precio"]); ?> <s
-                                                            class="p_desc">$<?= ucfirst($producto_data[$j]["precio_descuento"]); ?></s>
-                                                </h4>
+                                                <?php
+                                                if ($producto_data[$j]["precio_descuento"] > 0) {
+                                                    ?>
+                                                    <h4>$<?= ucfirst($producto_data[$j]["precio"]); ?> <s
+                                                                class="p_desc">$<?= ucfirst($producto_data[$j]["precio_descuento"]); ?></s>
+                                                    </h4>
+                                                    <?php
+                                                } else {
+                                                    ?>
+                                                    <h4>$<?= ucfirst($producto_data[$j]["precio"]); ?></h4>
+                                                    <?php
+                                                }
+                                                ?>
                                             </div>
                                         </div>
                                     </div>

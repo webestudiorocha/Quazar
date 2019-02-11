@@ -32,8 +32,8 @@ RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteRule . / [L,R=301]
 
 RewriteEngine on
-RewriteCond %{HTTPS} ^cordobapymes.com.ar [NC]
-RewriteRule ^(.*)$ https://www.cordobapymes.com.ar/$1 [L,R=301,NC]
+RewriteCond %{HTTPS} ^quazar.com.ar [NC]
+RewriteRule ^(.*)$ https://www.quazar.com.ar/$1 [L,R=301,NC]
 
 Header add Access-Control-Allow-Origin "*"
 

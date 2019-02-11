@@ -95,7 +95,18 @@ $template->themeNav();
             <div class="col-lg-5 offset-lg-1">
                 <div class="s_product_text">
                     <h3><?= $producto_data['titulo'] ?></h3>
-                    <h2>$<?= $producto_data['precio'] ?></h2>
+                    <?php
+                    if ($producto_data["precio_descuento"] > 0) {
+                        ?>
+                        <h2 style="display: inline-block;margin-right:5px;">$<?= ucfirst($producto_data["precio"]); ?> <h3 style="display: inline-block;color: grey;text-decoration: line-through;"> $<?= ucfirst($producto_data["precio_descuento"]); ?></h3>
+                        </h2>
+                        <?php
+                    } else {
+                        ?>
+                        <h2>$<?= ucfirst($producto_data["precio"]); ?></h2>
+                        <?php
+                    }
+                    ?>
                     <ul class="list">
                         <li><span>Categoría: </span><a class="active" href="#"><?= $categoria_data['titulo'] ?></a>
                         </li>
